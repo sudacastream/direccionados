@@ -10,6 +10,8 @@ import jQuery from 'jquery';
 window.$ = jQuery;
 
 $(document).ready(function(){
+  window.localStorage.setItem('data-theme', 'dark');
+  document.documentElement.setAttribute('data-theme', 'dark');
     var i=1;
     $('#add-ticket').click(function(){
         i++;
