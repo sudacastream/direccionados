@@ -41,7 +41,7 @@
                                             </td>
                                             <td class="py-3 px-6 text-left">
                                                 <div class="flex items-center">
-                                                    {{ $tickets[$tokensTicket[$b]][$i]->nombres }}
+                                                    {{ $tickets[$tokensTicket[$b]][$i]->dni }} - {{ $tickets[$tokensTicket[$b]][$i]->apellidos}}, {{$tickets[$tokensTicket[$b]][$i]->nombres }}
                                                 </div>
                                             </td>
                                             <td class="py-3 px-6 text-center">

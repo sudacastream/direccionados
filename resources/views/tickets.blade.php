@@ -4,7 +4,6 @@
             {{ __('Tienda') }}
         </h2>
     </x-slot>
-
     <form method="POST" action="{{ route('tienda.store') }}" class="mt-6 space-y-6" id="form-ticket">
       @csrf
     <div class="py-12">
