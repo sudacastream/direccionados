@@ -1,0 +1,60 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+#ticket-names .ticket:nth-child(even)
+{
+    background-color:rgb(250, 250, 250) !important;
+}
+#listado tr
+{
+    border-bottom:solid 1px rgb(229 231 235);
+}
+#listado tr:nth-child(even)
+{
+    background-color:rgb(249 250 251);
+}
+#listado tr:hover
+{
+    background-color: rgb(243 244 246);
+}
+
+.bg-colorido
+{
+    background:url(../../public/bg.png) center center;
+    background-size:cover;
+}
+.isologo
+{
+    height:64px;
+    text-align:center;
+}
+.guest-text
+{
+    color:#ffffff;
+    text-align:center;
+    text-shadow:1px 2px #ff2a66, 0 0 1em #ffad0d, 0 0 0.2em #02004f;
+}
+.remove-ticket
+{
+    background-color:white;
+    border:solid 1px #dc3545;
+    color:#dc3545;
+}
+.remove-ticket:hover
+{
+    background-color:#dc3545;
+    color:white;
+}
+.ticket-listado
+{
+    padding-bottom:1.5em;
+}
+.ticket-listado:first-of-type
+{
+    padding-top:2em;
+}
