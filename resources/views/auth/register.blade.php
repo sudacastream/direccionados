@@ -1,3 +1,4 @@
+@section('title', 'Registrarse - Congreso Direccionados')
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf

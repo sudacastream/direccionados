@@ -1,3 +1,4 @@
+@section('title', 'Confirmar contraseña - Congreso Direccionados')
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600">
         {{ __('Esta es un área segura. Por favor, confirme su contraseña antes de continuar.') }}

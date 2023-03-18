@@ -40,6 +40,11 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Perfil') }}
                         </x-dropdown-link>
+                        @if(Auth::user()->email=='ceo@sudacastream.com')
+                        <x-dropdown-link :href="route('admin.edit')">
+                            {{ __('Administración') }}
+                        </x-dropdown-link>
+                        @endif
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -89,6 +94,11 @@
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Perfil') }}
                 </x-responsive-nav-link>
+                @if(Auth::user()->email=='ceo@sudacastream.com')
+                <x-responsive-nav-link :href="route('admin.edit')">
+                    {{ __('Administración') }}
+                </x-responsive-nav-link>
+                @endif
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">

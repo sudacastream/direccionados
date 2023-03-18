@@ -160,6 +160,6 @@ class TiendaController extends Controller
 
         Mail::to($request->user()['email'])->send(new CompraEfectuada($contenido));
 
-        return to_route('dashboard');
+        return to_route('dashboard')->with('status', 'Hemos recibido tu pedido correctamente. Revisá tu casilla de email para abonar y confirmar el pedido.');
     }
 }

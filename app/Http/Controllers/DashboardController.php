@@ -46,7 +46,7 @@ class DashboardController extends Controller
             'buffet' => $buffet,
             'tokensMerchandising' => $tokensMerchandising,
             'merchandising' => $merchandising,
-            'userId' => $request->user()['id']
+            'userId' => $request->user()['id'],
         ]);
     }
 }

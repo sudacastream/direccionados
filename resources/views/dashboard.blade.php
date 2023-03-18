@@ -1,14 +1,22 @@
+@section('title', 'Dashboard - Congreso Direccionados')
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    <div class="box-border max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <x-auth-session-status class="bg-green-200 text-green-600 mt-6 px-4 py-3 rounded" :status="session('status')" />
+    </div>
+    <div class="py-4">
     @if(count($tokens) == 0 && count($tokensBuffet) == 0 && count($tokensMerchandising) == 0)
     <div class="ticket-listado">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
                 <p>Aún no se ha registrado la compra de tickets, combos o merchandising.</p>
+                <a class="inline-flex cursor-pointer items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                    Tienda
+                </a>
             </div>
         </div>
     </div>
@@ -155,4 +163,5 @@
             </div>
         </div>
     @endfor
+    </div>
 </x-app-layout>
