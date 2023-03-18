@@ -36,6 +36,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'edit'])->name('admin.edit');
+    Route::post('/admin/search', [AdminController::class, 'search'])->name('admin.search');
+    Route::get('/admin/search', [AdminController::class, 'redirect'])->name('admin.redirect');
     Route::patch('/admin', [AdminController::class, 'update'])->name('admin.update');
     Route::delete('/admin', [AdminController::class, 'destroy'])->name('admin.destroy');
 });

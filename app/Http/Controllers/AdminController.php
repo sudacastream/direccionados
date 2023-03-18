@@ -47,12 +47,36 @@ class AdminController extends Controller
                 'tokensMerchandising' => $tokensMerchandising,
                 'merchandising' => $merchandising,
                 'user' => $request->user(),
-                'title' => 'Administración - Congreso Direccionados',
             ]);
         }
         else
         {
             return abort(404);
         }
+    }
+    public function search(Request $request)
+    {
+        $request->validate([
+            'token' => 'required',
+        ]);
+
+        
+        $tickets = DB::table('tickets')->where('token', '=', $request->token)->get();
+
+        $buffet = DB::table('buffet')->where('token', '=', $request->token)->get();
+
+        $merchandising = DB::table('merchandising')->where('token', '=', $request->token)->get();
+
+        return view('admin.edit', [
+            'token' => $request->token,
+            'tickets' => $tickets,
+            'buffet' => $buffet,
+            'merchandising' => $merchandising,
+            'user' => $request->user(),
+        ]);
+    }
+    public function redirect()
+    {
+        return to_route('admin.edit');
     }
 }
