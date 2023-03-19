@@ -83,23 +83,31 @@ class AdminController extends Controller
         if(count(DB::table('tickets')->where('token', '=', $request->token)->get()) > 0)
         {
             DB::table('tickets')->where('token', '=', $request->token)->update(['pago' => true]);
+            $user = DB::table('tickets')->where('token', '=', $request->token)->get();
+
         }
         if(count(DB::table('buffet')->where('token', '=', $request->token)->get()) > 0)
         {
             DB::table('buffet')->where('token', '=', $request->token)->update(['pago' => true]);
+            $user = DB::table('buffet')->where('token', '=', $request->token)->get();
         }
         if(count(DB::table('merchandising')->where('token', '=', $request->token)->get()) > 0)
         {
             DB::table('merchandising')->where('token', '=', $request->token)->update(['pago' => true]);
+            $user = DB::table('merchandising')->where('token', '=', $request->token)->get();
         }
         
+        $u = DB::table('users')->where('id','=',$user[0]->usuario)->get();
+
+        $email = $u[0]->email;
+
         $tickets = DB::table('tickets')->where('token', '=', $request->token)->get();
 
         $buffet = DB::table('buffet')->where('token', '=', $request->token)->get();
 
         $merchandising = DB::table('merchandising')->where('token', '=', $request->token)->get();
 
-        Mail::to($request->user()['email'])->send(new ConfirmacionPago($request->token));
+        Mail::to($email)->send(new ConfirmacionPago($request->token));
 
         return view('admin.edit',[
             'token' => $request->token,
