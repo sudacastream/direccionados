@@ -47,35 +47,12 @@
                                         ¡Hola!
                                     </h1>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
-                                        Hemos recibido tu pedido correctamente. Para continuar con la compra realizá el pago y contestá este correo adjuntando el comprobante de transferencia sin borrar este mensaje en la respuesta.
-                                    </p>
-                                    <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
-                                        El Token Pass, detalle de la compra, el monto total y datos de la cuenta a transferir se te brindan a continuación:
-                                    </p>
-                                    <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-left:solid 1px #e8e5ef;padding:0 1em;">
-                                        <tr>
-                                            <td>
-                                                <p style="position: relative; font-size: 16px; line-height: 1.5em; margin:0; text-align: left;">
-                                                    {!! $mailData !!}
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 1em; text-align: left;">
-                                        ¡No te olvides de adjuntar el comprobante de transferencia!
+                                        Hemos registrado tu pago en los productos con el Token Pass <span style="font-weight:600;">{!! $mailData !!}</span>. Unos días antes del congreso recibirás un mensaje con el ticket.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
                                         Saludos, Congreso Direccionados
                                     </p>
-                                    <table class="subcopy" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-top: 1px solid #e8e5ef;margin-top: 25px;padding-top: 25px;">
-                                        <tr>
-                                            <td>
-                                                <p style="font-size:14px;">
-                                                    Si no has realizado ninguna compra, puedes ignorar o eliminar este e-mail.
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </table>
+
                                 </td>
                             </tr>
                         </table>

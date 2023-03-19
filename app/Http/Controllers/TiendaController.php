@@ -48,7 +48,9 @@ class TiendaController extends Controller
         $request['pago'] = 0;
         $request['asistencia'] = 0;
         
-        $contenido = '<span style="font-weight:600;">Detalle de la compra:</span><ul style="margin-top:5px;">';
+        
+        $contenido = '<span style="font-weight:600;">Token Pass: '.$request['token'].'</span><ul></ul>';
+        $contenido .= '<span style="font-weight:600;">Detalle de la compra:</span><ul style="margin-top:5px;">';
         $montoTotal = 0;
 
         if($request->nombres)

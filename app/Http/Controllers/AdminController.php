@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Mail\CompraEfectuada;
+use App\Mail\ConfirmacionPago;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -68,6 +71,37 @@ class AdminController extends Controller
         $merchandising = DB::table('merchandising')->where('token', '=', $request->token)->get();
 
         return view('admin.edit', [
+            'token' => $request->token,
+            'tickets' => $tickets,
+            'buffet' => $buffet,
+            'merchandising' => $merchandising,
+            'user' => $request->user(),
+        ]);
+    }
+    public function paid(Request $request)
+    {
+        if(count(DB::table('tickets')->where('token', '=', $request->token)->get()) > 0)
+        {
+            DB::table('tickets')->where('token', '=', $request->token)->update(['pago' => true]);
+        }
+        if(count(DB::table('buffet')->where('token', '=', $request->token)->get()) > 0)
+        {
+            DB::table('buffet')->where('token', '=', $request->token)->update(['pago' => true]);
+        }
+        if(count(DB::table('merchandising')->where('token', '=', $request->token)->get()) > 0)
+        {
+            DB::table('merchandising')->where('token', '=', $request->token)->update(['pago' => true]);
+        }
+        
+        $tickets = DB::table('tickets')->where('token', '=', $request->token)->get();
+
+        $buffet = DB::table('buffet')->where('token', '=', $request->token)->get();
+
+        $merchandising = DB::table('merchandising')->where('token', '=', $request->token)->get();
+
+        Mail::to($request->user()['email'])->send(new ConfirmacionPago($request->token));
+
+        return view('admin.edit',[
             'token' => $request->token,
             'tickets' => $tickets,
             'buffet' => $buffet,
