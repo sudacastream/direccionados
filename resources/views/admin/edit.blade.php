@@ -13,17 +13,22 @@
                     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500">
                         <li class="mr-2 tab-item">
                             <a class="cursor-pointer text-blue-600 border-b-2 border-blue-600 inline-flex p-4 rounded-t-lg group" aria-current="page">
-                                <i class="fa-solid fa-list-check pt-1 mr-3"></i>Ver listado
+                                <i class="fa-solid fa-list-check pt-1 mr-3"></i>Tokens<span class="hidden sm:inline-block">&nbsp;Pass</span>
                             </a>
                         </li>
                         <li class="mr-2 tab-item">
                             <a class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
-                                <i class="fa-solid fa-chart-pie pt-1 mr-3"></i>Estad&iacute;sticas
+                                <i class="fa-solid fa-ticket pt-1 mr-3"></i>Tickets
                             </a>
                         </li>
                         <li class="mr-2 tab-item">
                             <a class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
-                                <i class="fa-solid fa-sliders pt-1 mr-3"></i>Configuraci&oacute;n
+                                <i class="fa-solid fa-chart-pie pt-1 mr-3"></i>Censo
+                            </a>
+                        </li>
+                        <li class="mr-2 tab-item">
+                            <a href="{{ route('admin.settings.edit') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">    
+                                <i class="fa-solid fa-sliders pt-1 mr-3"></i>Ajustes
                             </a>
                         </li>
                     </ul>
@@ -36,7 +41,7 @@
                         <label for="table-search" class="sr-only"></label>
                         <div class="relative mt-1">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
@@ -55,8 +60,8 @@
                                 @method('PATCH')
                                 <input type="hidden" name="token" value="{{ $token }}" />
                                 <a class="inline-flex cursor-pointer items-center px-4 py-2.5 text-green-600 bg-green-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-green-200 focus:bg-green-200 active:bg-green-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
-                                    <i class="fa-solid fa-dollar-sign mr-2"></i>
-                                    Pago realizado
+                                    <i class="fa-solid fa-dollar-sign sm:mr-2"></i>
+                                    <span class="hidden sm:inline-block">Pago realizado</span>
                                 </a>
                                 </form>
                             </div>
@@ -69,8 +74,8 @@
                                 @method('PATCH')
                                 <input type="hidden" name="token" value="{{ $token }}" />
                                 <a class="inline-flex cursor-pointer items-center px-4 py-2.5 text-green-600 bg-green-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-green-200 focus:bg-green-200 active:bg-green-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
-                                    <i class="fa-solid fa-dollar-sign mr-2"></i>
-                                    Pago realizado
+                                    <i class="fa-solid fa-dollar-sign sm:mr-2"></i>
+                                    <span class="hidden sm:inline-block">Pago realizado</span>
                                 </a>
                                 </form>
                             </div>
@@ -83,8 +88,8 @@
                                 @method('PATCH')
                                 <input type="hidden" name="token" value="{{ $token }}" />
                                 <a class="inline-flex cursor-pointer items-center px-4 py-2.5 text-green-600 bg-green-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-green-200 focus:bg-green-200 active:bg-green-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
-                                    <i class="fa-solid fa-dollar-sign mr-2"></i>
-                                    Pago realizado
+                                    <i class="fa-solid fa-dollar-sign sm:mr-2"></i>
+                                    <span class="hidden sm:inline-block">Pago realizado</span>
                                 </a>
                                 </form>
                             </div>
@@ -118,9 +123,11 @@
                                     </td>
                                     <td class="py-3 px-6 text-center">
                                             @if($tickets[$i]->pago)
-                                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Pago registrado
+                                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
+                                                <span class="hidden md:inline-block">Pago registrado</span>
                                             @else
-                                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Pago pendiente
+                                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                                <span class="hidden md:inline-block">Pago pendiente</span>
                                                 ({{ \Carbon\Carbon::parse($tickets[$i]->created_at)->diffForHumans(); }})
                                             @endif
                                         </span>
@@ -162,9 +169,11 @@
                                     </td>
                                     <td class="py-3 px-6 text-center">
                                             @if($buffet[$i]->pago)
-                                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Pago registrado
+                                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
+                                                <span class="hidden md:inline-block">Pago registrado</span>
                                             @else
-                                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Pago pendiente
+                                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                                <span class="hidden md:inline-block">Pago pendiente</span>
                                                 ({{ \Carbon\Carbon::parse($buffet[$i]->created_at)->diffForHumans(); }})
                                             @endif
                                         </span>
@@ -201,9 +210,11 @@
                                     </td>
                                     <td class="py-3 px-6 text-center">
                                             @if($merchandising[$i]->pago)
-                                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Pago registrado
+                                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
+                                                <span class="hidden md:inline-block">Pago registrado</span>
                                             @else
-                                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Pago pendiente
+                                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                                <span class="hidden md:inline-block">Pago pendiente</span>
                                                 ({{ \Carbon\Carbon::parse($merchandising[$i]->created_at)->diffForHumans(); }})
                                             @endif
                                         </span>

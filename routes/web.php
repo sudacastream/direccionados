@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TiendaController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,12 +36,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', [AdminController::class, 'edit'])->name('admin.edit');
-    Route::post('/admin/search', [AdminController::class, 'search'])->name('admin.search');
-    Route::patch('/admin/search', [AdminController::class, 'paid'])->name('admin.paid');
-    Route::get('/admin/search', [AdminController::class, 'redirect'])->name('admin.redirect');
-    Route::patch('/admin', [AdminController::class, 'update'])->name('admin.update');
-    Route::delete('/admin', [AdminController::class, 'destroy'])->name('admin.destroy');
+    Route::get('/admin/tokens', [AdminController::class, 'edit'])->name('admin.edit');
+    Route::get('/admin', [AdminController::class, 'redirect'])->name('admin.redirect');
+    Route::get('/admin/search', [AdminController::class, 'redirect'])->name('admin.search.redirect');
+
+    Route::post('/admin/search/token', [AdminController::class, 'search'])->name('admin.search');
+    Route::patch('/admin/search/token', [AdminController::class, 'paid'])->name('admin.paid');
+    Route::get('/admin/search/token', [AdminController::class, 'redirect'])->name('admin.search.token.redirect');
+    
+
+    Route::get('/admin/settings', [SettingsController::class, 'edit'])->name('admin.settings.edit');
 });
 
 
