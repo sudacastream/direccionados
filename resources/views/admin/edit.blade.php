@@ -47,18 +47,48 @@
                         </div>
                         </form>
                 @isset($token)
-                        @if(!$tickets[0]->pago)
-                        <div class="mt-1.5">
-                            <form action="{{ route('admin.paid') }}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <input type="hidden" name="token" value="{{ $token }}" />
-                            <a class="inline-flex cursor-pointer items-center px-4 py-2.5 text-green-600 bg-green-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-green-200 focus:bg-green-200 active:bg-green-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
-                                <i class="fa-solid fa-dollar-sign mr-2"></i>
-                                Pago realizado
-                            </a>
-                            </form>
-                        </div>
+                        @if(count($tickets) > 0)
+                            @if(!$tickets[0]->pago)
+                            <div class="mt-1.5">
+                                <form action="{{ route('admin.paid') }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <input type="hidden" name="token" value="{{ $token }}" />
+                                <a class="inline-flex cursor-pointer items-center px-4 py-2.5 text-green-600 bg-green-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-green-200 focus:bg-green-200 active:bg-green-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
+                                    <i class="fa-solid fa-dollar-sign mr-2"></i>
+                                    Pago realizado
+                                </a>
+                                </form>
+                            </div>
+                            @endif
+                        @elseif(count($buffet) > 0)
+                            @if(!$buffet[0]->pago)
+                            <div class="mt-1.5">
+                                <form action="{{ route('admin.paid') }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <input type="hidden" name="token" value="{{ $token }}" />
+                                <a class="inline-flex cursor-pointer items-center px-4 py-2.5 text-green-600 bg-green-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-green-200 focus:bg-green-200 active:bg-green-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
+                                    <i class="fa-solid fa-dollar-sign mr-2"></i>
+                                    Pago realizado
+                                </a>
+                                </form>
+                            </div>
+                            @endif
+                        @elseif(count($merchandising) > 0)
+                            @if(!$merchandising[0]->pago)
+                            <div class="mt-1.5">
+                                <form action="{{ route('admin.paid') }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <input type="hidden" name="token" value="{{ $token }}" />
+                                <a class="inline-flex cursor-pointer items-center px-4 py-2.5 text-green-600 bg-green-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-green-200 focus:bg-green-200 active:bg-green-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
+                                    <i class="fa-solid fa-dollar-sign mr-2"></i>
+                                    Pago realizado
+                                </a>
+                                </form>
+                            </div>
+                            @endif
                         @endif
                     </div>
                     @if(count($tickets) > 0 || count($buffet) > 0 || count($merchandising) > 0)
