@@ -105,6 +105,8 @@
                             </tbody>
                         </table>
                     </div>
+                    @else
+                    <p class="mt-6 text-yellow-600">No hay resultados para mostrar.</p>
                     @endif
                     @endisset
                 </div>
