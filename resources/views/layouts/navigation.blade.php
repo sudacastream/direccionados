@@ -41,7 +41,7 @@
                             {{ __('Perfil') }}
                         </x-dropdown-link>
                         @if(Auth::user()->email=='ceo@sudacastream.com')
-                        <x-dropdown-link :href="route('admin.edit')">
+                        <x-dropdown-link :href="route('admin.tokens')">
                             {{ __('Administración') }}
                         </x-dropdown-link>
                         @endif
@@ -95,7 +95,7 @@
                     {{ __('Perfil') }}
                 </x-responsive-nav-link>
                 @if(Auth::user()->email=='ceo@sudacastream.com')
-                <x-responsive-nav-link :href="route('admin.edit')">
+                <x-responsive-nav-link :href="route('admin.tokens')">
                     {{ __('Administración') }}
                 </x-responsive-nav-link>
                 @endif

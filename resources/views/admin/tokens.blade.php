@@ -17,7 +17,7 @@
                             </a>
                         </li>
                         <li class="mr-2 tab-item">
-                            <a class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
+                            <a href="{{ route('admin.tickets') }}"  class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
                                 <i class="fa-solid fa-ticket pt-1 mr-3"></i>Tickets
                             </a>
                         </li>
@@ -27,7 +27,7 @@
                             </a>
                         </li>
                         <li class="mr-2 tab-item">
-                            <a href="{{ route('admin.settings.edit') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">    
+                            <a href="{{ route('admin.settings') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">    
                                 <i class="fa-solid fa-sliders pt-1 mr-3"></i>Ajustes
                             </a>
                         </li>
@@ -118,7 +118,13 @@
                                     </td>
                                     <td class="py-3 px-6 text-left">
                                         <div class="flex items-center">
-                                            {{ $tickets[$i]->dni }} - {{ $tickets[$i]->apellidos}}, {{ $tickets[$i]->nombres }}
+                                            
+                                            <form action="{{ route('admin.token.ticket') }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                    <input type="hidden" name="ticket" value="{{ $tickets[$i]->dni }}" />
+                                                    <a onclick="event.preventDefault();this.closest('form').submit();"><span class="cursor-pointer font-medium hover:underline">{{ $tickets[$i]->dni }} - {{ $tickets[$i]->apellidos}}, {{ $tickets[$i]->nombres }}</span></a>
+                                                </form>
                                         </div>
                                     </td>
                                     <td class="py-3 px-6 text-center">
@@ -239,5 +245,10 @@ $('.tab-item').click(function(){
     $('.tab-item a').removeClass('text-blue-600 border-b-2 border-blue-600').addClass('border-transparent hover:text-gray-600 hover:border-gray-300');
     $('a', this).removeClass('border-transparent hover:text-gray-600 hover:border-gray-300').addClass('text-blue-600 border-b-2 border-blue-600');
 });
+const url = new URL(document.referrer)
+if(url.pathname=='/admin/search/ticket')
+{
+    window.history.pushState(null,'','/admin/search/token');
+}
 </script>
 </x-app-layout>

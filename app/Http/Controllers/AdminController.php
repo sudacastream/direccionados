@@ -41,7 +41,7 @@ class AdminController extends Controller
 
             $merchandising = DB::table('merchandising')->get()->groupBy('token');
 
-            return view('admin.edit', [
+            return view('admin.tokens', [
                 'tokens' => $tokens,
                 'tokensTicket' => $tokensTicket,
                 'tickets' => $tickets,
@@ -70,12 +70,27 @@ class AdminController extends Controller
 
         $merchandising = DB::table('merchandising')->where('token', '=', $request->token)->get();
 
-        return view('admin.edit', [
+        return view('admin.tokens', [
             'token' => $request->token,
             'tickets' => $tickets,
             'buffet' => $buffet,
             'merchandising' => $merchandising,
             'user' => $request->user(),
+        ]);
+    }
+    public function ticket(Request $request)
+    {
+        if(is_numeric($request->ticket))
+        {
+            $tickets = DB::table('tickets')->where('dni','=',$request->ticket)->get();
+        }
+        else
+        {
+            $tickets = DB::table('tickets')->where('apellidos','LIKE','%'.$request->ticket.'%')->orWhere('nombres','LIKE','%'.$request->ticket.'%')->get();
+        }
+        return view('admin.tickets',[
+            'tickets' => $tickets,
+            'ticket' => $tickets[0]->dni,
         ]);
     }
     public function paid(Request $request)
@@ -109,7 +124,7 @@ class AdminController extends Controller
 
         Mail::to($email)->send(new ConfirmacionPago($request->token));
 
-        return view('admin.edit',[
+        return view('admin.tokens',[
             'token' => $request->token,
             'tickets' => $tickets,
             'buffet' => $buffet,
@@ -119,6 +134,6 @@ class AdminController extends Controller
     }
     public function redirect()
     {
-        return to_route('admin.edit');
+        return to_route('admin.tokens');
     }
 }

@@ -12,18 +12,23 @@
                 <div class="border-b border-gray-200">
                     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500">
                         <li class="mr-2 tab-item">
-                            <a href="{{ route('admin.edit') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group" aria-current="page">
-                                <i class="fa-solid fa-list-check pt-1 mr-3"></i>Tokens Pass
+                            <a href="{{ route('admin.tokens') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group" aria-current="page">
+                                <i class="fa-solid fa-list-check pt-1 mr-3"></i>Tokens<span class="hidden sm:inline-block">&nbsp;Pass</span>
+                            </a>
+                        </li>
+                        <li class="mr-2 tab-item">
+                            <a href="{{ route('admin.tickets') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
+                                <i class="fa-solid fa-ticket pt-1 mr-3"></i>Tickets
                             </a>
                         </li>
                         <li class="mr-2 tab-item">
                             <a class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
-                                <i class="fa-solid fa-chart-pie pt-1 mr-3"></i>Estad&iacute;sticas
+                                <i class="fa-solid fa-chart-pie pt-1 mr-3"></i>Censo
                             </a>
                         </li>
                         <li class="mr-2 tab-item">
                             <a class="cursor-pointer text-blue-600 border-b-2 border-blue-600 inline-flex p-4 rounded-t-lg group">
-                                <i class="fa-solid fa-sliders pt-1 mr-3"></i>Configuraci&oacute;n
+                                <i class="fa-solid fa-sliders pt-1 mr-3"></i>Ajustes
                             </a>
                         </li>
                     </ul>
