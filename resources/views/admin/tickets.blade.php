@@ -69,9 +69,9 @@
                                 <tr>
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         <div class="flex items-center">
-                                            <form action="{{ route('admin.token.ticket') }}" method="POST">
+                                            <form action="{{ route('admin.ticket.token') }}" method="POST">
                                             @csrf
-                                            @method('PATCH')
+                                            @method('PUT')
                                                 <input type="hidden" name="token" value="{{ $tickets[$i]->token }}" />
                                                 <a onclick="event.preventDefault();this.closest('form').submit();"><span class="cursor-pointer font-medium hover:underline">{{ $tickets[$i]->token }}</span></a>
                                             </form>
