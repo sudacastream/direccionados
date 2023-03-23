@@ -132,8 +132,15 @@ class AdminController extends Controller
             'user' => $request->user(),
         ]);
     }
-    public function redirect()
+    public function redirect(Request $request)
     {
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
+        {
         return to_route('admin.tokens');
+        }
+        else
+        {
+            return abort(404);
+        }
     }
 }
