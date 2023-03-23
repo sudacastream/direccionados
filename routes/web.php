@@ -38,7 +38,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    if (Auth::check()) {
         if (Auth::user()->email=='ceo@sudacastream.com' || Auth::user()->email=='nahufidelibus@gmail.com')
         {
             Route::get('/admin/tokens', [AdminController::class, 'edit'])->name('admin.tokens');
@@ -61,7 +60,6 @@ Route::middleware(['auth'])->group(function () {
         {
             abort(404);
         }
-    }
 });
 
 
