@@ -12,7 +12,14 @@ class TicketsController extends Controller
 {
     public function edit(Request $request): View
     {
-        return view('admin.tickets');
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
+        {
+            return view('admin.tickets');
+        }
+        else
+        {
+            return abort(404);
+        }
     }
     public function search(Request $request)
     {

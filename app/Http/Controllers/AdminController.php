@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function edit(Request $request): View
     {
-        if($request->user()['email'] == 'ceo@sudacastream.com')
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
         {
             $tokens = DB::table('tickets')->distinct()->pluck('token');
             $tokensTicket = DB::table('tickets')->distinct()->pluck('token');
