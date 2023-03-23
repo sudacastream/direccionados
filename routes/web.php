@@ -38,8 +38,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-        if (Auth::user()->email=='ceo@sudacastream.com' || Auth::user()->email=='nahufidelibus@gmail.com')
-        {
             Route::get('/admin/tokens', [AdminController::class, 'edit'])->name('admin.tokens');
             Route::post('/admin/search/token', [AdminController::class, 'search'])->name('admin.search');
             Route::put('/admin/search/token', [AdminController::class, 'ticket'])->name('admin.token.ticket');
@@ -55,11 +53,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/admin/search', [AdminController::class, 'redirect'])->name('admin.search.redirect');
             Route::get('/admin/search/token', [AdminController::class, 'redirect'])->name('admin.search.token.redirect');
             Route::get('/admin/search/ticket', [AdminController::class, 'redirect'])->name('admin.search.ticket.redirect');
-        }
-        else
-        {
-            return abort(404);
-        }
+
 });
 
 
