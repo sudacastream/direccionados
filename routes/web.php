@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
         }
         else
         {
-            abort(404);
+            return abort(404);
         }
 });
 
