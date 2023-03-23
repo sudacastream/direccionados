@@ -254,5 +254,5 @@ if(url.pathname=='/admin/search/ticket')
 </script>
 </x-app-layout>
 @else
-abort(404);
+{{ abort(404) }}
 @endif

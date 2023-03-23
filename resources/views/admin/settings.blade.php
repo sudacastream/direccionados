@@ -49,5 +49,5 @@ $('.tab-item').click(function(){
 </script>
 </x-app-layout>
 @else
-abort(404);
+{{ abort(404) }}
 @endif
