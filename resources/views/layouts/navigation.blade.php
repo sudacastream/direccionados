@@ -40,7 +40,7 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Perfil') }}
                         </x-dropdown-link>
-                        @if(Auth::user()->email=='ceo@sudacastream.com')
+                        @if(Auth::user()->email=='ceo@sudacastream.com' || Auth::user()->email=='nahufidelibus@gmail.com')
                         <x-dropdown-link :href="route('admin.tokens')">
                             {{ __('Administración') }}
                         </x-dropdown-link>

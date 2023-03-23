@@ -1,3 +1,4 @@
+@if(Auth::user()->email=='ceo@sudacastream.com' || Auth::user()->email=='nahufidelibus@gmail.com')
 @section('title', 'Administración - Congreso Direccionados')
 <x-app-layout>
     <x-slot name="header">
@@ -252,3 +253,6 @@ if(url.pathname=='/admin/search/ticket')
 }
 </script>
 </x-app-layout>
+@else
+abort(404);
+@endif
