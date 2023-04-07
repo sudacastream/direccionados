@@ -86,7 +86,7 @@ class AdminController extends Controller
         }
         else
         {
-            $tickets = DB::table('tickets')->where('apellidos','LIKE','%'.$request->ticket.'%')->orWhere('nombres','LIKE','%'.$request->ticket.'%')->get();
+            $tickets = DB::table('tickets')->where('apellidos','ILIKE','%'.$request->ticket.'%')->orWhere('nombres','ILIKE','%'.$request->ticket.'%')->get();
         }
         return view('admin.tickets',[
             'tickets' => $tickets,
