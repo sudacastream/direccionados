@@ -45,7 +45,12 @@
                         @if($loop->iteration % 2 == 0)
                         <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $pago->apellidos }}, {{ $pago->nombres }} - {{ $pago->dni }}
+                                {{ $pago->apellidos }}, {{ $pago->nombres }} - {{ $pago->dni }}                                
+                                @if($pago->funcion == 'pastor')
+                                <i class="fa-solid fa-user-tie pt-1 ml-3 text-yellow-600"></i>
+                                @elseif($pago->funcion == 'lider')
+                                <i class="fa-solid fa-user-check pt-1 ml-3 text-blue-900"></i>
+                                @endif
                             </th>
                             <td class="px-6 py-4">
                                 {{ $pago->congregacion }}
@@ -71,7 +76,12 @@
                         @else
                         <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $pago->apellidos }}, {{ $pago->nombres }} - {{ $pago->dni }}
+                                {{ $pago->apellidos }}, {{ $pago->nombres }} - {{ $pago->dni }}                          
+                                @if($pago->funcion == 'pastor')
+                                <i class="fa-solid fa-user-tie pt-1 ml-3 text-yellow-600"></i>
+                                @elseif($pago->funcion == 'lider')
+                                <i class="fa-solid fa-user-check pt-1 ml-3 text-blue-900"></i>
+                                @endif
                             </th>
                             <td class="px-6 py-4">
                                 {{ $pago->congregacion }}
