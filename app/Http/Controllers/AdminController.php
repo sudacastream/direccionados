@@ -143,4 +143,15 @@ class AdminController extends Controller
             return abort(404);
         }
     }
+    public function list(Request $request)
+    {
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
+        {
+            $ticketsPagos = DB::table('tickets')->orderByDesc('pago')->orderBy('apellidos')->get();
+        }
+        return view('admin.list',[
+            'user' => $request->user(),
+            'pagos' => $ticketsPagos,
+        ]);
+    }
 }

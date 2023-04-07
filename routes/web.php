@@ -57,5 +57,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+Route::get('/admin/list', [AdminController::class, 'list'])->middleware(['auth', 'verified'])->name('listado');
 
 require __DIR__.'/auth.php';
