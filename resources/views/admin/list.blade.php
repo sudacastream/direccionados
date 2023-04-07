@@ -47,9 +47,13 @@
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $pago->apellidos }}, {{ $pago->nombres }} - {{ $pago->dni }}                                
                                 @if($pago->funcion == 'pastor')
-                                <i class="fa-solid fa-user-tie pt-1 ml-3 text-yellow-600"></i>
+                                <span title="Pastor/a" class="inline-flex items-center bg-yellow-100 text-yellow-600 text-xs font-medium p-2.5 ml-2 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </span>
                                 @elseif($pago->funcion == 'lider')
-                                <i class="fa-solid fa-user-check pt-1 ml-3 text-blue-900"></i>
+                                <span title="L&iacute;der" class="inline-flex items-center bg-blue-100 text-blue-600 text-xs font-medium p-2.5 ml-2 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                                    <i class="fa-solid fa-user-check"></i>
+                                </span>
                                 @endif
                             </th>
                             <td class="px-6 py-4">
@@ -63,12 +67,12 @@
                             </td>
                             <td class="px-6 py-4">
                                 @if($pago->pago)
-                                <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
-                                    <span class="hidden md:inline-block"></span>
+                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium p-2.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
                                 </span>
-                                @else
-                                <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
-                                    <span class="hidden md:inline-block"></span>
+                                @else                    
+                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium p-2.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full"></span>
                                 </span>
                                 @endif
                             </td>
@@ -78,9 +82,13 @@
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $pago->apellidos }}, {{ $pago->nombres }} - {{ $pago->dni }}                          
                                 @if($pago->funcion == 'pastor')
-                                <i class="fa-solid fa-user-tie pt-1 ml-3 text-yellow-600"></i>
+                                <span title="Pastor/a" class="inline-flex items-center bg-yellow-100 text-yellow-600 text-xs font-medium p-2.5 ml-2 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </span>
                                 @elseif($pago->funcion == 'lider')
-                                <i class="fa-solid fa-user-check pt-1 ml-3 text-blue-900"></i>
+                                <span title="L&iacute;der" class="inline-flex items-center bg-blue-100 text-blue-600 text-xs font-medium p-2.5 ml-2 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                                    <i class="fa-solid fa-user-check"></i>
+                                </span>
                                 @endif
                             </th>
                             <td class="px-6 py-4">
@@ -94,12 +102,12 @@
                             </td>
                             <td class="px-6 py-4">
                                 @if($pago->pago)
-                                <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
-                                    <span class="hidden md:inline-block"></span>
+                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium p-2.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
                                 </span>
-                                @else
-                                <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
-                                    <span class="hidden md:inline-block"></span>
+                                @else                    
+                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium p-2.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full"></span>
                                 </span>
                                 @endif
                             </td>
