@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\StatsController;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\TiendaController;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/admin/search', [AdminController::class, 'redirect'])->name('admin.search.redirect');
             Route::get('/admin/search/token', [AdminController::class, 'redirect'])->name('admin.search.token.redirect');
             Route::get('/admin/search/ticket', [AdminController::class, 'redirect'])->name('admin.search.ticket.redirect');
+
+            Route::get('/admin/stats', [StatsController::class, 'index'])->name('admin.stats');
 
 });
 

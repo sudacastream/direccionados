@@ -22,7 +22,7 @@
                             </a>
                         </li>
                         <li class="mr-2 tab-item">
-                            <a class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
+                            <a href="{{ route('admin.stats') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
                                 <i class="fa-solid fa-chart-pie pt-1 mr-3"></i>Censo
                             </a>
                         </li>
