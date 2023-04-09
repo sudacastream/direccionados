@@ -71,14 +71,50 @@
                                 );
                             </script>
                         </div>
-                        <div class="w-1/2 ml-0 mt-6">
-                            <div class="px-5 py-3 dark:text-neutral-200">
-                                Pagos
+                        <div class="ml-0 mt-6 grid grid-cols-2">
+                            <div>
+                                <div class="px-5 py-3">
+                                    Cupos
+                                </div>
+                                <canvas class="p-10" id="chartPie1"></canvas>
                             </div>
-                            <canvas class="p-10" id="chartPie"></canvas>
                             <!-- Chart pie -->
                             <script>
-                                const dataPie = {
+                                const dataPie1 = {
+                                labels: ["Vendidos", "Disponibles"],
+                                datasets: [
+                                    {
+                                    label: "Cantidad",
+                                    data: [{{ count($iTotal) }}, 300-{{ count($iTotal) }}],
+                                    backgroundColor: [
+                                        "rgb(34, 197, 94)",
+                                        "rgb(239, 68, 68)",
+                                    ],
+                                    hoverOffset: 4,
+                                    },
+                                ],
+                                };
+                            
+                                const configPie1 = {
+                                type: "pie",
+                                data: dataPie1,
+                                options: {},
+                                };
+                            
+                                var chartBar1 = new Chart(
+                                document.getElementById("chartPie1"),
+                                configPie1
+                                );
+                            </script>
+                            <div>
+                                <div class="px-5 py-3">
+                                    Pagos
+                                </div>
+                                <canvas class="p-10" id="chartPie2"></canvas>
+                            </div>
+                            <!-- Chart pie -->
+                            <script>
+                                const dataPie2 = {
                                 labels: ["Pagos", "Impagos"],
                                 datasets: [
                                     {
@@ -93,15 +129,15 @@
                                 ],
                                 };
                             
-                                const configPie = {
+                                const configPie2 = {
                                 type: "pie",
-                                data: dataPie,
+                                data: dataPie2,
                                 options: {},
                                 };
                             
-                                var chartBar = new Chart(
-                                document.getElementById("chartPie"),
-                                configPie
+                                var chartBar2 = new Chart(
+                                document.getElementById("chartPie2"),
+                                configPie2
                                 );
                             </script>
                         </div>
