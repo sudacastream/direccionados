@@ -160,8 +160,15 @@ class TiendaController extends Controller
         $contenido .= '<span style="font-weight:600;">Cuenta a transferir:</span><ul style="margin-top:5px;list-style:none;">';
         $contenido .= '<li>Titular: Gastón Eugenio Fidelibus</li><li>CVU: 0000003100021237935253</li><li>Alias: direccionados23</li><li>CUIT/CUIL: 20214537460</li><li>Mercado Pago</li></ul>';
 
-        Mail::to($request->user()['email'])->send(new CompraEfectuada($contenido));
+        if($montoTotal > 0)
+        {
+            Mail::to($request->user()['email'])->send(new CompraEfectuada($contenido));
+            return to_route('dashboard')->with('status', 'Hemos recibido tu pedido correctamente. Revisá tu casilla de email para abonar y confirmar el pedido.');
+        }
+        else
+        {
+            return to_route('tienda');
+        }
 
-        return to_route('dashboard')->with('status', 'Hemos recibido tu pedido correctamente. Revisá tu casilla de email para abonar y confirmar el pedido.');
     }
 }
