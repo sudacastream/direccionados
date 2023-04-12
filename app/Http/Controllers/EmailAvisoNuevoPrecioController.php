@@ -8,7 +8,7 @@ class EmailAvisoNuevoPrecioController extends Controller
 {
     public function index(Request $request)
     {
-        return view('advice');
+        return view('admin.advice');
     }
     public function send(Request $request)
     {
