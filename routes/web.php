@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmailAvisoNuevoPrecioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\StatsController;
@@ -61,5 +62,10 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/admin/list', [AdminController::class, 'list'])->middleware(['auth', 'verified'])->name('listado');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/advice', [EmailAvisoNuevoPrecioController::class, 'index'])->name('advice');
+    Route::post('/admin/advice', [EmailAvisoNuevoPrecioController::class, 'send'])->name('advice.send');
+});
 
 require __DIR__.'/auth.php';
