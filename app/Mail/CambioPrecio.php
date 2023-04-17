@@ -20,9 +20,8 @@ class CambioPrecio extends Mailable
      *
      * @return void
      */
-    public function __construct($mailData)
+    public function __construct()
     {
-        $this->mailData = $mailData;
     }
   
     /**
@@ -32,7 +31,7 @@ class CambioPrecio extends Mailable
      */
     public function build()
     {
-        return $this->subject('Vencimiento de compra')
+        return $this->subject('Compra pendiente de pago')
                     ->view('emails.cambio-precio');
     }
 

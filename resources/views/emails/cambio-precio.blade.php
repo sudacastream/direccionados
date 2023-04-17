@@ -47,26 +47,15 @@
                                         ¡Hola!
                                     </h1>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
-                                        Te informamos que ten&eacute;s tiempo hasta el 16 de abril de 2023 para abonar el pedido solicitado.
+                                        Te recordamos que ten&eacute;s un pedido pendiente de pago.</br>
+                                        Te enviamos un correo electr&oacute;nico previo con los datos de la compra y cuenta a transferir.
                                     </p>
-                                    <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
-                                        El Token Pass, detalle de la compra, el monto total y datos de la cuenta a transferir se te brindan a continuación:
-                                    </p>
-                                    <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-left:solid 1px #e8e5ef;padding:0 1em;">
-                                        <tr>
-                                            <td>
-                                                <p style="position: relative; font-size: 16px; line-height: 1.5em; margin:0; text-align: left;">
-                                                    {!! $mailData !!}
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
-                                        En caso de no abonar el monto total antes de la fecha mencionada, procederemos a liberar los tickets para otros asistentes.<br/>
-                                        Para continuar realizá el pago y contestá este correo adjuntando el comprobante de transferencia sin borrar este mensaje en la respuesta.
+                                
+                                    <p style="position: relative; font-size: 16px; line-height: 1.5em; text-align: left;">
+                                        En caso de no abonar el monto total antes del 20/4/2023, procederemos a liberar los tickets para otros asistentes.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 1em; text-align: left;">
-                                        ¡No te olvides de adjuntar el comprobante de transferencia!
+                                        Si ten&eacute;s alg&uacute;n inconveniento o inquietud, no dudes en escribirnos.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
                                         Saludos, Congreso Direccionados
