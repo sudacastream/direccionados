@@ -85,7 +85,7 @@
                                 datasets: [
                                     {
                                     label: "Cantidad",
-                                    data: [{{ count($iTotal) }}, 300-{{ count($iTotal) }}],
+                                    data: [{{ count($iTotal) }}, 275-{{ count($iTotal) }}],
                                     backgroundColor: [
                                         "rgb(34, 197, 94)",
                                         "rgb(239, 68, 68)",
