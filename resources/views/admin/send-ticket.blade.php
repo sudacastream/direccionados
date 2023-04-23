@@ -29,11 +29,14 @@
                 </div>
                 <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 pt-5">
                 @foreach ($tokens as $token)
-                    @php $email = '' @endphp
+                    @php 
+                        $email = '';
+                        $cantidad = intval(count($tokens) / 3) + 1;
+                    @endphp
                     @if($loop->first)
                     <div class="grid gap-4 flex items-stretch content-start">
                     @endif
-                    @if($loop->iteration % 4 == 0)
+                    @if($loop->iteration % $cantidad == 0)
                     </div><div class="grid gap-4 flex items-stretch content-start">
                     @endif
                     <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow p-6 self-start">
