@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailAvisoNuevoPrecioController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SendTickets;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\StatsController;
 use App\Http\Controllers\TicketsController;
@@ -66,6 +67,11 @@ Route::get('/admin/list', [AdminController::class, 'list'])->middleware(['auth',
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/advice', [EmailAvisoNuevoPrecioController::class, 'index'])->name('advice');
     Route::post('/admin/advice', [EmailAvisoNuevoPrecioController::class, 'send'])->name('advice.send');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/ticket/send', [SendTickets::class, 'index'])->name('send');
+    Route::post('/admin/ticket/send', [SendTickets::class, 'send'])->name('send.ticket');
 });
 
 require __DIR__.'/auth.php';
