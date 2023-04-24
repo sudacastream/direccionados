@@ -41,40 +41,40 @@
                             <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
                                 <span class="text-lg text-gray-900">Inscripciones</span>
                                 <div class="flex items-center justify-between">
-                                    <div class="text-3xl font-bold text-gray-900">{{ number_format(count($iTotal)*100/275, 2, ',','') }}%</div>
+                                    <div class="text-3xl font-bold text-gray-900 cursor-pointer" title="Porcentaje de tickets vendidos">{{ number_format(count($iTotal)*100/275, 2, ',','') }}%</div>
                                     <div class="text-lg font-bold flex items-center justify-between">
-                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{ count($pagos) }}</span>
-                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">{{ count($impagos) }}</span>
+                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Tickets pagos">{{ count($pagos) }}</span>
+                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Tickets impagos">{{ count($impagos) }}</span>
                                     </div>
                                 </div>  
                             </div>
                             <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
                                 <span class="text-lg text-gray-900">Buffet</span>
                                 <div class="flex items-center justify-between">
-                                    <div class="text-3xl font-bold text-gray-900">{{ $buffetPagos + $buffetImpagos }}</div>
+                                    <div class="text-3xl font-bold text-gray-900 cursor-pointer" title="Total de combos vendidos">{{ $buffetPagos + $buffetImpagos }}</div>
                                     <div class="text-lg font-bold flex items-center justify-between">
-                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{ $buffetPagos }}</span>
-                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">{{ $buffetImpagos }}</span>
+                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Combos pagos">{{ $buffetPagos }}</span>
+                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Combos impagos">{{ $buffetImpagos }}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
                                 <span class="text-lg text-gray-900">Remeras</span>
                                 <div class="flex items-center justify-between">
-                                    <div class="text-3xl font-bold text-gray-900">{{ $remerasPagas + $remerasImpagas }}</div>
+                                    <div class="text-3xl font-bold text-gray-900 cursor-pointer" title="Total de remeras vendidas">{{ $remerasPagas + $remerasImpagas }}</div>
                                     <div class="text-lg font-bold flex items-center justify-between">
-                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{ $remerasPagas }}</span>
-                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">{{ $remerasImpagas }}</span>
+                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Remeras pagas">{{ $remerasPagas }}</span>
+                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Remeras impagas">{{ $remerasImpagas }}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
                                 <span class="text-lg text-gray-900">Gorras</span>
                                 <div class="flex items-center justify-between">
-                                    <div class="text-3xl font-bold text-gray-900">{{ $gorrasPagas + $gorrasImpagas }}</div>
+                                    <div class="text-3xl font-bold text-gray-900 cursor-pointer" title="Total de gorras vendidas">{{ $gorrasPagas + $gorrasImpagas }}</div>
                                     <div class="text-lg font-bold flex items-center justify-between">
-                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{ $gorrasPagas }}</span>
-                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">{{ $gorrasImpagas }}</span>
+                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Gorras pagas">{{ $gorrasPagas }}</span>
+                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Gorras impagas">{{ $gorrasImpagas }}</span>
                                     </div>
                                 </div>
                             </div>
