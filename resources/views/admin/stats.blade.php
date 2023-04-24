@@ -36,6 +36,51 @@
 
                 <div class="p-4">
                     <div class="overflow-hidden">
+                        
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-5">
+                            <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
+                                <span class="text-lg text-gray-900">Inscripciones</span>
+                                <div class="flex items-center justify-between">
+                                    <div class="text-3xl font-bold text-gray-900">{{ number_format(count($iTotal)*100/275, 2, ',','') }}%</div>
+                                    <div class="text-lg font-bold flex items-center justify-between">
+                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{ count($pagos) }}</span>
+                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">{{ count($impagos) }}</span>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
+                                <span class="text-lg text-gray-900">Buffet</span>
+                                <div class="flex items-center justify-between">
+                                    <div class="text-3xl font-bold text-gray-900">{{ $buffetPagos + $buffetImpagos }}</div>
+                                    <div class="text-lg font-bold flex items-center justify-between">
+                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{ $buffetPagos }}</span>
+                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">{{ $buffetImpagos }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
+                                <span class="text-lg text-gray-900">Remeras</span>
+                                <div class="flex items-center justify-between">
+                                    <div class="text-3xl font-bold text-gray-900">{{ $remerasPagas + $remerasImpagas }}</div>
+                                    <div class="text-lg font-bold flex items-center justify-between">
+                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{ $remerasPagas }}</span>
+                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">{{ $remerasImpagas }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
+                                <span class="text-lg text-gray-900">Gorras</span>
+                                <div class="flex items-center justify-between">
+                                    <div class="text-3xl font-bold text-gray-900">{{ $gorrasPagas + $gorrasImpagas }}</div>
+                                    <div class="text-lg font-bold flex items-center justify-between">
+                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{ $gorrasPagas }}</span>
+                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">{{ $gorrasImpagas }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="">
                             <div class="px-5 py-3 dark:text-neutral-200">
                               Cantidad de Inscripciones
