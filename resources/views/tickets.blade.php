@@ -12,19 +12,25 @@
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div>
                   <section class="mb-6 pb-3 border-b border-solid border-gray-100">
-                  <header>
-                      <h1 class="font-semibold text-xl text-gray-900">
-                          {{ __('Tickets') }}
-                      </h1>
-                      <p class="texto-comprar-tickets mt-1 mb-6 text-sm text-gray-600">
-                        Complete los siguientes datos de carácter obligatorio.
-                      </p>
-                      <p class="texto-agregar-tickets mt-1 mb-6 text-sm text-gray-600">
-                        Usted ya tiene tickets adquiridos. Si desea adquirir más, pulse "ADQUIRIR MÁS TICKETS".
-                      </p>
-                      <a id="comprar-ticket" class="mb-4 cursor-pointer inline-flex items-center px-4 py-2 bg-green-200 border border-transparent rounded-md font-semibold text-xs text-gray uppercase tracking-widest hover:bg-green-100 focus:bg-green-200 active:bg-green-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Adquirir más tickets</a>
-                      <a id="no-comprar-ticket" class="mb-4 cursor-pointer inline-flex items-center px-4 py-2 bg-red-200 border border-transparent rounded-md font-semibold text-xs text-gray uppercase tracking-widest hover:bg-red-100  focus:bg-red-200 active:bg-red-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Eliminar tickets</a>
-                  </header>
+                    <header>
+                        <h1 class="font-semibold text-xl text-gray-900">
+                            {{ __('Tickets') }}
+                        </h1>
+                        @if($email == 'ceo@sudacastream.coms')
+                        <p class="texto-comprar-tickets mt-1 mb-6 text-sm text-gray-600">
+                          Complete los siguientes datos de carácter obligatorio.
+                        </p>
+                        <p class="texto-agregar-tickets mt-1 mb-6 text-sm text-gray-600">
+                          Usted ya tiene tickets adquiridos. Si desea adquirir más, pulse "ADQUIRIR MÁS TICKETS".
+                        </p>
+                        <a id="comprar-ticket" class="mb-4 cursor-pointer inline-flex items-center px-4 py-2 bg-green-200 border border-transparent rounded-md font-semibold text-xs text-gray uppercase tracking-widest hover:bg-green-100 focus:bg-green-200 active:bg-green-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Adquirir más tickets</a>
+                        <a id="no-comprar-ticket" class="mb-4 cursor-pointer inline-flex items-center px-4 py-2 bg-red-200 border border-transparent rounded-md font-semibold text-xs text-gray uppercase tracking-widest hover:bg-red-100  focus:bg-red-200 active:bg-red-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Eliminar tickets</a>
+                        @else
+                        <div class="box-border max-w-7xl mx-auto mb-3">
+                          <p class="bg-red-200 text-red-600 mt-6 px-4 py-3 rounded"><span class="font-bold"><i class="fa-regular fa-font-awesome mr-2"></i>SOLD OUT</span> - Tickets agotados.</p>
+                        </div>
+                        @endif
+                    </header> 
                     @if(count($tokens) > 0)
                     <script>
                         var dale=0;
@@ -62,7 +68,7 @@
                               <a id="add-ticket" class="cursor-pointer inline-flex items-center px-4 py-2 bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-gray uppercase tracking-widest hover:bg-gray-100 focus:bg-gray-200 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">A&ntilde;adir otro ticket</a>    
                             </div>
                     </div>
-                    </section>
+                  </section>
                     <section class="my-6 pb-3 border-b border-solid border-gray-100">
                       <header class="mb-6">
                         <h1 class="font-semibold text-xl text-gray-900 ">

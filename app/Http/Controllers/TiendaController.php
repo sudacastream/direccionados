@@ -26,7 +26,8 @@ class TiendaController extends Controller
             'remeraDescripcion' => DB::table('precios')->where('producto', 'remera')->value('descripcion'),
             'precioGorra' => DB::table('precios')->where('producto', 'gorra')->value('precio'),
             'gorraDescripcion' => DB::table('precios')->where('producto', 'gorra')->value('descripcion'),
-            'tokens' => DB::table('tickets')->where('usuario', '=', $id)->distinct()->pluck('token'),            
+            'tokens' => DB::table('tickets')->where('usuario', '=', $id)->distinct()->pluck('token'),
+            'email' => $request->user()['email'],
         ]);
     }
     public function store(Request $request)
