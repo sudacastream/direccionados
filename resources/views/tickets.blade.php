@@ -16,7 +16,7 @@
                         <h1 class="font-semibold text-xl text-gray-900">
                             {{ __('Tickets') }}
                         </h1>
-                        @if($email == 'ceo@sudacastream.coms')
+                        @if($email == 'ceo@sudacastream.com')
                         <p class="texto-comprar-tickets mt-1 mb-6 text-sm text-gray-600">
                           Complete los siguientes datos de carácter obligatorio.
                         </p>
@@ -74,11 +74,14 @@
                         <h1 class="font-semibold text-xl text-gray-900 ">
                           {{ __('Buffet') }}
                         </h1>
+                        @if( count($tokens) > 0 )
                         <p class="mt-1 text-sm text-gray-600 ">
                           {{ __('Haga su pedido en el buffet del Congreso. Tenga en cuenta que no se tomarán pedidos de manera presencial.') }}
                         </p>
+                        @endif
                       </header>
                       <div>
+                        @if( count($tokens) > 0 )
                         <h2 class="text-lg font-medium text-gray-900 ">Combo &uacute;nico por ${{ $precioBuffet }}</h2>
                         <p class="mt-1 text-sm text-gray-600">{{ $comboDescripcion }}</p>
                         <div class="flex flex-wrap px-3">
@@ -90,7 +93,11 @@
                           </div>
                         </div>
                       </div>
-                    
+                      @else
+                      <div class="box-border max-w-7xl mx-auto mb-3">
+                        <p class="bg-red-200 text-red-600 mt-6 px-4 py-3 rounded"><span class="font-bold"><i class="fa-solid fa-shop-lock mr-2"></i></span> - Para poder acceder al buffet debe tener al menos un ticket adquirido.</p>
+                      </div>
+                      @endif
                     </section>
 
                     <section class="my-6 pb-3 border-b border-solid border-gray-100">
@@ -98,10 +105,13 @@
                         <h1 class="font-semibold text-xl text-gray-900 ">
                           {{ __('Merchandising') }}
                         </h1>
+                        @if( count($tokens) > 0 )
                         <p class="mt-1 text-sm text-gray-600 ">
                           {{ __('Haga su pedido y un operador se pondrá en contacto con usted para elección de talle y color. Tenga en cuenta que no se tomarán pedidos de manera presencial.') }}
                         </p>
+                        @endif
                       </header>
+                      @if( count($tokens) > 0 )
                       <div>  
                         <h2 class="text-lg font-medium text-gray-900 ">Remera del Congreso por ${{ $precioRemera }}</h2>
                         <p class="mt-1 text-sm text-gray-600 w-full sm:w-1/3">{{ $remeraDescripcion }}</p>
@@ -126,6 +136,11 @@
                           </div>
                         </div>
                       </div>
+                      @else
+                      <div class="box-border max-w-7xl mx-auto mb-3">
+                        <p class="bg-red-200 text-red-600 mt-6 px-4 py-3 rounded"><span class="font-bold"><i class="fa-solid fa-shop-lock mr-2"></i></span> - Para poder acceder al merchandi debe tener al menos un ticket adquirido.</p>
+                      </div>
+                      @endif
                     
                     </section>
                     
