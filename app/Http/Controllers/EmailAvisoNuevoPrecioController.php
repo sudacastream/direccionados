@@ -11,8 +11,8 @@ class EmailAvisoNuevoPrecioController extends Controller
 {
     public function index(Request $request)
     {
-        $listado = DB::table('tickets')->where('precio','=','1499')->where('pago','=',false)->get();
-        $listadoMorosos = DB::table('tickets')->where('precio','=','1499')->where('pago','=',false)->distinct()->pluck('usuario');
+        $listado = DB::table('tickets')->where('pago','=',false)->get();
+        $listadoMorosos = DB::table('tickets')->where('pago','=',false)->distinct()->pluck('usuario');
         return view('admin.advice', [
             'listado' => $listado,
             'morosos' => $listadoMorosos,
@@ -20,7 +20,7 @@ class EmailAvisoNuevoPrecioController extends Controller
     }
     public function send(Request $request)
     {
-        $listadoMorosos = DB::table('tickets')->where('precio','=','1499')->where('pago','=',false)->distinct()->pluck('usuario');
+        $listadoMorosos = DB::table('tickets')->where('pago','=',false)->distinct()->pluck('usuario');
 
         foreach($listadoMorosos as $moroso)
         {
