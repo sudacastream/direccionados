@@ -44,7 +44,7 @@
                             <tr>
                                 <td class="content-cell" style="max-width: 100vw;padding: 32px;">
                                     <h1 style="position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">
-                                        ¡Hola!
+                                        ¡Hola! ¿Te asustaste?
                                     </h1>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
                                         Te recordamos que ten&eacute;s un pedido pendiente de pago.</br>
