@@ -11,12 +11,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div>
+                  @if($email == 'ceo@sudacastream.com')
                   <section class="mb-6 pb-3 border-b border-solid border-gray-100">
                     <header>
                         <h1 class="font-semibold text-xl text-gray-900">
                             {{ __('Tickets') }}
                         </h1>
-                        @if($email == 'ceo@sudacastream.com')
                         <p class="texto-comprar-tickets mt-1 mb-6 text-sm text-gray-600">
                           Complete los siguientes datos de carácter obligatorio.
                         </p>
@@ -25,11 +25,6 @@
                         </p>
                         <a id="comprar-ticket" class="mb-4 cursor-pointer inline-flex items-center px-4 py-2 bg-green-200 border border-transparent rounded-md font-semibold text-xs text-gray uppercase tracking-widest hover:bg-green-100 focus:bg-green-200 active:bg-green-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Adquirir más tickets</a>
                         <a id="no-comprar-ticket" class="mb-4 cursor-pointer inline-flex items-center px-4 py-2 bg-red-200 border border-transparent rounded-md font-semibold text-xs text-gray uppercase tracking-widest hover:bg-red-100  focus:bg-red-200 active:bg-red-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Eliminar tickets</a>
-                        @else
-                        <div class="box-border max-w-7xl mx-auto mb-3">
-                          <p class="bg-red-200 text-red-600 mt-6 px-4 py-3 rounded"><span class="font-bold"><i class="fa-regular fa-font-awesome mr-2"></i>SOLD OUT</span> - Tickets agotados.</p>
-                        </div>
-                        @endif
                     </header> 
                     @if(count($tokens) > 0)
                     <script>
@@ -99,7 +94,6 @@
                       </div>
                       @endif
                     </section>
-
                     <section class="my-6 pb-3 border-b border-solid border-gray-100">
                       <header class="mb-6">
                         <h1 class="font-semibold text-xl text-gray-900 ">
@@ -143,8 +137,6 @@
                       @endif
                     
                     </section>
-                    
-
                     <div class="flex items-center gap-4">
                       <x-primary-button>
                         {{ __('Pagar') }}
@@ -339,7 +331,11 @@
                       
                     </form>
                     </div>
-                    
+                    @else
+                    <div class="box-border max-w-7xl mx-auto mb-3">
+                      <p class="bg-red-200 text-red-600 mt-6 px-4 py-3 rounded"><span class="font-bold"><i class="fa-solid fa-shop-lock mr-2"></i>SOLD OUT</span> - Tickets, Buffet y Merchandising agotados.</p>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
