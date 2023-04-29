@@ -52,7 +52,7 @@
                                     </p>
                                 
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; text-align: left;">
-                                        En caso de no abonar el monto total antes del 20/4/2023, procederemos a liberar los tickets para otros asistentes.
+                                        En caso de no abonar el monto total antes del 5/5/2023, procederemos a liberar los tickets para otros asistentes.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 1em; text-align: left;">
                                         Si ten&eacute;s alg&uacute;n inconveniento o inquietud, no dudes en escribirnos.
