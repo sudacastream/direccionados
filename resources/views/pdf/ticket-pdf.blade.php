@@ -9,10 +9,22 @@
 <style>
     body, html
     {
-        background: url('https://pass.direccionados.ar/bg-ticket.png') center center;
-        background-size: cover;
+        background: url('https://pass.direccionados.ar/bg-ticket.png') top center;
+        font-family: Arial, Helvetica, sans-serif;
         margin: 0;
         padding: 0;
+    }
+    .brand
+    {
+        height: 80%;
+        width: 100%;
+    }
+    .brand h2
+    {
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        transform: rotate(180);
     }
     .info
     {
@@ -24,7 +36,9 @@
     }
 </style>
 <body>
-    <div class="brand"></div>
+    <div class="brand">
+        <h2>direccionados.ar</h2>
+    </div>
     <div class="info">
 
     </div>
