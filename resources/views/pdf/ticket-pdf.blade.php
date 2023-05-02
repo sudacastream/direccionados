@@ -16,7 +16,10 @@
     }
     .brand
     {
+        background: #0c0;
         height: 80%;
+        margin: 0;
+        padding: 0;
         width: 100%;
     }
     .brand h2
@@ -26,9 +29,13 @@
         text-align: center;
         transform: rotate(180);
     }
+    .brand .img
+    {
+        background: #c00;
+    }
     .info
     {
-        background: #fff;
+        border-top: dashed #161616 1px;
         bottom: 0;
         height: 20%;
         position: fixed;
@@ -38,6 +45,9 @@
 <body>
     <div class="brand">
         <h2>direccionados.ar</h2>
+        <div class="img">
+            <img src="https://pass.direccionados.ar/brand-ticket.png" alt="">
+        </div>
     </div>
     <div class="info">
 
