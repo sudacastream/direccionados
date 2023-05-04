@@ -40,6 +40,9 @@
             </div>
         </div>
     </div>
+    <audio id="audio" controls>
+        <source type="audio/mp3" src="/beep.mp3">
+    </audio>
     <script src="https://unpkg.com/@zxing/library@latest"></script>
     <script>
         window.addEventListener('load', function () {
@@ -70,6 +73,7 @@
                 codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
                 if (result) {
                     console.log(result)
+                    audio.play();
                     document.getElementById('result').textContent = result.text
                 }
                 if (err && !(err instanceof ZXing.NotFoundException)) {
