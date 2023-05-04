@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailAvisoNuevoPrecioController;
+use App\Http\Controllers\InletController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SendTickets;
 use App\Http\Controllers\SettingsController;
@@ -72,6 +73,11 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/ticket/send', [SendTickets::class, 'index'])->name('send');
     Route::post('/admin/ticket/send', [SendTickets::class, 'send'])->name('send.ticket');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/inlet', [InletController::class, 'index'])->name('inlet');
+    Route::post('/inlet', [InletController::class, 'scan'])->name('inlet.scan');
 });
 
 require __DIR__.'/auth.php';
