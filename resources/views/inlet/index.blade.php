@@ -49,13 +49,10 @@
     <script src="https://unpkg.com/@zxing/library@latest"></script>
     <script>
         window.addEventListener('load', function () {
-            let selectedDeviceId;
-            var hints = new Map();
-            hints.set(ZXing.DecodeHintType.ASSUME_GS1, true)
-            hints.set(ZXing.DecodeHintType.TRY_HARDER, true)
-            const codeReader = new ZXing.BrowserMultiFormatReader(hints)
-            console.log('ZXing code reader initialized')
-            codeReader.getVideoInputDevices()
+        let selectedDeviceId;
+        const codeReader = new ZXing.BrowserMultiFormatReader()
+        console.log('ZXing code reader initialized')
+        codeReader.listVideoInputDevices()
             .then((videoInputDevices) => {
             const sourceSelect = document.getElementById('sourceSelect')
             selectedDeviceId = videoInputDevices[0].deviceId
@@ -78,7 +75,7 @@
             document.getElementById('startButton').addEventListener('click', () => {
                 codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
                 if (result) {
-                    console.log(result.getText())
+                    console.log(result)
                     document.getElementById('result').textContent = result.text
                 }
                 if (err && !(err instanceof ZXing.NotFoundException)) {
