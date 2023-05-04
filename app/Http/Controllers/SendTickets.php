@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Milon\Barcode\DNS2D;
 
 class SendTickets extends Controller
 {
@@ -53,39 +54,68 @@ class SendTickets extends Controller
     public function send(Request $request)
     {
         $tokens = DB::table('tickets')->where('pago','=',true)->distinct()->pluck('token');
+        $details = '';
         foreach($tokens as $token)
         {
             $tickets = DB::table('tickets')->where('token','=',$token)->get();
             $buffet = DB::table('buffet')->where('token','=',$token)->get();
             $merchandising = DB::table('merchandising')->where('token','=',$token)->get();
 
-            foreach($tickets as $ticket)
+            if(count($tickets) == 1)
             {
-                echo $ticket->token.' - '.$ticket->nombres.'</br>';
+                $details .= 'Ticket: 1 ticket';
+            }
+            elseif(count($tickets) > 1)
+            {
+                $details .= 'Tickets: '.count($tickets).' tickets';
+            }
+            if(count($tickets) > 0 && count($buffet) > 0)
+            {
+                $details .= ' | ';
             }
             foreach($buffet as $combo)
             {
-                echo $combo->token.' - '.$combo->cantidad;
+                $details .= 'Buffet: '.$combo->cantidad;
                 if($combo->cantidad > 1)
                 {
-                    echo ' combos</br>';
+                    $details .= ' combos';
                 }
                 else
                 {
-                    echo ' combo</br>';
+                    $details .= ' combo';
                 }
             }
+            if(count($tickets) > 0 || count($buffet) > 0 && count($merchandising) > 0)
+            {
+                $details .= ' | ';
+            }
+            if(count($merchandising) > 0)
+            {
+                $details .= 'Merchandising:';
+            }
+            $i = 1;
             foreach($merchandising as $merch)
             {
-                echo $merch->token.' - '.$merch->cantidad.' '.$merch->producto.'</br>';
+                $details .= ' '.$merch->cantidad.' '.$merch->producto;
+                if(count($merchandising) > 1 && $i == 1)
+                {
+                    $details .= ' y';
+                }
+                $i++;
             }
-            echo '</br>';
+            $d = new DNS2D();
+            $d->setStorPath(__DIR__.'/cache/');
+            $code = $d->getBarcodePNG($token,'PDF417',2,0.5);
+    
+            $data = [
+                'titulo' => 'TICKET',
+                'code' => $code,
+                'token' => $token,
+                'details' => $details
+            ];
+            $customPaper = array(0,0,396.85,198.425);
+            $pdf = Pdf::loadView('pdf.ticket-pdf', $data)->setPaper($customPaper, 'landscape');
+            return $pdf->stream('archivo.pdf');
         }
-        $data = [
-            'titulo' => 'TICKET'
-        ];
-        $customPaper = array(0,0,396.85,198.425);
-        $pdf = Pdf::loadView('pdf.ticket-pdf', $data)->setPaper($customPaper, 'landscape');
-        return $pdf->stream('archivo.pdf');
     }
 }
