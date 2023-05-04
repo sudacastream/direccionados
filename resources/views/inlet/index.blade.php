@@ -13,16 +13,10 @@
                 <main class="wrapper" style="padding-top:2em">
 
                     <section class="container" id="demo-content">
-                      <h1 class="title">Scan 1D/2D Code from Video Camera</h1>
-                  
-                      <p>This example shows how to scan any supported 1D/2D code with ZXing javascript library from the device video
-                        camera. If more
-                        than one video input devices are available (for example front and back camera) the example shows how to read
-                        them and use a select to change the input device.</p>
                   
                       <div>
-                        <a class="button" id="startButton">Start</a>
-                        <a class="button" id="resetButton">Reset</a>
+                        <a class="button" id="startButton">Iniciar</a>
+                        <a class="button" id="resetButton">Resetear</a>
                       </div>
                   
                       <div>
@@ -30,12 +24,12 @@
                       </div>
                   
                       <div id="sourceSelectPanel" style="display:none">
-                        <label for="sourceSelect">Change video source:</label>
+                        <label for="sourceSelect">C&aacute;mara:</label>
                         <select id="sourceSelect" style="max-width:400px">
                         </select>
                       </div>
                   
-                      <label>Result:</label>
+                      <label>Resultado:</label>
                       <pre><code id="result"></code></pre>
                     </section>
                   
