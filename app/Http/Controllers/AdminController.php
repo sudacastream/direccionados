@@ -154,4 +154,15 @@ class AdminController extends Controller
             'pagos' => $ticketsPagos,
         ]);
     }
+    public function pastors(Request $request)
+    {
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
+        {
+            $pastores = DB::table('tickets')->where('funcion','=','pastor')->orderBy('apellidos')->get();
+        }
+        return view('admin.pastores',[
+            'user' => $request->user(),
+            'pagos' => $pastores,
+        ]);
+    }
 }

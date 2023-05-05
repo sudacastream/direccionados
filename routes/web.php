@@ -64,6 +64,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/admin/list', [AdminController::class, 'list'])->middleware(['auth', 'verified'])->name('listado');
+Route::get('/admin/list/pastors', [AdminController::class, 'pastors'])->middleware(['auth', 'verified'])->name('pastores');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/advice', [EmailAvisoNuevoPrecioController::class, 'index'])->name('advice');
