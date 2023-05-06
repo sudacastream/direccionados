@@ -10,23 +10,32 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
 
                     <section id="demo-content">
-                      <div class="md:w-1/2 w-full h-12">
-                        <div class="w-1/6 float-left">
-                            <a id="startButton" class="w-full block text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none"><i class="fa-solid fa-barcode"></i></a>
+                        <div class="md:w-1/2 w-full h-12">
+                            <div class="w-1/6 float-left">
+                                <a id="startButton" class="w-full block text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none"><i class="fa-solid fa-barcode"></i></a>
+                            </div>
+                            <div id="sourceSelectPanel" class="w-4/6 float-left px-2">
+                                <select id="sourceSelect" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"></select>
+                            </div>
+                            <div class="w-1/6 float-left">
+                                <a id="resetButton" class="w-full block text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none"><i class="fa-solid fa-arrows-rotate"></i></a>
+                            </div>
                         </div>
-                        <div id="sourceSelectPanel" class="w-4/6 float-left px-2">
-                            <select id="sourceSelect" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"></select>
+                        <div class="md:w-1/2 w-full">
+                            <video id="video" class="w-full bg-gray-50 rounded-md"></video>
                         </div>
-                        <div class="w-1/6 float-left">
-                            <a id="resetButton" class="w-full block text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none"><i class="fa-solid fa-arrows-rotate"></i></a>
-                        </div>
-                      </div>
-                      <div class="md:w-1/2 w-full">
-                        <video id="video" class="w-full bg-gray-100 rounded-md"></video>
-                      </div>
-                  
-                      <label>Resultado:</label>
-                      <pre><code id="result"></code></pre>
+                        <form id="searchToken" action="{{ route('inlet.search') }}" method="POST">
+                            @csrf
+                            <div class="flex my-4">
+                                <div class="relative w-full">
+                                    <input type="search" name="token" id="search" class="block p-2.5 w-full z-20 text-sm text-gray-900 border-gray-200 bg-gray-50 border-1 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Token Pass" required autocomplete="off">
+                                    <button type="submit" class="absolute top-0 right-0 py-2.5 px-4 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
                     </section>
 
 
@@ -67,7 +76,8 @@
                 if (result) {
                     console.log(result)
                     audio.play();
-                    document.getElementById('result').textContent = result.text
+                    document.getElementById('search').textContent = result.text;
+                    document.getElementById('searchToken').submit();
                 }
                 if (err && !(err instanceof ZXing.NotFoundException)) {
                     console.error(err)

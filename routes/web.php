@@ -78,7 +78,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/inlet', [InletController::class, 'index'])->name('inlet');
-    Route::post('/inlet', [InletController::class, 'scan'])->name('inlet.scan');
+    Route::post('/inlet', [InletController::class, 'search'])->name('inlet.search');
 });
 
 require __DIR__.'/auth.php';
