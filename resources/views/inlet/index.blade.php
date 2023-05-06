@@ -27,29 +27,45 @@
                         <script>
                             function searchToken(info)
                             {
-                                $.ajax({
-                                    type: 'POST',
-                                    url: '{{ route('inlet.search') }}',
-                                    data: {                        
-                                        '_token': '{{ csrf_token() }}',
-                                        'token': info
-                                    },
-                                    success: function(data){
-                                        html = '';
-                                        html += '<table class="w-full text-sm text-left text-gray-500">';
-                                        html += '<thead class="text-xs text-gray-700 uppercase bg-gray-50">';
-                                        html += '<tr><th scope="col" class="px-2 py-3">Nombre completo y DNI</th><th scope="col" class="px-2 py-3"></th></tr></thead><tbody>';
-                                        data.forEach(datos);
-                                        function datos(item)
-                                        {
-                                            html += '<tr class="bg-white border-b"><th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap">';
-                                            html += item.apellidos+', '+item.nombres+' ('+item.dni+')</th><td class="px-2 py-4">';
-                                            html += '<label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" value="" class="sr-only peer"><div class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[\'\'] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div></label></td></tr>';
-                                            $('#response').html(html);
+                                if(info=='')
+                                {
+                                }
+                                else
+                                {
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: '{{ route('inlet.search') }}',
+                                        data: {                        
+                                            '_token': '{{ csrf_token() }}',
+                                            'token': info
+                                        },
+                                        success: function(data){
+                                            if(data=='')
+                                            {
+                                                aviso = '<div id="alert-border-4" class="flex p-4 mb-4 text-yellow-800 border-t-4 border-yellow-300 bg-yellow-50" role="alert"><i class="fa-solid fa-circle-exclamation"></i><div class="ml-3 text-sm font-medium">';
+                                                aviso += 'El token ingresado es inexistente.';
+                                                aviso += '</div></div>';
+                                                $('#response').html(aviso);
+                                            }
+                                            else
+                                            {
+                                                html = '';
+                                                html += '<table class="w-full text-sm text-left text-gray-500">';
+                                                html += '<thead class="text-xs text-gray-700 uppercase bg-gray-50">';
+                                                html += '<tr><th scope="col" class="px-2 py-3">Nombre completo y DNI</th><th scope="col" class="px-2 py-3"></th></tr></thead><tbody>';
+                                                data.forEach(datos);
+                                                function datos(item)
+                                                {
+                                                    html += '<tr class="bg-white border-b"><th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap">';
+                                                    html += item.apellidos+', '+item.nombres+' ('+item.dni+')</th><td class="px-2 py-4">';
+                                                    html += '<label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" value="" class="sr-only peer"><div class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[\'\'] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div></label></td></tr>';
+                                                    $('#response').html(html);
+                                                }
+                                                $('#response').append('</tbody></table>');
+                                            }
                                         }
-                                        $('#response').append('</tbody></table>');
-                                    }
-                                });
+                                    });
+                                }
                             }
                         </script>
                         <div class="flex my-4">
