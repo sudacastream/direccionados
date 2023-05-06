@@ -22,7 +22,7 @@
                         </div>
                       </div>
                       <div class="md:w-1/2 w-full">
-                        <video id="video" class="w-full h-28 bg-gray-100 rounded-md"></video>
+                        <video id="video" class="w-full bg-gray-100 rounded-md"></video>
                       </div>
                   
                       <label>Resultado:</label>
