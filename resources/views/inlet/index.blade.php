@@ -76,7 +76,7 @@
                                 }
                             }
                         </script>
-                        <div class="flex my-4">
+                        <div class="flex my-4 md:w-1/2 w-full">
                             <div class="relative w-full">
                                 <input type="search" name="token" id="search" class="block p-2.5 w-full z-20 text-sm text-gray-900 border-gray-200 bg-gray-50 border-1 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Token Pass" required autocomplete="off">
                                 <button type="button" onclick="searchToken(document.getElementById('search').value);" class="absolute top-0 right-0 py-2.5 px-4 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
@@ -86,7 +86,7 @@
                         </div>
 
                     </section>
-                    <div id="response">
+                    <div id="response" class="md:w-1/2 w-full">
                     </div>
 
 

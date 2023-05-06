@@ -9,7 +9,14 @@ class InletController extends Controller
 {
     public function index(Request $request)
     {
-        return view('inlet.index');
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'congreso@direccionados.ar')
+        {
+            return view('inlet.index');
+        }
+        else
+        {
+            return abort(404);
+        }
     }
     public function search(Request $request)
     {

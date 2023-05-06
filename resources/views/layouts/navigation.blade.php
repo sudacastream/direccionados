@@ -5,12 +5,20 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
+                    @if(Auth::user()->email!='congreso@direccionados.ar')
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
+                    @else
+                    <a href="{{ route('inlet') }}">
+                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                    </a>
+                    @endif
                 </div>
 
                 <!-- Navigation Links -->
+                
+                @if(Auth::user()->email!='congreso@direccionados.ar')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
@@ -19,6 +27,7 @@
                         {{ __('Tienda') }}
                     </x-nav-link>
                 </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->
@@ -36,7 +45,8 @@
                         </button>
                     </x-slot>
 
-                    <x-slot name="content">
+                    <x-slot name="content">                
+                        @if(Auth::user()->email!='congreso@direccionados.ar')
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Perfil') }}
                         </x-dropdown-link>
@@ -44,6 +54,7 @@
                         <x-dropdown-link :href="route('admin.tokens')">
                             {{ __('Administración') }}
                         </x-dropdown-link>
+                        @endif
                         @endif
 
                         <!-- Authentication -->
@@ -74,6 +85,8 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        
+        @if(Auth::user()->email!='congreso@direccionados.ar')
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
@@ -82,6 +95,7 @@
                 {{ __('Tienda') }}
             </x-responsive-nav-link>
         </div>
+        @endif
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -91,15 +105,20 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Perfil') }}
-                </x-responsive-nav-link>
-                @if(Auth::user()->email=='ceo@sudacastream.com')
-                <x-responsive-nav-link :href="route('admin.tokens')">
-                    {{ __('Administración') }}
-                </x-responsive-nav-link>
+                @if(Auth::user()->email!='congreso@direccionados.ar')
+                    <x-responsive-nav-link :href="route('profile.edit')">
+                        {{ __('Perfil') }}
+                    </x-responsive-nav-link>
+                    @if(Auth::user()->email=='ceo@sudacastream.com' || Auth::user()->email=='nahufidelibus@gmail.com')
+                    <x-responsive-nav-link :href="route('admin.tokens')">
+                        {{ __('Administración') }}
+                    </x-responsive-nav-link>
+                    @endif
+                @else
+                    <x-responsive-nav-link :href="route('inlet')">
+                        {{ __('Admisión') }}
+                    </x-responsive-nav-link>
                 @endif
-
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

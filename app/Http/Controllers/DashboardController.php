@@ -9,6 +9,10 @@ class DashboardController extends Controller
 {
     public function index(Request $request)
     {
+        if($request->user()['email'] == 'congreso@direccionados.ar')
+        {
+            return redirect('inlet');
+        }
         $id = strval($request->user()['id']);
         
         $tokens = DB::table('tickets')->where('tickets.usuario', '=', $id)->distinct()->pluck('token');

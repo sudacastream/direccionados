@@ -148,21 +148,29 @@ class AdminController extends Controller
         if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
         {
             $ticketsPagos = DB::table('tickets')->orderByDesc('pago')->orderBy('funcion')->orderBy('apellidos')->get();
+            return view('admin.list',[
+                'user' => $request->user(),
+                'pagos' => $ticketsPagos,
+            ]);
         }
-        return view('admin.list',[
-            'user' => $request->user(),
-            'pagos' => $ticketsPagos,
-        ]);
+        else
+        {
+            return abort(404);
+        }
     }
     public function pastors(Request $request)
     {
         if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
         {
             $pastores = DB::table('tickets')->where('funcion','=','pastor')->orderBy('apellidos')->get();
+            return view('admin.pastores',[
+                'user' => $request->user(),
+                'pagos' => $pastores,
+            ]);
         }
-        return view('admin.pastores',[
-            'user' => $request->user(),
-            'pagos' => $pastores,
-        ]);
+        else
+        {
+            return abort(404);
+        }
     }
 }
