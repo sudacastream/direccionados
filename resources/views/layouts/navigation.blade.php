@@ -27,6 +27,10 @@
                         {{ __('Tienda') }}
                     </x-nav-link>
                 </div>
+                @else
+                    <x-nav-link :href="route('inlet')" :active="request()->routeIs('inlet')">
+                        {{ __('Admisión') }}
+                    </x-nav-link>
                 @endif
             </div>
 
