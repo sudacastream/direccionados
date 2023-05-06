@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BuffetController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailAvisoNuevoPrecioController;
 use App\Http\Controllers\InletController;
@@ -80,6 +81,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/inlet', [InletController::class, 'index'])->name('inlet');
     Route::post('/inlet', [InletController::class, 'search'])->name('inlet.search');
     Route::patch('/inlet', [InletController::class, 'asistencia'])->name('inlet.asistencia');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/buffet', [BuffetController::class, 'index'])->name('buffet');
+    Route::post('/buffet', [BuffetController::class, 'search'])->name('buffet.search');
+    Route::patch('/buffet', [BuffetController::class, 'entrega'])->name('buffet.entrega');
 });
 
 require __DIR__.'/auth.php';
