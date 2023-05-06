@@ -31,6 +31,9 @@
                     <x-nav-link :href="route('inlet')" :active="request()->routeIs('inlet')">
                         {{ __('Admisión') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('buffet')" :active="request()->routeIs('buffet')">
+                        {{ __('Buffet') }}
+                    </x-nav-link>
                 @endif
             </div>
 
@@ -54,9 +57,20 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Perfil') }}
                         </x-dropdown-link>
-                        @if(Auth::user()->email=='ceo@sudacastream.com' || Auth::user()->email=='nahufidelibus@gmail.com')
+                        @if(Auth::user()->email=='nahufidelibus@gmail.com')
                         <x-dropdown-link :href="route('admin.tokens')">
                             {{ __('Administración') }}
+                        </x-dropdown-link>
+                        @endif
+                        @if(Auth::user()->email=='ceo@sudacastream.com')
+                        <x-dropdown-link :href="route('admin.tokens')">
+                            {{ __('Administración') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('inlet')">
+                            {{ __('Admisión') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('buffet')">
+                            {{ __('Buffet') }}
                         </x-dropdown-link>
                         @endif
                         @endif
@@ -90,16 +104,23 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         
-        @if(Auth::user()->email!='congreso@direccionados.ar')
         <div class="pt-2 pb-3 space-y-1">
+            @if(Auth::user()->email!='congreso@direccionados.ar')
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('tienda')" :active="request()->routeIs('tienda')">
                 {{ __('Tienda') }}
             </x-responsive-nav-link>
+            @else
+                <x-responsive-nav-link :href="route('inlet')">
+                    {{ __('Admisión') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('buffet')">
+                    {{ __('Buffet') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
-        @endif
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -117,11 +138,15 @@
                     <x-responsive-nav-link :href="route('admin.tokens')">
                         {{ __('Administración') }}
                     </x-responsive-nav-link>
-                    @endif
-                @else
+                    @endif                    
+                    @if(Auth::user()->email=='ceo@sudacastream.com')
                     <x-responsive-nav-link :href="route('inlet')">
                         {{ __('Admisión') }}
                     </x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('buffet')">
+                        {{ __('Buffet') }}
+                    </x-responsive-nav-link>
+                    @endif
                 @endif
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
