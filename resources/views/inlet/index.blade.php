@@ -76,7 +76,7 @@
                 if (result) {
                     console.log(result)
                     audio.play();
-                    document.getElementById('search').textContent = result.text;
+                    document.getElementById('search').value = result.text;
                     document.getElementById('searchToken').submit();
                 }
                 if (err && !(err instanceof ZXing.NotFoundException)) {
