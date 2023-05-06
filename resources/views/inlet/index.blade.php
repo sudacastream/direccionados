@@ -14,7 +14,7 @@
                         <div class="w-1/6 float-left">
                             <a id="startButton" class="w-full block text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none"><i class="fa-solid fa-barcode"></i></a>
                         </div>
-                        <div id="sourceSelectPanel" class="w-4/6 float-left px-3">
+                        <div id="sourceSelectPanel" class="w-4/6 float-left px-2">
                             <select id="sourceSelect" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"></select>
                         </div>
                         <div class="w-1/6 float-left">
@@ -22,7 +22,7 @@
                         </div>
                       </div>
                       <div class="md:w-1/2 w-full">
-                        <video id="video" class="w-full h-30 bg-gray-100 rounded-md"></video>
+                        <video id="video" class="w-full h-28 bg-gray-100 rounded-md"></video>
                       </div>
                   
                       <label>Resultado:</label>
