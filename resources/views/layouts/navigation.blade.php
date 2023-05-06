@@ -18,23 +18,24 @@
 
                 <!-- Navigation Links -->
                 
-                @if(Auth::user()->email!='congreso@direccionados.ar')
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    @if(Auth::user()->email!='congreso@direccionados.ar')
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('tienda')" :active="request()->routeIs('tienda')">
                         {{ __('Tienda') }}
                     </x-nav-link>
+                    @else
+                        <x-nav-link :href="route('inlet')" :active="request()->routeIs('inlet')">
+                            {{ __('Admisión') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('buffet')" :active="request()->routeIs('buffet')">
+                            {{ __('Buffet') }}
+                        </x-nav-link>
+                    @endif
                 </div>
-                @else
-                    <x-nav-link :href="route('inlet')" :active="request()->routeIs('inlet')">
-                        {{ __('Admisión') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('buffet')" :active="request()->routeIs('buffet')">
-                        {{ __('Buffet') }}
-                    </x-nav-link>
-                @endif
             </div>
 
             <!-- Settings Dropdown -->
