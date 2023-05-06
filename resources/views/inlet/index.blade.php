@@ -24,19 +24,46 @@
                         <div class="md:w-1/2 w-full">
                             <video id="video" class="w-full bg-gray-50 rounded-md"></video>
                         </div>
-                        <form id="searchToken" action="{{ route('inlet.search') }}" method="POST">
-                            @csrf
-                            <div class="flex my-4">
-                                <div class="relative w-full">
-                                    <input type="search" name="token" id="search" class="block p-2.5 w-full z-20 text-sm text-gray-900 border-gray-200 bg-gray-50 border-1 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Token Pass" required autocomplete="off">
-                                    <button type="submit" class="absolute top-0 right-0 py-2.5 px-4 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
-                                </div>
+                        <script>
+                            function searchToken(info)
+                            {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '{{ route('inlet.search') }}',
+                                    data: {                        
+                                        '_token': '{{ csrf_token() }}',
+                                        'token': info
+                                    },
+                                    success: function(data){
+                                        html = '';
+                                        html += '<table class="w-full text-sm text-left text-gray-500">';
+                                        html += '<thead class="text-xs text-gray-700 uppercase bg-gray-50">';
+                                        html += '<tr><th scope="col" class="px-2 py-3">Nombre completo y DNI</th><th scope="col" class="px-2 py-3"></th></tr></thead><tbody>';
+                                        data.forEach(datos);
+                                        function datos(item)
+                                        {
+                                            html += '<tr class="bg-white border-b"><th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap">';
+                                            html += item.apellidos+', '+item.nombres+' ('+item.dni+')</th><td class="px-2 py-4">';
+                                            html += '<label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" value="" class="sr-only peer"><div class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[\'\'] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div></label></td></tr>';
+                                            $('#response').html(html);
+                                        }
+                                        $('#response').append('</tbody></table>');
+                                    }
+                                });
+                            }
+                        </script>
+                        <div class="flex my-4">
+                            <div class="relative w-full">
+                                <input type="search" name="token" id="search" class="block p-2.5 w-full z-20 text-sm text-gray-900 border-gray-200 bg-gray-50 border-1 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Token Pass" required autocomplete="off">
+                                <button type="button" onclick="searchToken(document.getElementById('search').value);" class="absolute top-0 right-0 py-2.5 px-4 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
                             </div>
-                        </form>
+                        </div>
 
                     </section>
+                    <div id="response">
+                    </div>
 
 
             </div>
@@ -77,7 +104,7 @@
                     console.log(result)
                     audio.play();
                     document.getElementById('search').value = result.text;
-                    document.getElementById('searchToken').submit();
+                    searchToken(result.text);
                 }
                 if (err && !(err instanceof ZXing.NotFoundException)) {
                     console.error(err)
