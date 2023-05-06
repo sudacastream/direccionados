@@ -79,6 +79,7 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/inlet', [InletController::class, 'index'])->name('inlet');
     Route::post('/inlet', [InletController::class, 'search'])->name('inlet.search');
+    Route::patch('/inlet', [InletController::class, 'asistencia'])->name('inlet.asistencia');
 });
 
 require __DIR__.'/auth.php';

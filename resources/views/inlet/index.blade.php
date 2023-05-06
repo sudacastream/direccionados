@@ -56,9 +56,17 @@
                                                 data.forEach(datos);
                                                 function datos(item)
                                                 {
+                                                    if(item.asistencia)
+                                                    {
+                                                        checked = 'checked';
+                                                    }
+                                                    else
+                                                    {
+                                                        checked = '';
+                                                    }
                                                     html += '<tr class="bg-white border-b"><th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap">';
                                                     html += item.apellidos+', '+item.nombres+' ('+item.dni+')</th><td class="px-2 py-4">';
-                                                    html += '<label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" value="" class="sr-only peer"><div class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[\'\'] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div></label></td></tr>';
+                                                    html += '<label class="relative inline-flex items-center cursor-pointer"><input id="cb'+item.id+'" '+checked+' onchange="asistencia('+item.id+', this.checked);" type="checkbox" value="" class="asistencia sr-only peer"><div class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[\'\'] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div></label></td></tr>';
                                                     $('#response').html(html);
                                                 }
                                                 $('#response').append('</tbody></table>');
@@ -87,6 +95,12 @@
     </div>
     <audio id="audio">
         <source type="audio/mp3" src="/beep.mp3">
+    </audio>
+    <audio id="ok">
+        <source type="audio/mp3" src="/ping.mp3">
+    </audio>
+    <audio id="err">
+        <source type="audio/mp3" src="/pong.mp3">
     </audio>
     <script src="https://unpkg.com/@zxing/library@latest"></script>
     <script>
@@ -140,6 +154,47 @@
             .catch((err) => {
             console.error(err)
             })
-        })
+        });
+        function asistencia(id, checked, checkbox)
+        {
+            if(checked)
+            {
+                $('#cb'+id).attr('checked',true);
+                $.ajax({
+                    type: 'PATCH',
+                    url: '{{ route('inlet.asistencia') }}',
+                    data: {
+                        '_token': '{{ csrf_token() }}',
+                        'id': id,
+                        'checked': true
+                    },
+                    success: function(data){
+                        ok.pause();
+                        ok.currentTime = 0;
+                        ok.play();
+                        console.log(data)
+                    }
+                });
+            }
+            else
+            {
+                $('#cb'+id).attr('checked',false);
+                $.ajax({
+                    type: 'PATCH',
+                    url: '{{ route('inlet.asistencia') }}',
+                    data: {
+                        '_token': '{{ csrf_token() }}',
+                        'id': id,
+                        'checked': false
+                    },
+                    success: function(data){
+                        err.pause();
+                        err.currentTime = 0;
+                        err.play();
+                        console.log(data)
+                    }
+                });
+            }
+        }
     </script>
 </x-app-layout>

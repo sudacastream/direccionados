@@ -16,4 +16,15 @@ class InletController extends Controller
         $token = DB::table('tickets')->where('token','=',$request->token)->get();
         return $token;
     }
+    public function asistencia(Request $request)
+    {
+        if($request->checked == 'true')
+        {
+            DB::table('tickets')->where('id','=',$request->id)->update(['asistencia'=>true]);
+        }
+        else
+        {
+            DB::table('tickets')->where('id','=',$request->id)->update(['asistencia'=>false]);
+        }
+    }
 }
