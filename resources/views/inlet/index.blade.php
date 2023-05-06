@@ -9,38 +9,31 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
 
-
-                <main class="wrapper" style="padding-top:2em">
-
-                    <section class="container" id="demo-content">
-                  
-                      <div>
-                        <a class="button" id="startButton">Iniciar</a>
-                        <a class="button" id="resetButton">Resetear</a>
+                    <section id="demo-content">
+                      <div class="md:w-1/2 w-full h-12">
+                        <div class="w-1/6 float-left">
+                            <a id="startButton" class="w-full block text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none"><i class="fa-solid fa-barcode"></i></a>
+                        </div>
+                        <div id="sourceSelectPanel" class="w-4/6 float-left px-3">
+                            <select id="sourceSelect" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"></select>
+                        </div>
+                        <div class="w-1/6 float-left">
+                            <a id="resetButton" class="w-full block text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none"><i class="fa-solid fa-arrows-rotate"></i></a>
+                        </div>
                       </div>
-                  
-                      <div>
-                        <video id="video" width="640" height="480" style="border: 1px solid gray"></video>
-                      </div>
-                  
-                      <div id="sourceSelectPanel" style="display:none">
-                        <label for="sourceSelect">C&aacute;mara:</label>
-                        <select id="sourceSelect" style="max-width:400px">
-                        </select>
+                      <div class="md:w-1/2 w-full">
+                        <video id="video" class="w-full h-30 bg-gray-100 rounded-md"></video>
                       </div>
                   
                       <label>Resultado:</label>
                       <pre><code id="result"></code></pre>
                     </section>
-                  
-                  </main>
-
 
 
             </div>
         </div>
     </div>
-    <audio id="audio" controls>
+    <audio id="audio">
         <source type="audio/mp3" src="/beep.mp3">
     </audio>
     <script src="https://unpkg.com/@zxing/library@latest"></script>
