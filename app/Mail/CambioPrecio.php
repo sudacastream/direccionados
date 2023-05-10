@@ -31,7 +31,7 @@ class CambioPrecio extends Mailable
      */
     public function build()
     {
-        return $this->subject('¿Te asustaste? Te damos un poco más de tiempo')
+        return $this->subject('Eliminamos tu compra')
                     ->view('emails.cambio-precio');
     }
 

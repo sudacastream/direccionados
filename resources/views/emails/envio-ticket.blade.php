@@ -62,7 +62,7 @@
                                         </tr>
                                     </table>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 1em; text-align: left;">
-                                        Record&aacute; tener descargado en tu celular o impreso el pase que adjuntamos en este mensaje, te lo vamos a pedir para el ingreso al congreso.
+                                        Record&aacute; tener descargado en tu celular o impreso el pase que adjuntamos en este mensaje. El pase y el DNI de cada asistente ser&aacute; requerido al ingreso del congreso.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
                                         Saludos, Congreso Direccionados.

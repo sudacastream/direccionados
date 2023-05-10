@@ -44,18 +44,17 @@
                             <tr>
                                 <td class="content-cell" style="max-width: 100vw;padding: 32px;">
                                     <h1 style="position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">
-                                        ¡Hola! ¿Te asustaste?
+                                        ¡Hola!
                                     </h1>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
-                                        Te recordamos que ten&eacute;s un pedido pendiente de pago.</br>
-                                        Te enviamos un correo electr&oacute;nico previo con los datos de la compra y cuenta a transferir.
+                                        Queremos informarte que eliminamos tu pedido pendiente de pago.</br>
                                     </p>
                                 
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; text-align: left;">
-                                        En caso de no abonar el monto total antes del 5/5/2023, procederemos a liberar los tickets para otros asistentes.
+                                        Ten&eacute; en cuenta que no podr&aacute;s acceder al Congreso, pero te esperamos el pr&oacute;ximo a&ntilde;o.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 1em; text-align: left;">
-                                        Si ten&eacute;s alg&uacute;n inconveniento o inquietud, no dudes en escribirnos.
+                                        Si ten&eacute;s alguna inquietud, no dudes en escribirnos.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
                                         Saludos, Congreso Direccionados
