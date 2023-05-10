@@ -203,6 +203,7 @@ class SendTickets extends Controller
         if(count($tickets) > 0 || count($buffet) > 0 || count($merchandising) > 0)
         {
             $details = '';
+            $tipo = 'general';
 
             foreach($tickets as $ticket)
             {
