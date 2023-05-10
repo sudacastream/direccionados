@@ -40,7 +40,7 @@
                             <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
                                 <span class="text-lg text-gray-900">Inscripciones</span>
                                 <div class="flex items-center justify-between">
-                                    <div class="text-3xl font-bold text-gray-900 cursor-pointer" title="Porcentaje de tickets vendidos">{{ number_format(count($iTotal)*100/285, 0, ',','') }}%</div>
+                                    <div class="text-3xl font-bold text-gray-900 cursor-pointer" title="Porcentaje de tickets vendidos">{{ number_format(count($iTotal)*100/280, 0, ',','') }}%</div>
                                     <div class="text-lg font-bold flex items-center justify-between">
                                         <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Tickets pagos">{{ count($pagos) }}</span>
                                         <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Tickets impagos">{{ count($impagos) }}</span>
@@ -129,7 +129,7 @@
                                 datasets: [
                                     {
                                     label: "Cantidad",
-                                    data: [{{ count($iTotal) }}, 285-{{ count($iTotal) }}],
+                                    data: [{{ count($iTotal) }}, 280-{{ count($iTotal) }}],
                                     backgroundColor: [
                                         "rgb(34, 197, 94)",
                                         "rgb(239, 68, 68)",
