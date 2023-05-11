@@ -76,6 +76,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/ticket/send', [SendTickets::class, 'index'])->name('send');
     Route::post('/admin/ticket/send', [SendTickets::class, 'send'])->name('send.ticket');
     Route::get('/admin/ticket/send/{token}', [SendTickets::class, 'sendTicket'])->name('send.ticket.uno');
+    Route::get('/admin/ticket/{token}', [SendTickets::class, 'getTicket'])->name('get.ticket.uno');
 });
 
 Route::middleware(['auth'])->group(function () {

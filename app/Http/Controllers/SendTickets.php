@@ -317,4 +317,90 @@ class SendTickets extends Controller
             return 'El token '.$token.' no existe.';
         }
     }
+    public function getTicket($token)
+    {
+        $tickets = DB::table('tickets')->where('token','=',$token)->get();
+        $buffet = DB::table('buffet')->where('token','=',$token)->get();
+        $merchandising = DB::table('merchandising')->where('token','=',$token)->get();
+        if(count($tickets) > 0 || count($buffet) > 0 || count($merchandising) > 0)
+        {
+            $details = '';
+            $tipo = 'general';
+
+            foreach($tickets as $ticket)
+            {
+                if($ticket->precio > 1500)
+                {
+                    $tipo = 'general';
+                }
+                else
+                {
+                    $tipo = 'preventa';
+                }
+                $usuario = $ticket->usuario;
+            }
+            if(count($tickets) == 1)
+            {
+                $details .= 'Ticket: 1 ticket';
+            }
+            elseif(count($tickets) > 1)
+            {
+                $details .= 'Tickets: '.count($tickets).' tickets';
+            }
+            if(count($tickets) > 0 && count($buffet) > 0)
+            {
+                $details .= ' | ';
+            }
+            foreach($buffet as $combo)
+            {
+                $details .= 'Buffet: '.$combo->cantidad;
+                if($combo->cantidad > 1)
+                {
+                    $details .= ' combos';
+                }
+                else
+                {
+                    $details .= ' combo';
+                }
+                $usuario = $combo->usuario;
+            }
+            if(count($tickets) > 0 || count($buffet) > 0 && count($merchandising) > 0)
+            {
+                $details .= ' | ';
+            }
+            if(count($merchandising) > 0)
+            {
+                $details .= 'Merchandising:';
+            }
+            $i = 1;
+            foreach($merchandising as $merch)
+            {
+                $details .= ' '.$merch->cantidad.' '.$merch->producto;
+                if(count($merchandising) > 1 && $i == 1)
+                {
+                    $details .= ' y';
+                }
+                $i++;
+                $usuario = $merch->usuario;
+            }
+            $d = new DNS2D();
+            $d->setStorPath(__DIR__.'/cache/');
+            $code = $d->getBarcodePNG($token,'PDF417',2,0.5);
+    
+            $data = [
+                'code' => $code,
+                'token' => $token,
+                'details' => $details,
+                'tipo' => $tipo
+            ];
+            $customPaper = array(0,0,396.85,198.425);
+            $pdf = Pdf::loadView('pdf.ticket-pdf', $data)->setPaper($customPaper, 'landscape');
+            $details = '';
+            return $pdf->stream();
+        }
+        else
+        {
+            return 'El token '.$token.' no existe.';
+        }
+    }
 }
