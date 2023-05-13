@@ -20,15 +20,16 @@ class InletController extends Controller
     }
     public function search(Request $request)
     {
-        if(str_contains($request->token, '-'))
+        if(str_contains($request->token, '@'))
         {
-            $token = DB::table('tickets')->where('token','=',$request->token)->get();
-            return $token;
+            $cadena = explode('@', $request->token);
+            $dni = DB::table('tickets')->where('dni','=',$cadena[4])->get();
+            return $dni;
         }
         else
         {
-            $dni = DB::table('tickets')->where('dni','=',$request->token)->get();
-            return $dni;
+            $token = DB::table('tickets')->where('token','=',$request->token)->get();
+            return $token;
         }
     }
     public function asistencia(Request $request)

@@ -131,19 +131,9 @@
             document.getElementById('startButton').addEventListener('click', () => {
                 codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
                 if (result) {
-                    if(result.includes("@"))
-                    {
-                        const cadena = result.split("@");
-                        audio.play();
-                        document.getElementById('search').value = cadena[4];
-                        searchToken(cadena[4]);
-                    }
-                    else
-                    {
-                        audio.play();
-                        document.getElementById('search').value = result.text;
-                        searchToken(result.text);
-                    }
+                    audio.play();
+                    document.getElementById('search').value = result.text;
+                    searchToken(result.text);
                 }
                 if (err && !(err instanceof ZXing.NotFoundException)) {
                     console.error(err)
