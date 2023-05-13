@@ -54,6 +54,10 @@
                                                     var cadena = info.split("@");
                                                     $('#search').val(cadena[4]);
                                                 }
+                                                else
+                                                {
+                                                    $('#search').val(info);
+                                                }
                                                 html = '';
                                                 html += '<table class="w-full text-sm text-left text-gray-500">';
                                                 html += '<thead class="text-xs text-gray-700 uppercase bg-gray-50">';
@@ -137,7 +141,6 @@
                 codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
                 if (result) {
                     audio.play();
-                    document.getElementById('search').value = result.text;
                     searchToken(result.text);
                 }
                 if (err && !(err instanceof ZXing.NotFoundException)) {
