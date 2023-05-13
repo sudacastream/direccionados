@@ -26,9 +26,14 @@ class InletController extends Controller
             $dni = DB::table('tickets')->where('dni','=',$cadena[4])->get();
             return $dni;
         }
-        else
+        else if(str_contains($request->token, '-'))
         {
             $token = DB::table('tickets')->where('token','=',$request->token)->get();
+            return $token;
+        }
+        else
+        {
+            $token = DB::table('tickets')->where('dni','=',$request->token)->get();
             return $token;
         }
     }
