@@ -91,4 +91,5 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/buffet', [BuffetController::class, 'entrega'])->name('buffet.entrega');
 });
 
+
 require __DIR__.'/auth.php';

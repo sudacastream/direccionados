@@ -43,7 +43,7 @@
                                             if(data=='')
                                             {
                                                 aviso = '<div id="alert-border-4" class="flex p-4 mb-4 text-yellow-800 border-t-4 border-yellow-300 bg-yellow-50" role="alert"><i class="fa-solid fa-circle-exclamation"></i><div class="ml-3 text-sm font-medium">';
-                                                aviso += 'El token ingresado es inexistente.';
+                                                aviso += 'El Token o DNI ingresado no posee tickets.';
                                                 aviso += '</div></div>';
                                                 $('#response').html(aviso);
                                             }
@@ -131,10 +131,19 @@
             document.getElementById('startButton').addEventListener('click', () => {
                 codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
                 if (result) {
-                    console.log(result)
-                    audio.play();
-                    document.getElementById('search').value = result.text;
-                    searchToken(result.text);
+                    if(result.includes("@"))
+                    {
+                        const cadena = result.split("@");
+                        audio.play();
+                        document.getElementById('search').value = cadena[4];
+                        searchToken(cadena[4]);
+                    }
+                    else
+                    {
+                        audio.play();
+                        document.getElementById('search').value = result.text;
+                        searchToken(result.text);
+                    }
                 }
                 if (err && !(err instanceof ZXing.NotFoundException)) {
                     console.error(err)

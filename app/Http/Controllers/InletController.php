@@ -20,8 +20,16 @@ class InletController extends Controller
     }
     public function search(Request $request)
     {
-        $token = DB::table('tickets')->where('token','=',$request->token)->get();
-        return $token;
+        if(str_contains($request->token, '-'))
+        {
+            $token = DB::table('tickets')->where('token','=',$request->token)->get();
+            return $token;
+        }
+        else
+        {
+            $dni = DB::table('tickets')->where('dni','=',$request->token)->get();
+            return $dni;
+        }
     }
     public function asistencia(Request $request)
     {
