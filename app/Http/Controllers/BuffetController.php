@@ -23,6 +23,14 @@ class BuffetController extends Controller
         $token = DB::table('buffet')->where('token','=',$request->token)->get();
         return $token;
     }
+    public function searchUsuario(Request $request)
+    {
+        $cadena = explode('-', $request->token);
+        $usuario = $cadena[1];
+
+        $usuario = DB::table('tickets')->where('usuario','=',$usuario)->get();
+        return $usuario;
+    }
     public function entrega(Request $request)
     {
         if($request->checked == 'true')

@@ -79,6 +79,51 @@
                                                 }
                                                 $('#response').append('</tbody></table>');
                                             }
+                                            $.ajax({
+                                            type: 'POST',
+                                            url: '{{ route('inlet.search') }}',
+                                            data: {                        
+                                                '_token': '{{ csrf_token() }}',
+                                                'token': info
+                                            },
+                                            success: function(data){
+                                                    if(data!='')
+                                                    {
+                                                        append = '<table class="w-full text-sm text-left text-gray-500 mt-5"><thead class="text-xs text-gray-700 uppercase bg-gray-50"><tr><th scope="col" class="px-2 py-3">Retira</th></tr></thead><tbody>';
+                                                        data.forEach(datos);
+                                                        function datos(persona)
+                                                        {
+                                                            append += '<tr class="bg-white border-b"><th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap">'+persona.apellidos+', '+persona.nombres+' ('+persona.dni+')</th>';
+                                                        }
+                                                        append += '</tbody></table>';
+                                                        $('#response').append(append);
+                                                    }
+                                                    else
+                                                    {
+                                                        $.ajax({
+                                                        type: 'POST',
+                                                        url: '{{ route('buffet.search.usuario') }}',
+                                                        data: {                        
+                                                            '_token': '{{ csrf_token() }}',
+                                                            'token': info
+                                                        },
+                                                        success: function(data){
+                                                                if(data!='')
+                                                                {
+                                                                    append = '<table class="w-full text-sm text-left text-gray-500 mt-5"><thead class="text-xs text-gray-700 uppercase bg-gray-50"><tr><th scope="col" class="px-2 py-3">Retira</th></tr></thead><tbody>';
+                                                                    data.forEach(datos);
+                                                                    function datos(persona)
+                                                                    {
+                                                                        append += '<tr class="bg-white border-b"><th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap">'+persona.apellidos+', '+persona.nombres+' ('+persona.dni+')</th>';
+                                                                    }
+                                                                    append += '</tbody></table>';
+                                                                    $('#response').append(append);
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                }
+                                            });
                                         }
                                     });
                                 }

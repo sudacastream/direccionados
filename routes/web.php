@@ -88,6 +88,7 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/buffet', [BuffetController::class, 'index'])->name('buffet');
     Route::post('/buffet', [BuffetController::class, 'search'])->name('buffet.search');
+    Route::post('/buffet/usuario', [BuffetController::class, 'searchUsuario'])->name('buffet.search.usuario');
     Route::patch('/buffet', [BuffetController::class, 'entrega'])->name('buffet.entrega');
 });
 

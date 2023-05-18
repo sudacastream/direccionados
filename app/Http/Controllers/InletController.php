@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class InletController extends Controller
 {
@@ -41,11 +42,11 @@ class InletController extends Controller
     {
         if($request->checked == 'true')
         {
-            DB::table('tickets')->where('id','=',$request->id)->update(['asistencia'=>true]);
+            DB::table('tickets')->where('id','=',$request->id)->update(['asistencia'=>true, 'updated_at'=>Carbon::now()]);
         }
         else
         {
-            DB::table('tickets')->where('id','=',$request->id)->update(['asistencia'=>false]);
+            DB::table('tickets')->where('id','=',$request->id)->update(['asistencia'=>false, 'updated_at'=>Carbon::now()]);
         }
     }
 }
