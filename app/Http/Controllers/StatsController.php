@@ -25,6 +25,7 @@ class StatsController extends Controller
             {
                 $totalCombosEntregados += $entregado->cantidad;
             }
+            $ingresantes = DB::table('tickets')->where('asistencia','=',true)->orderByDesc('updated_at')->get();
 
             return view('admin.stats', [
                 'user' => $request->user(),
@@ -32,6 +33,7 @@ class StatsController extends Controller
                 'presentes' => $presentes,
                 'totalCombos' => $totalCombos,
                 'combosEntregados' => $totalCombosEntregados,
+                'ingresantes' => $ingresantes,
             ]);
         }
         else

@@ -135,6 +135,59 @@
                         </div>
                     </div>
                 </div>
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                Nombre completo y DNI
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Iglesia
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Pastor
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Lugar
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($ingresantes as $item)    
+                        @if($loop->iteration % 2 == 0)
+                        <tr class="border-b bg-gray-50">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                {{ $item->apellidos }}, {{ $item->nombres }} ({{ $item->dni }})
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ $item->congregacion }}
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ $item->pastor }}
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ $item->ciudad }}, {{ $item->provincia }}
+                            </th>
+                        </tr>
+                        @else
+                        <tr class="bg-white border-b">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                {{ $item->apellidos }}, {{ $item->nombres }} ({{ $item->dni }})
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ $item->congregacion }}
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ $item->pastor }}
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ $item->ciudad }}, {{ $item->provincia }}
+                            </th>
+                        </tr>
+                        @endif
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
