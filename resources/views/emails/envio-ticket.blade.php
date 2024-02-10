@@ -44,7 +44,7 @@
                             <tr>
                                 <td class="content-cell" style="max-width: 100vw;padding: 32px;">
                                     <h1 style="position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">
-                                        ¡Bienvenido al Congreso Direccionados 2023!
+                                        ¡Bienvenido al Congreso Direccionados 2024!
                                     </h1>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
                                         Hemos registrado tu pago en los productos con el Token Pass <span style="font-weight:600;">{{ $token }}</span>.
@@ -88,7 +88,7 @@
                         <table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="-premailer-cellpadding: 0;-premailer-cellspacing: 0;-premailer-width: 570px;margin: 0 auto;padding: 25px 0;text-align: center;width: 570px;">
                             <tr>
                                 <td class="content-cell" align="center">
-                                    <p style="color: #b0adc5;font-size: 12px;text-align: center;">© 2023 Direccionados. Todos los derechos reservados.</p>
+                                    <p style="color: #b0adc5;font-size: 12px;text-align: center;">©2024 Direccionados. Todos los derechos reservados.</p>
                                 </td>
                             </tr>
                         </table>

@@ -80,7 +80,7 @@
                         <table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="-premailer-cellpadding: 0;-premailer-cellspacing: 0;-premailer-width: 570px;margin: 0 auto;padding: 25px 0;text-align: center;width: 570px;">
                             <tr>
                                 <td class="content-cell" align="center">
-                                    <p style="color: #b0adc5;font-size: 12px;text-align: center;">© 2023 Direccionados. Todos los derechos reservados.</p>
+                                    <p style="color: #b0adc5;font-size: 12px;text-align: center;">©2024 Direccionados. Todos los derechos reservados.</p>
                                 </td>
                             </tr>
                         </table>
