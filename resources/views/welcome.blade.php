@@ -25,10 +25,10 @@
             <div class="w-full h-24 px-general flex justify-between">
                 <div class="grid content-center"><img src="{{ url('') }}/direccionados-white.png" alt="Congreso Direccionados" height="45" width="89"></div>
                 <ul class="hidden md:flex items-center gap-4 font-climate uppercase text-white tracking-widest">
-                    <li>Vision</li>
+                    <li><a id="lvision" href="#vision">Vision</a></li>
                     <li><a id="loradores" href="#oradores">Oradores</a></li>
                     <li><a id="llugar" href="#lugar"></a>Lugar</li>
-                    <li>Ticket</li>
+                    <li><a id="ltickets" href="#tickets">Tickets</a></li>
                     <li><a id="lfaq" href="#faq">FAQ</a></li>
                     <li class="ml-3 bg-verde px-6 py-4 rounded-full">
                         <a href="{{ route('tienda') }}">Tienda</a>
@@ -42,9 +42,9 @@
             <h1 class="w-full absolute bottom-0 text-center uppercase font-cute text-white text-xl tracking-widest">Congreso de Jovenes Direccionados</h1>
         </header>
         <main class="w-full grid">
-            <section id="vision" class="px-general bg-gray-50 py-24 grid">
-                <h2 class="animate-pulse mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Vision</h2>
-                
+            <section id="vision" class="px-general bg-white py-24 grid gap-6">
+                <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Vision</h2>
+                <p class="mx-auto text-2xl w-full md:w-1/2 px-general text-center">Direccionados es un congreso nacional para j&oacute;venes de visi&oacute;n apost&oacute;lica y prof&eacute;tica que naci&oacute; en el coraz&oacute;n de Dios, para activar j&oacute;venes en sus prop&oacute;sitos y en el camino que Dios traz&oacute; para sus vidas a trav&eacute;s de la Palabra, la comuni&oacute;n con otros j&oacute;venes y el mover de la presencia del Esp&iacute;ritu Santo.</p>
             </section>
             <section id="oradores" class="px-general bg-gray-50 py-24 grid gap-10 grid-cols-3">
                 <h2 class="animate-pulse mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Oradores</h2>
@@ -78,6 +78,45 @@
                     <div class="h-4 bg-gray-200 rounded-full mb-2.5"></div>
                     <div class="h-4 bg-gray-200 rounded-full w-2/3"></div>
                 </article>
+            </section>
+            <section id="tickets" class="px-general bg-white py-24 grid gap-6">
+                <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Tickets</h2>
+                <div class="grid grid-cols-2 place-content-center gap-4">
+                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="{{ route('tienda') }}">
+                            <img class="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="Ticket Preventa" />
+                        </a>
+                        <div class="px-5 pb-5">
+                            <a href="{{ route('tienda') }}">
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Ticket Preventa (Primer tanda)</h5>
+                            </a>
+                            <div class="flex items-center mt-2.5 mb-5">
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">Hasta agotar stock.</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$3000</span>
+                                <a href="{{ route('tienda') }}" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="{{ route('tienda') }}">
+                            <img class="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="Remera y Ticket" />
+                        </a>
+                        <div class="px-5 pb-5">
+                            <a href="{{ route('tienda') }}">
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Combo Direccionado (Ticket y Remera)</h5>
+                            </a>
+                            <div class="flex items-center mt-2.5 mb-5">
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">Hasta agotar stock</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$15000</span>
+                                <a href="{{ route('tienda') }}" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section id="faq" class="px-general bg-white py-24 grid gap-6">
                 <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest">Preguntas frecuentes</h2>
