@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Registro - Congreso Direccionados 2023</title>
+        <title>Congreso Direccionados 2024</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +42,10 @@
             <h1 class="w-full absolute bottom-0 text-center uppercase font-cute text-white text-xl tracking-widest">Congreso de Jovenes Direccionados</h1>
         </header>
         <main class="w-full grid">
+            <section id="vision" class="px-general bg-gray-50 py-24 grid">
+                <h2 class="animate-pulse mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Vision</h2>
+                
+            </section>
             <section id="oradores" class="px-general bg-gray-50 py-24 grid gap-10 grid-cols-3">
                 <h2 class="animate-pulse mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Oradores</h2>
                 <article class="animate-pulse gap-4">
@@ -175,52 +179,16 @@
                                 <div class="py-5 border-b border-gray-200 px-4">
                                     Para ingresar al congreso tendr&aacute;s que tener el ticket en tu celular o impreso. En la puerta, el equipo de admisi&oacute;n escanear&aacute; el c&oacute;digo con el Token Pass para validar tu ticket y brindarte la pulsera de acceso. Record&aacute; tambi&eacute;n tener a mano tu DNI por si te lo piden.
                                 </div>
-                            </div><!--
-                            <h2 id="ingreso-heading-2">
-                                <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-gray-500 border-b border-gray-200 gap-3" data-accordion-target="#ingreso-body-2" aria-expanded="false" aria-controls="ingreso-body-2">
-                                    <span class="flex gap-2"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="inline text-left">¿C&oacute;mo puedo abonar las ingreso?</span></span>
-                                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                                    </svg>
-                                </button>
-                            </h2>
-                            <div id="ingreso-body-2" class="hidden" aria-labelledby="ingreso-heading-2">
-                                <div class="py-5 border-b px-4">
-                                    Podr&aacute;s abonar los tickets y ingreso mediante transferencia a una cuenta de Mercado Pago. Los datos de la cuenta se te enviar&aacute;n por mail con el detalle de la compra y el monto total a abonar.
-                                </div>
                             </div>
-                            <h2 id="ingreso-heading-3">
-                                <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-gray-500 border-b border-gray-200 gap-3" data-accordion-target="#ingreso-body-3" aria-expanded="false" aria-controls="ingreso-body-3">
-                                    <span class="flex gap-2"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="inline text-left">¿Que talles y colores de ingreso hay disponibles?</span></span>
-                                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                                    </svg>
-                                </button>
-                            </h2>
-                            <div id="ingreso-body-3" class="hidden" aria-labelledby="ingreso-heading-3">
-                                <div class="py-5 border-b px-4">
-                                    Tenemos para ofrecer los talles L, XL, 2XL y talle especial; en colores negro (con inscripciones en blanco) y blanco (con inscripciones en negro).
-                                    Ten&eacute; en cuenta que el stock disponible es de 50 unidades.
-                                </div>
-                            </div>
-                            <h2 id="ingreso-heading-4">
-                                <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-gray-500 border-b border-gray-200 gap-3" data-accordion-target="#ingreso-body-4" aria-expanded="false" aria-controls="ingreso-body-4">
-                                    <span class="flex gap-2"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="inline text-left">¿C&oacute;mo, donde y cu&aacute;ndo se entregar&aacute;n las ingreso?</span></span>
-                                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                                    </svg>
-                                </button>
-                            </h2>
-                            <div id="ingreso-body-4" class="hidden" aria-labelledby="ingreso-heading-4">
-                                <div class="py-5 border-b px-4">
-                                    Las ingreso se entregar&aacute;n de manera presencial con el Token Pass en el stand de Merchandising el d&iacute;a del congreso.
-                                </div>
-                            </div>-->
                         </div>
                         <p class="text-gray-800 mt-6">Si ten&eacute;s alguna duda, inquietud o sugerencia, no dudes en escribirnos a <a class="text-verde underline" href="mailto:info@direccionados.ar" target="_blank">info@direccionados.ar</a>.</p>
                     </div>
                 </div>
             </section>
         </main>
+        <footer class="text-sm px-general grid grid-cols-1 text-center md:flex place-content-between py-12 border-t gap-4">
+            <div>&copy;2024 Congreso Direccionados - Todos los derechos reservados.</div>
+            <div>Desarrollado por <a class="font-semibold hover:text-verde hover:underline" href="https://instagram.com/sudacastream" target="_blank">Sudaca Stream</a>.</div>
+        </footer>
     </body>
 </html>

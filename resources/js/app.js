@@ -60,6 +60,18 @@ $(document).ready(function(){
 `);
       addTicket($('#combo'+ i).val());
     });
+    $('#lvision').on('click', (e) => {
+      e.preventDefault();
+      $('html, body').animate({
+        scrollTop: $("#vision").offset().top
+    }, 200);
+    });
+    $('#loradores').on('click', (e) => {
+      e.preventDefault();
+      $('html, body').animate({
+        scrollTop: $("#oradores").offset().top
+    }, 200);
+    });
     $('#lfaq').on('click', (e) => {
       e.preventDefault();
       $('html, body').animate({
