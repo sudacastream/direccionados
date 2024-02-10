@@ -33,7 +33,7 @@ class ConfirmacionPago extends Mailable
     public function build()
     {
         return $this->subject('Confirmación de pago')
-                    ->view('emails.confirmacion-pago');
+                    ->view('emails.envio-ticket');
     }
 
     /**

@@ -8,6 +8,8 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Milon\Barcode\DNS2D;
 
 class AdminController extends Controller
 {
@@ -101,34 +103,90 @@ class AdminController extends Controller
             $user = DB::table('tickets')->where('token', '=', $request->token)->get();
 
         }
-        if(count(DB::table('buffet')->where('token', '=', $request->token)->get()) > 0)
-        {
-            DB::table('buffet')->where('token', '=', $request->token)->update(['pago' => true]);
-            $user = DB::table('buffet')->where('token', '=', $request->token)->get();
-        }
-        if(count(DB::table('merchandising')->where('token', '=', $request->token)->get()) > 0)
-        {
-            DB::table('merchandising')->where('token', '=', $request->token)->update(['pago' => true]);
-            $user = DB::table('merchandising')->where('token', '=', $request->token)->get();
-        }
         
         $u = DB::table('users')->where('id','=',$user[0]->usuario)->get();
 
         $email = $u[0]->email;
+        $token = $request->token;
 
-        $tickets = DB::table('tickets')->where('token', '=', $request->token)->get();
+        $tickets = DB::table('tickets')->where('token','=',$token)->get();
+        if(count($tickets) > 0)
+        {
+            $details = '';
+            $tipo = 'preventa';
 
-        $buffet = DB::table('buffet')->where('token', '=', $request->token)->get();
+            foreach($tickets as $ticket)
+            {
+                /*if($ticket->precio > 4500)
+                {
+                    $tipo = 'general';
+                }
+                else
+                {
+                    $tipo = 'preventa';
+                }*/
+                $usuario = $ticket->usuario;
+            }
+            $details .= 'Presentar en puerta para ingresar';
 
-        $merchandising = DB::table('merchandising')->where('token', '=', $request->token)->get();
+            $d = new DNS2D();
+            $d->setStorPath(__DIR__.'/cache/');
+            $code = $d->getBarcodePNG($token,'PDF417',2,0.5);
+    
+            $data = [
+                'code' => $code,
+                'token' => $token,
+                'details' => $details,
+                'tipo' => $tipo,
+                'url' => env('APP_URL'),
+            ];
+            $customPaper = array(0,0,396.85,198.425);
+            $pdf = Pdf::loadView('pdf.ticket-pdf', $data)->setPaper($customPaper, 'landscape');
+            $details = '';
 
-        Mail::to($email)->send(new ConfirmacionPago($request->token));
+            $mailData = '<ul>';
+            $esCombo = 0;
+            foreach($tickets as $ticket)
+            {
+                if($ticket->combo == 1)
+                {
+                    $mailData .= '<li>Ticket y Remera: '.$ticket->nombres.' '.$ticket->apellidos.' ('.$ticket->dni.')</li>';
+                    $esCombo++;
+                }
+                else
+                {
+                    $mailData .= '<li>Ticket: '.$ticket->nombres.' '.$ticket->apellidos.' ('.$ticket->dni.')</li>';
+                }
+            }
+            if($esCombo > 0)
+            {
+                $productoAdquirido = 'tickets y remeras';
+            }
+            else
+            {
+                $productoAdquirido = 'tickets';
+            }
+
+            $mailData .= '</ul>';
+
+            $usuario = DB::table('users')->where('id','=',$usuario)->get();
+            $data["email"] = $usuario[0]->email;
+            $data["title"] = "Tu ticket para el Congreso Direccionados - ".$token;
+            $data["body"] = $mailData;
+            $data["token"] = $token;
+            $data["productoAdquirido"] = $productoAdquirido;
+
+            Mail::send('emails.envio-ticket', $data, function($message) use($data, $pdf) {
+                $message->to($data["email"])
+                        ->subject("¡Pago recibido! Tu pase para el Congreso Direccionados - Token Pass ".$data["token"])
+                        ->attachData($pdf->output(), $data["token"].".pdf");
+            });
+            $mailData = '';
+        }
 
         return view('admin.tokens',[
             'token' => $request->token,
             'tickets' => $tickets,
-            'buffet' => $buffet,
-            'merchandising' => $merchandising,
             'user' => $request->user(),
         ]);
     }

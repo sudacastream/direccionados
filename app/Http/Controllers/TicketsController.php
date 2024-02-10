@@ -52,4 +52,13 @@ class TicketsController extends Controller
             'user' => $request->user(),
         ]);
     }
+    public function shirts(Request $request)
+    {
+        $shirts = DB::table('tickets')->where('combo', '=', '1')->get();
+
+        return view('admin.shirts', [
+            'shirts' => $shirts,
+            'user' => $request->user(),
+        ]);
+    }
 }

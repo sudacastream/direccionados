@@ -51,6 +51,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/admin/tickets', [TicketsController::class, 'edit'])->name('admin.tickets');
             Route::post('/admin/search/ticket', [TicketsController::class, 'search'])->name('admin.ticket.search');
             Route::put('/admin/search/ticket', [TicketsController::class, 'token'])->name('admin.ticket.token');
+            Route::get('/admin/shirts', [TicketsController::class, 'shirts'])->name('admin.shirts');
 
             Route::get('/admin/settings', [SettingsController::class, 'edit'])->name('admin.settings');
 

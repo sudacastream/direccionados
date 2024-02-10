@@ -22,6 +22,11 @@
                             </a>
                         </li>
                         <li class="mr-2 tab-item">
+                            <a href="{{ route('admin.shirts') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
+                                <i class="fa-solid fa-shirt pt-1 mr-3"></i>Remeras
+                            </a>
+                        </li>
+                        <li class="mr-2 tab-item">
                             <a href="{{ route('admin.stats') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
                                 <i class="fa-solid fa-chart-pie pt-1 mr-3"></i>Censo
                             </a>

@@ -5,6 +5,33 @@
 @tailwind utilities;
 
 
+html
+{
+    scroll-behavior: smooth;
+}
+
+.px-general
+{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+@media (min-width: 768px) 
+{
+    .px-general
+    {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+@media (min-width: 992px) 
+{
+    .px-general
+    {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
 
 #ticket-names .ticket:nth-child(even)
 {

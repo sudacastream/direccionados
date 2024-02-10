@@ -207,7 +207,7 @@ class SendTickets extends Controller
 
             foreach($tickets as $ticket)
             {
-                if($ticket->precio > 1500)
+                if($ticket->precio > 4500)
                 {
                     $tipo = 'general';
                 }
@@ -225,10 +225,6 @@ class SendTickets extends Controller
             {
                 $details .= 'Tickets: '.count($tickets).' tickets';
             }
-            if(count($tickets) > 0 && count($buffet) > 0)
-            {
-                $details .= ' | ';
-            }
             foreach($buffet as $combo)
             {
                 $details .= 'Buffet: '.$combo->cantidad;
@@ -242,13 +238,9 @@ class SendTickets extends Controller
                 }
                 $usuario = $combo->usuario;
             }
-            if(count($tickets) > 0 || count($buffet) > 0 && count($merchandising) > 0)
-            {
-                $details .= ' | ';
-            }
             if(count($merchandising) > 0)
             {
-                $details .= 'Merchandising:';
+                $details .= ' | Merchandising:';
             }
             $i = 1;
             foreach($merchandising as $merch)
@@ -306,7 +298,7 @@ class SendTickets extends Controller
 
             Mail::send('emails.envio-ticket', $data, function($message) use($data, $pdf) {
                 $message->to($data["email"])
-                        ->subject("Tu pase para el Congreso Direccionados - ".$data["token"])
+                        ->subject("¡Pago recibido! Tu pase para el Congreso Direccionados - ".$data["token"])
                         ->attachData($pdf->output(), $data["token"].".pdf");
             });
             $mailData = '';
@@ -320,69 +312,25 @@ class SendTickets extends Controller
     public function getTicket($token)
     {
         $tickets = DB::table('tickets')->where('token','=',$token)->get();
-        $buffet = DB::table('buffet')->where('token','=',$token)->get();
-        $merchandising = DB::table('merchandising')->where('token','=',$token)->get();
-        if(count($tickets) > 0 || count($buffet) > 0 || count($merchandising) > 0)
+        if(count($tickets) > 0)
         {
             $details = '';
-            $tipo = 'general';
+            $tipo = 'preventa';
 
             foreach($tickets as $ticket)
             {
-                if($ticket->precio > 1500)
+                /*if($ticket->updated_at > fecha_cierre)
                 {
                     $tipo = 'general';
                 }
                 else
                 {
                     $tipo = 'preventa';
-                }
+                }*/
                 $usuario = $ticket->usuario;
             }
-            if(count($tickets) == 1)
-            {
-                $details .= 'Ticket: 1 ticket';
-            }
-            elseif(count($tickets) > 1)
-            {
-                $details .= 'Tickets: '.count($tickets).' tickets';
-            }
-            if(count($tickets) > 0 && count($buffet) > 0)
-            {
-                $details .= ' | ';
-            }
-            foreach($buffet as $combo)
-            {
-                $details .= 'Buffet: '.$combo->cantidad;
-                if($combo->cantidad > 1)
-                {
-                    $details .= ' combos';
-                }
-                else
-                {
-                    $details .= ' combo';
-                }
-                $usuario = $combo->usuario;
-            }
-            if(count($tickets) > 0 || count($buffet) > 0 && count($merchandising) > 0)
-            {
-                $details .= ' | ';
-            }
-            if(count($merchandising) > 0)
-            {
-                $details .= 'Merchandising:';
-            }
-            $i = 1;
-            foreach($merchandising as $merch)
-            {
-                $details .= ' '.$merch->cantidad.' '.$merch->producto;
-                if(count($merchandising) > 1 && $i == 1)
-                {
-                    $details .= ' y';
-                }
-                $i++;
-                $usuario = $merch->usuario;
-            }
+            $details .= 'Presentar en puerta para ingresar';
+            
             $d = new DNS2D();
             $d->setStorPath(__DIR__.'/cache/');
             $code = $d->getBarcodePNG($token,'PDF417',2,0.5);
@@ -391,7 +339,8 @@ class SendTickets extends Controller
                 'code' => $code,
                 'token' => $token,
                 'details' => $details,
-                'tipo' => $tipo
+                'tipo' => $tipo,
+                'url' => env('APP_URL'),
             ];
             $customPaper = array(0,0,396.85,198.425);
             $pdf = Pdf::loadView('pdf.ticket-pdf', $data)->setPaper($customPaper, 'landscape');

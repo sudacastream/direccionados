@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('pastor');
             $table->string('funcion');
             $table->boolean('asistencia');
+            $table->boolean('combo');
             $table->string('precio');
             $table->boolean('pago');
             $table->timestamps();

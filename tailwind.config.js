@@ -13,8 +13,17 @@ module.exports = {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                verde : '#1d594f',
+            },
+            boxShadow: {
+                innerxl : 'inset 0 80px 80px 0 rgb(0 0 0 / 0.5);',
+            },
+            spacing: {
+                'header' : 'calc(100vh - 6rem)',
+            }
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [require('@tailwindcss/forms'), require('flowbite/plugin')],
 };

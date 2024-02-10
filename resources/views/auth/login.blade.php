@@ -3,6 +3,17 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <h2 class="font-semibold text-2xl text-gray-800">Acceder</h2>
+    <div class="text-gray-600">
+        ¿No tienes cuenta a&uacute;n? <a class="underline hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">Creala desde aqu&iacute;</a>.
+    </div>
+    
+    <div class="my-6 w-full">
+        <div class="w-full border-t top-50">
+            <span class="absolute left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white px-2 text-sm">o</span>
+        </div>
+    </div>
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
 

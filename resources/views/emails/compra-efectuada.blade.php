@@ -47,7 +47,7 @@
                                         ¡Hola!
                                     </h1>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
-                                        Hemos recibido tu pedido correctamente. Para continuar con la compra realizá el pago y contestá este correo adjuntando el comprobante de transferencia sin borrar este mensaje en la respuesta.
+                                        Hemos recibido tu pedido correctamente. Para continuar con la compra realizá el pago y respondé este correo adjuntando el comprobante de transferencia sin borrar este mensaje en la respuesta.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
                                         El Token Pass, detalle de la compra, el monto total y datos de la cuenta a transferir se te brindan a continuación:

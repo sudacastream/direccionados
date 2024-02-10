@@ -22,6 +22,11 @@
                             </a>
                         </li>
                         <li class="mr-2 tab-item">
+                            <a href="{{ route('admin.shirts') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
+                                <i class="fa-solid fa-shirt pt-1 mr-3"></i>Remeras
+                            </a>
+                        </li>
+                        <li class="mr-2 tab-item">
                             <a href="{{ route('admin.stats') }}" class="cursor-pointer border-transparent hover:text-gray-600 hover:border-gray-300 inline-flex p-4 border-b-2 rounded-t-lg group">
                                 <i class="fa-solid fa-chart-pie pt-1 mr-3"></i>Censo
                             </a>
@@ -96,141 +101,53 @@
                             @endif
                         @endif
                     </div>
-                    @if(count($tickets) > 0 || count($buffet) > 0 || count($merchandising) > 0)
                     @if(count($tickets) > 0)
-                    <h3 class="text-xl font-semibold mt-4 mb-3">Tickets</h3>
-                    <div class="bg-white shadow-md rounded">
-                        <table class="min-w-max w-full table-auto">
-                            <thead>
-                                <tr class="bg-gray-200 text-gray-600 text-sm leading-normal">
-                                    <th class="py-3 px-6 text-left">Token Pass</th>
-                                    <th class="py-3 px-6 text-left">Ticket</th>
-                                    <th class="py-3 px-6 text-center">Estado</th>
-                                </tr>
-                            </thead>
-                            <tbody id="listado" class="text-gray-600 text-sm font-light">
-                                @for( $i = 0 ; $i <= count($tickets)-1 ; $i++)
-                                <tr>
-                                    <td class="py-3 px-6 text-left whitespace-nowrap">
-                                        <div class="flex items-center">
-                                            <span class="font-medium">{{ $tickets[$i]->token }}</span>
-                                        </div>
-                                    </td>
-                                    <td class="py-3 px-6 text-left">
-                                        <div class="flex items-center">
-                                            
-                                            <form action="{{ route('admin.token.ticket') }}" method="POST">
-                                                @csrf
-                                                @method('PUT')
-                                                    <input type="hidden" name="ticket" value="{{ $tickets[$i]->dni }}" />
-                                                    <a onclick="event.preventDefault();this.closest('form').submit();"><span class="cursor-pointer font-medium hover:underline">{{ $tickets[$i]->dni }} - {{ $tickets[$i]->apellidos}}, {{ $tickets[$i]->nombres }}</span></a>
-                                                </form>
-                                        </div>
-                                    </td>
-                                    <td class="py-3 px-6 text-center">
-                                            @if($tickets[$i]->pago)
-                                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
-                                                <span class="hidden md:inline-block">Pago registrado</span>
-                                            @else
-                                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
-                                                <span class="hidden md:inline-block">Pago pendiente</span>
-                                                ({{ \Carbon\Carbon::parse($tickets[$i]->created_at)->diffForHumans(); }})
-                                            @endif
-                                        </span>
-                                    </td>
-                                </tr>
-                                @endfor
-                            </tbody>
-                        </table>
-                    </div>
-                    @endif
-                    @if(count($buffet) > 0)
-                    <h3 class="text-xl font-semibold mt-4 mb-3">Buffet</h3>
-                    <div class="bg-white shadow-md rounded">
-                        <table class="min-w-max w-full table-auto">
-                            <thead>
-                                <tr class="bg-gray-200 text-gray-600 text-sm leading-normal">
-                                    <th class="py-3 px-6 text-left">Token Pass</th>
-                                    <th class="py-3 px-6 text-left">Producto</th>
-                                    <th class="py-3 px-6 text-center">Estado</th>
-                                </tr>
-                            </thead>
-                            <tbody id="listado" class="text-gray-600 text-sm font-light">
-                                @for( $i = 0 ; $i <= count($buffet)-1 ; $i++)
-                                <tr>
-                                    <td class="py-3 px-6 text-left whitespace-nowrap">
-                                        <div class="flex items-center">
-                                            <span class="font-medium">{{ $buffet[$i]->token }}</span>
-                                        </div>
-                                    </td>
-                                    <td class="py-3 px-6 text-left">
-                                        <div class="flex items-center">
-                                            {{ $buffet[$i]->cantidad }}
-                                            @if($buffet[$i]->cantidad > 1)
-                                            combos. 
-                                            @else
-                                            combo.
-                                            @endif
-                                        </div>
-                                    </td>
-                                    <td class="py-3 px-6 text-center">
-                                            @if($buffet[$i]->pago)
-                                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
-                                                <span class="hidden md:inline-block">Pago registrado</span>
-                                            @else
-                                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
-                                                <span class="hidden md:inline-block">Pago pendiente</span>
-                                                ({{ \Carbon\Carbon::parse($buffet[$i]->created_at)->diffForHumans(); }})
-                                            @endif
-                                        </span>
-                                    </td>
-                                </tr>
-                                @endfor
-                            </tbody>
-                        </table>
-                    </div>
-                    @endif
-                    @if(count($merchandising) > 0)
-                    <h3 class="text-xl font-semibold mt-4 mb-3">Merchandising</h3>
-                    <div class="bg-white shadow-md rounded">
-                        <table class="min-w-max w-full table-auto">
-                            <thead>
-                                <tr class="bg-gray-200 text-gray-600 text-sm leading-normal">
-                                    <th class="py-3 px-6 text-left">Token Pass</th>
-                                    <th class="py-3 px-6 text-left">Producto</th>
-                                    <th class="py-3 px-6 text-center">Estado</th>
-                                </tr>
-                            </thead>
-                            <tbody id="listado" class="text-gray-600 text-sm font-light">
-                                @for( $i = 0 ; $i <= count($merchandising)-1 ; $i++)
-                                <tr>
-                                    <td class="py-3 px-6 text-left whitespace-nowrap">
-                                        <div class="flex items-center">
-                                            <span class="font-medium">{{ $merchandising[$i]->token }}</span>
-                                        </div>
-                                    </td>
-                                    <td class="py-3 px-6 text-left">
-                                        <div class="flex items-center">
-                                            {{ $merchandising[$i]->cantidad }} {{ $merchandising[$i]->producto }}.
-                                        </div>
-                                    </td>
-                                    <td class="py-3 px-6 text-center">
-                                            @if($merchandising[$i]->pago)
-                                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
-                                                <span class="hidden md:inline-block">Pago registrado</span>
-                                            @else
-                                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
-                                                <span class="hidden md:inline-block">Pago pendiente</span>
-                                                ({{ \Carbon\Carbon::parse($merchandising[$i]->created_at)->diffForHumans(); }})
-                                            @endif
-                                        </span>
-                                    </td>
-                                </tr>
-                                @endfor
-                            </tbody>
-                        </table>
-                    </div>
-                    @endif
+                        @if(count($tickets) > 0)
+                        <h3 class="text-xl font-semibold mt-4 mb-3">Tickets</h3>
+                        <div class="bg-white shadow-md rounded">
+                            <table class="min-w-max w-full table-auto">
+                                <thead>
+                                    <tr class="bg-gray-200 text-gray-600 text-sm leading-normal">
+                                        <th class="py-3 px-6 text-left">Token Pass</th>
+                                        <th class="py-3 px-6 text-left">Ticket</th>
+                                        <th class="py-3 px-6 text-center">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listado" class="text-gray-600 text-sm font-light">
+                                    @for( $i = 0 ; $i <= count($tickets)-1 ; $i++)
+                                    <tr>
+                                        <td class="py-3 px-6 text-left whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <span class="font-medium">{{ $tickets[$i]->token }}</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 px-6 text-left">
+                                            <div class="flex items-center">
+                                                <form action="{{ route('admin.token.ticket') }}" method="POST">
+                                                    @csrf
+                                                    @method('PUT')
+                                                        <input type="hidden" name="ticket" value="{{ $tickets[$i]->dni }}" />
+                                                        <a onclick="event.preventDefault();this.closest('form').submit();"><span class="cursor-pointer font-medium hover:underline">{{ $tickets[$i]->dni }} - {{ $tickets[$i]->apellidos}}, {{ $tickets[$i]->nombres }}</span></a>
+                                                    </form>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 px-6 text-center">
+                                                @if($tickets[$i]->pago)
+                                                <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
+                                                    <span class="hidden md:inline-block">Pago registrado</span>
+                                                @else
+                                                <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                                    <span class="hidden md:inline-block">Pago pendiente</span>
+                                                    ({{ \Carbon\Carbon::parse($tickets[$i]->created_at)->diffForHumans(); }})
+                                                @endif
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    @endfor
+                                </tbody>
+                            </table>
+                        </div>
+                        @endif
                     @else
                     <p class="mt-6 text-red-600">No hay coincidencias con el Token Pass <span class="font-semibold">{{ $token }}</span>.</p>
                     @endif

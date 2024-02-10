@@ -47,10 +47,11 @@
                                         ¡Bienvenido al Congreso Direccionados 2023!
                                     </h1>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
+                                        Hemos registrado tu pago en los productos con el Token Pass <span style="font-weight:600;">{{ $token }}</span>.
                                         Te enviamos a trav&eacute;s de este mensaje un archivo adjunto con el pase del congreso.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; text-align: left;">
-                                        Con &eacute;l podr&aacute;s acceder a los tickets, combos y merchandising que adquiriste con el Token Pass <span style="font-weight: bold;">{{ $token }}</span>:
+                                        Con &eacute;l podr&aacute;s acceder a los {{ $productoAdquirido }} que adquiriste con el Token Pass <span style="font-weight: bold;">{{ $token }}</span>:
                                     </p>
                                     <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-left:solid 1px #e8e5ef;padding:0 1em;">
                                         <tr>
