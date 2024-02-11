@@ -15,7 +15,7 @@
               </svg>
               <span class="sr-only">Info</span>
               <div>
-                <span class="font-medium">¡Pesa&ntilde;aste!</span> Se agotaron los tickets de la primera tanda de preventa. El 16/2 se habilitar&aacute; la segunda tanda de preventa, no te duermas.
+                <span class="font-medium">¡Pesta&ntilde;aste!</span> Se agotaron los tickets de la primera tanda de preventa. El 16/2 se habilitar&aacute; la segunda tanda de preventa, no te duermas.
               </div>
             </div>
           </div>
