@@ -16,7 +16,7 @@
     }
     .brand
     {
-        background: url('{{ $url }}/bg-ticket.jpg') center center;
+        background: url('https://direccionados.ar/bg-ticket.jpg') center center;
         background-size: 140%;
         border-radius: 0 0 1.65em 1.65em;
         height: 75%;
