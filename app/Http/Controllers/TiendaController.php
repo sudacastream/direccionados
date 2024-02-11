@@ -78,7 +78,7 @@ class TiendaController extends Controller
                 }
                 else
                 {
-                    $ticket->precio = $request['precioCombo'];
+                    $ticket->precio = $request['precio'];
                 }
                 $ticket->pago = $request['pago'];
                 $ticket->save();

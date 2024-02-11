@@ -102,76 +102,52 @@ class SendTickets extends Controller
 
             $usuario = DB::table('users')->where('id','=',$usuario)->get();
             $data["email"] = $usuario[0]->email;
-            $data["title"] = "Reenvío - Tu ticket para el Congreso Direccionados - ".$token;
+            $data["title"] = "Reenvío - Tu pase para el Congreso Direccionados - ".$token;
             $data["body"] = $mailData;
             $data["token"] = $token;
 
             Mail::send('emails.envio-ticket', $data, function($message) use($data, $pdf) {
                 $message->to($data["email"])
-                        ->subject("Reenvío - Tu ticket para el Congreso Direccionados - ".$data["token"])
+                        ->subject("Reenvío - Tu pase para el Congreso Direccionados - ".$data["token"])
                         ->attachData($pdf->output(), $data["token"].".pdf");
             });
             $mailData = '';
         }
     }
-    public function sendTicket($token)
+    public function sendTicket(Request $request)
     {
+        if(count(DB::table('tickets')->where('token', '=', $request->token)->get()) > 0)
+        {
+            DB::table('tickets')->where('token', '=', $request->token)->update(['pago' => true]);
+            $user = DB::table('tickets')->where('token', '=', $request->token)->get();
+
+        }
+        
+        $u = DB::table('users')->where('id','=',$user[0]->usuario)->get();
+
+        $email = $u[0]->email;
+        $token = $request->token;
+
         $tickets = DB::table('tickets')->where('token','=',$token)->get();
-        $buffet = DB::table('buffet')->where('token','=',$token)->get();
-        $merchandising = DB::table('merchandising')->where('token','=',$token)->get();
-        if(count($tickets) > 0 || count($buffet) > 0 || count($merchandising) > 0)
+        if(count($tickets) > 0)
         {
             $details = '';
-            $tipo = 'general';
+            $tipo = 'preventa';
 
             foreach($tickets as $ticket)
             {
-                if($ticket->precio > 4500)
+                /*if($ticket->precio > 4500)
                 {
                     $tipo = 'general';
                 }
                 else
                 {
                     $tipo = 'preventa';
-                }
+                }*/
                 $usuario = $ticket->usuario;
             }
-            if(count($tickets) == 1)
-            {
-                $details .= 'Ticket: 1 ticket';
-            }
-            elseif(count($tickets) > 1)
-            {
-                $details .= 'Tickets: '.count($tickets).' tickets';
-            }
-            foreach($buffet as $combo)
-            {
-                $details .= 'Buffet: '.$combo->cantidad;
-                if($combo->cantidad > 1)
-                {
-                    $details .= ' combos';
-                }
-                else
-                {
-                    $details .= ' combo';
-                }
-                $usuario = $combo->usuario;
-            }
-            if(count($merchandising) > 0)
-            {
-                $details .= ' | Merchandising:';
-            }
-            $i = 1;
-            foreach($merchandising as $merch)
-            {
-                $details .= ' '.$merch->cantidad.' '.$merch->producto;
-                if(count($merchandising) > 1 && $i == 1)
-                {
-                    $details .= ' y';
-                }
-                $i++;
-                $usuario = $merch->usuario;
-            }
+            $details .= 'Presentar en puerta para ingresar';
+
             $d = new DNS2D();
             $d->setStorPath(__DIR__.'/cache/');
             $code = $d->getBarcodePNG($token,'PDF417',2,0.5);
@@ -180,33 +156,36 @@ class SendTickets extends Controller
                 'code' => $code,
                 'token' => $token,
                 'details' => $details,
-                'tipo' => $tipo
+                'tipo' => $tipo,
+                'url' => env('APP_URL'),
             ];
             $customPaper = array(0,0,396.85,198.425);
             $pdf = Pdf::loadView('pdf.ticket-pdf', $data)->setPaper($customPaper, 'landscape');
             $details = '';
 
             $mailData = '<ul>';
+            $esCombo = 0;
             foreach($tickets as $ticket)
             {
-                $mailData .= '<li>Ticket: '.$ticket->nombres.' '.$ticket->apellidos.' ('.$ticket->dni.')</li>';
-            }
-            foreach($buffet as $combo)
-            {
-                $mailData .= '<li>Buffet: '.$combo->cantidad;
-                if($combo->cantidad > 1)
+                if($ticket->combo == 1)
                 {
-                    $mailData .= ' combos</li>';
+                    $mailData .= '<li>Ticket y Remera: '.$ticket->nombres.' '.$ticket->apellidos.' ('.$ticket->dni.')</li>';
+                    $esCombo++;
                 }
                 else
                 {
-                    $mailData .= ' combo</li>';
+                    $mailData .= '<li>Ticket: '.$ticket->nombres.' '.$ticket->apellidos.' ('.$ticket->dni.')</li>';
                 }
             }
-            foreach($merchandising as $merch)
+            if($esCombo > 0)
             {
-                $mailData .= '<li>Merchandising: '.$merch->cantidad.' '.$merch->producto.'</li>';
+                $productoAdquirido = 'tickets y remeras';
             }
+            else
+            {
+                $productoAdquirido = 'tickets';
+            }
+
             $mailData .= '</ul>';
 
             $usuario = DB::table('users')->where('id','=',$usuario)->get();
@@ -214,14 +193,15 @@ class SendTickets extends Controller
             $data["title"] = "Tu ticket para el Congreso Direccionados - ".$token;
             $data["body"] = $mailData;
             $data["token"] = $token;
+            $data["productoAdquirido"] = $productoAdquirido;
 
-            Mail::send('emails.envio-ticket', $data, function($message) use($data, $pdf) {
+            Mail::send('emails.correccion-envio-ticket', $data, function($message) use($data, $pdf) {
                 $message->to($data["email"])
-                        ->subject("¡Pago recibido! Tu pase para el Congreso Direccionados - ".$data["token"])
+                        ->subject("¡Corrección! Tu pase para el Congreso Direccionados - Token Pass ".$data["token"])
                         ->attachData($pdf->output(), $data["token"].".pdf");
             });
             $mailData = '';
-            return 'Enviado!';
+            return '¡Enviado!';
         }
         else
         {

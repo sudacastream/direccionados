@@ -72,6 +72,12 @@ $(document).ready(function(){
         scrollTop: $("#oradores").offset().top
     }, 200);
     });
+    $('#ltickets').on('click', (e) => {
+      e.preventDefault();
+      $('html, body').animate({
+        scrollTop: $("#tickets").offset().top
+    }, 200);
+    });
     $('#lfaq').on('click', (e) => {
       e.preventDefault();
       $('html, body').animate({
