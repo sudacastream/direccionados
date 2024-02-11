@@ -129,16 +129,16 @@
 <body>
     <div class="brand">
         <div class="logotipo">
-            <img src="{{ $url }}/brand-ticket.png">
+            <img src="https://direccionados.ar/brand-ticket.png">
         </div>
         <div class="tipo">
-            <img src="{{ $url }}/{{ $tipo }}.png">
+            <img src="https://direccionados.ar/{{ $tipo }}.png">
         </div>
         <div class="lugar">
-            <img src="{{ $url }}/lugar.png">
+            <img src="https://direccionados.ar/lugar.png">
         </div>
         <div class="sitio">
-            <img src="{{ $url }}/sitio.png">
+            <img src="https://direccionados.ar/sitio.png">
         </div>
     </div>
     <div class="info">
@@ -147,7 +147,7 @@
         <div class="barcode"><img src="data:image/png;base64,{{ $code }}" alt="barcode"   /><span>{{ $token }}</span></div>
     </div>
     <div class="logo">
-        <img src="{{ $url }}/logo-ticket.png" alt="">
+        <img src="https://direccionados.ar/logo-ticket.png" alt="">
     </div>
     <div class="pinb"></div>
 </body>
