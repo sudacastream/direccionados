@@ -36,7 +36,7 @@
                             Lugar
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Asistencia
+                            Pago
                         </th>
                     </tr>
                 </thead>
@@ -101,7 +101,7 @@
                                 {{ $pago->ciudad }}, {{ $pago->provincia }}
                             </td>
                             <td class="px-6 py-4">
-                                @if($pago->asistencia)
+                                @if($pago->pago)
                                 <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium p-2.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                     <span class="w-2 h-2 bg-green-500 rounded-full"></span>
                                 </span>

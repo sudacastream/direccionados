@@ -206,7 +206,7 @@ class AdminController extends Controller
     {
         if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
         {
-            $ticketsPagos = DB::table('tickets')->orderBy('apellidos')->orderBy('asistencia')->get();
+            $ticketsPagos = DB::table('tickets')->orderBy('apellidos')->orderBy('pago')->get();
             return view('admin.list',[
                 'user' => $request->user(),
                 'pagos' => $ticketsPagos,
