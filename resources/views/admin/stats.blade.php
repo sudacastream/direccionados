@@ -43,23 +43,12 @@
                     <div class="overflow-hidden">
                         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-5 mb-5">
                             <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
-                                <span class="text-lg text-gray-900">Asistencia</span>
+                                <span class="text-lg text-gray-900">Tickets Pagos</span>
                                 <div class="flex items-center justify-between">
-                                    <div class="text-3xl font-bold text-gray-900 cursor-pointer" title="Porcentaje de personas que ingresaron">{{ number_format(count($presentes)*100/count($totales), 0, ',','') }}%</div>
+                                    <div class="text-3xl font-bold text-gray-900 cursor-pointer" title="Porcentaje de personas que pagaron">{{ number_format(count($pagos)*100/count($totales), 0, ',','') }}%</div>
                                     <div class="text-lg font-bold flex items-center justify-between">
-                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Presentes">{{ count($presentes) }}</span>
-                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Pendientes">{{ count($totales)-count($presentes) }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
-                                <span class="text-lg text-gray-900">Buffet</span>
-                                <div class="flex items-center justify-between">
-                                    <div class="text-3xl font-bold text-gray-900 cursor-pointer" title="Total de combos vendidos">{{ $totalCombos }}</div>
-                                    <div class="text-lg font-bold flex items-center justify-between">
-                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Combos entregados">{{ $combosEntregados }}</span>
-                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Combos pendientes">{{ $totalCombos-$combosEntregados }}</span>
+                                        <span class="bg-green-100 text-green-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Pagos">{{ count($pagos) }}</span>
+                                        <span class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded-full cursor-pointer" title="Impagos">{{ count($totales)-count($pagos) }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -71,18 +60,18 @@
                         <div class="ml-0 mt-6 grid grid-cols-2">
                             <div>
                                 <div class="px-5 py-3">
-                                    Asistencia
+                                    Tickets Pagos
                                 </div>
                                 <canvas class="p-10" id="chartPie1"></canvas>
                             </div>
                             <!-- Chart pie -->
                             <script>
                                 const dataPie1 = {
-                                labels: ["Pendientes", "Presentes"],
+                                labels: ["Impagos", "Pagos"],
                                 datasets: [
                                     {
                                     label: "Cantidad",
-                                    data: [{{ count($totales)-count($presentes) }},{{ count($presentes) }}],
+                                    data: [{{ count($totales)-count($pagos) }},{{ count($pagos) }}],
                                     backgroundColor: [
                                         "rgb(239, 68, 68)",
                                         "rgb(34, 197, 94)",
@@ -101,40 +90,6 @@
                                 var chartBar1 = new Chart(
                                 document.getElementById("chartPie1"),
                                 configPie1
-                                );
-                            </script>
-                            <div>
-                                <div class="px-5 py-3">
-                                    Buffet
-                                </div>
-                                <canvas class="p-10" id="chartPie2"></canvas>
-                            </div>
-                            <!-- Chart pie -->
-                            <script>
-                                const dataPie2 = {
-                                labels: ["Pendientes", "Entregados"],
-                                datasets: [
-                                    {
-                                    label: "Cantidad",
-                                    data: [{{ $totalCombos-$combosEntregados }},{{ $combosEntregados }}],
-                                    backgroundColor: [
-                                        "rgb(239, 68, 68)",
-                                        "rgb(34, 197, 94)",
-                                    ],
-                                    hoverOffset: 4,
-                                    },
-                                ],
-                                };
-                            
-                                const configPie2 = {
-                                type: "pie",
-                                data: dataPie2,
-                                options: {},
-                                };
-                            
-                                var chartBar2 = new Chart(
-                                document.getElementById("chartPie2"),
-                                configPie2
                                 );
                             </script>
                         </div>
