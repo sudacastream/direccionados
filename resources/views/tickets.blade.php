@@ -141,7 +141,7 @@
           <div class="ms-3 text-sm font-normal">
               <div class="text-sm font-semibold text-gray-900">Tickets de Preventa (primer tanda)</div>
               <div class="text-sm font-normal">se encuentran agotados</div> 
-              <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-02-10 20:26')->diffForHumans() }}</span>   
+              <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-02-10 20:26 GMT-0300')->diffForHumans() }}</span>   
           </div>
       </div>
   </div>
