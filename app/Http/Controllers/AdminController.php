@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Milon\Barcode\DNS2D;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -99,7 +100,7 @@ class AdminController extends Controller
     {
         if(count(DB::table('tickets')->where('token', '=', $request->token)->get()) > 0)
         {
-            DB::table('tickets')->where('token', '=', $request->token)->update(['pago' => true]);
+            DB::table('tickets')->where('token', '=', $request->token)->update(['pago' => true, 'updated_at'=>Carbon::now()]);
             $user = DB::table('tickets')->where('token', '=', $request->token)->get();
 
         }
