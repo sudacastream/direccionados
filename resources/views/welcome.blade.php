@@ -58,7 +58,7 @@
         </nav>
         <div class="w-full h-screen bg-black hidden z-40 backdrop-blur-sm bg-gray-700/30" id="backdrop"></div>
         <header class="w-full h-screen shadow-innerxl" style="background: url({{ url('') }}/bg.jpg) no-repeat center top; background-size:cover;">
-            <div class="w-full h-24 px-general flex justify-between">
+            <div id="sticky" class="w-full h-24 px-general flex justify-between z-30">
                 <div class="grid content-center"><img src="{{ url('') }}/direccionados-white.png" alt="Congreso Direccionados" height="45" width="89"></div>
                 <ul class="hidden md:flex items-center gap-4 font-climate uppercase text-white tracking-widest text-sm">
                     <li><a id="lvision" href="#vision">Vision</a></li>
@@ -66,7 +66,7 @@
                     <li><a id="llugar" href="#lugar"></a>Lugar</li>
                     <li><a id="ltickets" href="#tickets">Tickets</a></li>
                     <li><a id="lfaq" href="#faq">FAQ</a></li>
-                    <li class="ml-3 bg-verde px-6 py-4 rounded-full">
+                    <li id="btn-tienda" class="ml-3 bg-verde px-6 py-4 rounded-full">
                         <a href="{{ route('tienda') }}">Tienda</a>
                     </li>
                 </ul>
@@ -86,11 +86,11 @@
             <h1 class="w-full absolute bottom-0 text-center uppercase font-cute text-white text-xl tracking-widest">Congreso de Jovenes Direccionados</h1>
         </header>
         <main class="w-full grid">
-            <section id="vision" class="px-general bg-white py-24 grid gap-y-6">
+            <section id="vision" class="px-general bg-white py-40 grid gap-y-6">
                 <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Vision</h2>
                 <p class="mx-auto text-2xl w-full md:w-1/2 px-general text-center">Direccionados es un congreso nacional para j&oacute;venes de visi&oacute;n apost&oacute;lica y prof&eacute;tica que naci&oacute; en el coraz&oacute;n de Dios, para activar j&oacute;venes en sus prop&oacute;sitos y en el camino que Dios traz&oacute; para sus vidas a trav&eacute;s de la Palabra, la comuni&oacute;n con otros j&oacute;venes y el mover de la presencia del Esp&iacute;ritu Santo.</p>
             </section>
-            <section id="oradores" class="px-general bg-gray-50 py-24 grid gap-10 grid-cols-3">
+            <section id="oradores" class="px-general bg-gray-50 py-40 grid gap-10 grid-cols-3">
                 <h2 class="animate-pulse mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Oradores</h2>
                 <article class="animate-pulse gap-4">
                     <svg class="w-1/2 mb-3 text-gray-200 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -123,7 +123,7 @@
                     <div class="h-4 bg-gray-200 rounded-full w-2/3"></div>
                 </article>
             </section>
-            <section id="tickets" class="px-general bg-white py-24 grid grid-cols-1 gap-y-6">
+            <section id="tickets" class="px-general bg-white py-40 grid grid-cols-1 gap-y-6">
                 <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Tickets</h2>
                 <div class="grid md:flex place-content-center gap-4">
                     <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
@@ -235,7 +235,7 @@
                     </div>
                 </div>
             </section>
-            <section id="faq" class="px-general bg-white py-24 grid gap-6">
+            <section id="faq" class="px-general bg-white py-40 grid gap-6">
                 <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest">Preguntas frecuentes</h2>
                 <div class="w-full grid gap-6">
                     <div class="w-full md:w-2/3 mx-auto md:text-lg grid gap-2">

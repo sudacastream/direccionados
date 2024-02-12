@@ -14,6 +14,7 @@ window.$ = jQuery;
 $(document).ready(function(){
   window.localStorage.setItem('data-theme', 'dark');
   document.documentElement.setAttribute('data-theme', 'dark');
+  stickyMenu();
     var i=1;
     $('#add-ticket').on('click', function(){
         i++;
@@ -97,3 +98,18 @@ $('#menu-btn, #close-menu-btn, #backdrop').on('click',()=>{
   $('#menu').toggleClass('active');
   $('#backdrop').toggleClass('fixed').toggleClass('hidden').toggleClass('active');
 });
+$(window).on('scroll', () => {
+  stickyMenu();
+});
+function stickyMenu() {
+  if(window.scrollY > innerHeight - 1)
+  {
+    $('#sticky').addClass('fixed').addClass('bg-verde').addClass('shadow');
+    $('#btn-tienda').removeClass('bg-verde').addClass('border');
+  }
+  else
+  {
+    $('#sticky').removeClass('fixed').removeClass('bg-verde').removeClass('shadow');
+    $('#btn-tienda').removeClass('border').addClass('bg-verde');
+  }
+}
