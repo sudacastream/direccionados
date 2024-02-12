@@ -3,8 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Congreso Direccionados 2024</title>
+        <meta name="title" content="Congreso Direccionados 2024" />
+        <meta name="description" content="Congreso de Jóvenes Direccionados: 18 de mayo de 2024 en el Club Parque Sur de Concepci&oacute;n del Uruguay." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://direccionados.ar/" />
+        <meta property="og:title" content="Congreso Direccionados 2024" />
+        <meta property="og:description" content="Congreso de Jóvenes Direccionados: 18 de mayo de 2024 en el Club Parque Sur de Concepci&oacute;n del Uruguay." />
+        <meta property="og:image" content="https://direccionados.ar/congreso-direccionados.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://direccionados.ar/" />
+        <meta property="twitter:title" content="Congreso Direccionados" />
+        <meta property="twitter:description" content="Congreso de Jóvenes Direccionados: 18 de mayo de 2024 en el Club Parque Sur de Concepci&oacute;n del Uruguay." />
+        <meta property="twitter:image" content="https://direccionados.ar/congreso-direccionados.png" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +47,7 @@
                 </ul>
             </div>
             <div class="w-full h-header grid place-items-center content-center gap-4">
+                <span class="uppercase font-cute text-white text-2xl md:text-4xl">Congreso de Jovenes</span>
                 <img class="w-10/12 md:w-1/2" src="{{ url('') }}/logotipo-direccionados.png" alt="Congreso Direccionados">
                 <span class="uppercase font-cute text-white text-2xl md:text-4xl">18 de Mayo de 2024 - Club Parque Sur</span>
             </div>
