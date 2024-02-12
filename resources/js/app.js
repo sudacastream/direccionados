@@ -60,28 +60,40 @@ $(document).ready(function(){
 `);
       addTicket($('#combo'+ i).val());
     });
-    $('#lvision').on('click', (e) => {
+    $('#lvision, #mvision').on('click', (e) => {
       e.preventDefault();
+      $('#menu').removeClass('active');
+      $('#backdrop').removeClass('fixed').addClass('hidden').removeClass('active');
       $('html, body').animate({
         scrollTop: $("#vision").offset().top
     }, 200);
     });
-    $('#loradores').on('click', (e) => {
+    $('#loradores, #moradores').on('click', (e) => {
       e.preventDefault();
+      $('#menu').removeClass('active');
+      $('#backdrop').removeClass('fixed').addClass('hidden').removeClass('active');
       $('html, body').animate({
         scrollTop: $("#oradores").offset().top
     }, 200);
     });
-    $('#ltickets').on('click', (e) => {
+    $('#ltickets, #mtickets').on('click', (e) => {
       e.preventDefault();
+      $('#menu').removeClass('active');
+      $('#backdrop').removeClass('fixed').addClass('hidden').removeClass('active');
       $('html, body').animate({
         scrollTop: $("#tickets").offset().top
     }, 200);
     });
-    $('#lfaq').on('click', (e) => {
+    $('#lfaq, #mfaq').on('click', (e) => {
       e.preventDefault();
+      $('#menu').removeClass('active');
+      $('#backdrop').removeClass('fixed').addClass('hidden').removeClass('active');
       $('html, body').animate({
         scrollTop: $("#faq").offset().top
     }, 200);
     });
+});
+$('#menu-btn, #close-menu-btn, #backdrop').on('click',()=>{
+  $('#menu').toggleClass('active');
+  $('#backdrop').toggleClass('fixed').toggleClass('hidden').toggleClass('active');
 });

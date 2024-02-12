@@ -32,6 +32,24 @@ html
     }
 }
 
+#menu
+{
+    right: -150vw;
+    transition: all ease-in-out .5s;
+}
+#menu.active
+{
+    right: 0px;
+}
+#backdrop
+{
+    opacity: 0;
+    transition: all ease-in-out .5s;
+}
+#backdrop.active
+{
+    opacity: 90%;
+}
 
 #ticket-names .ticket:nth-child(even)
 {

@@ -32,6 +32,31 @@
         }
     </style>
     <body class="antialiased">
+        <nav class="w-80 h-screen bg-verde z-50 fixed px-general" id="menu">
+            <div class="w-full h-24 flex justify-between">
+                <div class="grid content-center"><img src="{{ url('') }}/direccionados-white.png" alt="Congreso Direccionados" height="30" width="59"></div>
+                <div class="w-8 cursor-pointer grid content-center right-0" id="close-menu-btn">
+                    <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6m0 12L6 6"/>
+                    </svg>
+                </div>
+            </div>
+            <ul class="grid items-center font-climate uppercase text-white tracking-widest pt-8">
+                <li class="text-center"><a id="lvision" href="#vision">Vision</a></li>
+                <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
+                <li class="text-center"><a id="loradores" href="#oradores">Oradores</a></li>
+                <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
+                <li class="text-center"><a id="llugar" href="#lugar"></a>Lugar</li>
+                <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
+                <li class="text-center"><a id="ltickets" href="#tickets">Tickets</a></li>
+                <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
+                <li class="text-center mb-8"><a id="lfaq" href="#faq">FAQ</a></li>
+                <li class="text-center mt-4">
+                    <a class="border px-6 py-4 rounded-full" href="{{ route('tienda') }}">Tienda</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="w-full h-screen bg-black hidden z-40 backdrop-blur-sm bg-gray-700/30" id="backdrop"></div>
         <header class="w-full h-screen shadow-innerxl" style="background: url({{ url('') }}/bg.jpg) no-repeat center top; background-size:cover;">
             <div class="w-full h-24 px-general flex justify-between">
                 <div class="grid content-center"><img src="{{ url('') }}/direccionados-white.png" alt="Congreso Direccionados" height="45" width="89"></div>
@@ -45,6 +70,13 @@
                         <a href="{{ route('tienda') }}">Tienda</a>
                     </li>
                 </ul>
+                <div class="grid md:hidden content-center">
+                    <div class="w-10 h-10 cursor-pointer" id="menu-btn">
+                        <svg class="w-10 h-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
             <div class="w-full h-header grid place-items-center content-center gap-4">
                 <span class="uppercase font-cute text-white text-2xl md:text-4xl">Congreso de Jovenes</span>
