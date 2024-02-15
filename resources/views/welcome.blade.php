@@ -34,36 +34,32 @@
     <body class="antialiased">
         <nav class="w-80 h-screen bg-verde z-50 fixed px-general" id="menu">
             <div class="w-full h-24 flex justify-between">
-                <div class="grid content-center"><img src="{{ url('') }}/direccionados-white.png" alt="Congreso Direccionados" height="30" width="59"></div>
+                <div class="grid content-center"><img src="{{ url('') }}/direccionados-white.svg" alt="Congreso Direccionados" height="30" width="59"></div>
                 <div class="w-8 cursor-pointer grid content-center right-0" id="close-menu-btn">
                     <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6m0 12L6 6"/>
                     </svg>
                 </div>
             </div>
-            <ul class="grid items-center font-climate uppercase text-white tracking-widest pt-8">
+            <ul class="grid items-center font-climate uppercase text-white tracking-widest pt-8 gap-8">
                 <li class="text-center"><a id="mvision" href="#vision">Vision</a></li>
-                <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
                 <li class="text-center"><a id="moradores" href="#oradores">Oradores</a></li>
-                <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
-                <li class="text-center"><a id="mlugar" href="#lugar"></a>Lugar</li>
-                <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
+                <li class="text-center"><a id="mlugar" href="#lugar">Lugar</a></li>
                 <li class="text-center"><a id="mtickets" href="#tickets">Tickets</a></li>
-                <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
                 <li class="text-center mb-8"><a id="mfaq" href="#faq">FAQ</a></li>
-                <li class="text-center mt-4">
+                <li class="text-center">
                     <a class="border px-6 py-4 rounded-full" href="{{ route('tienda') }}">Tienda</a>
                 </li>
             </ul>
         </nav>
         <div class="w-full h-screen bg-black hidden z-40 backdrop-blur-sm bg-gray-700/30" id="backdrop"></div>
-        <header class="w-full h-screen shadow-innerxl" style="background: url({{ url('') }}/bg.jpg) no-repeat center top; background-size:cover;">
+        <header class="w-full h-screen shadow-innerxl" style="background: url({{ url('') }}/bg.webp) no-repeat center top; background-size:cover;">
             <div id="sticky" class="w-full h-24 px-general flex justify-between z-30">
-                <div class="grid content-center"><img src="{{ url('') }}/direccionados-white.png" alt="Congreso Direccionados" height="45" width="89"></div>
+                <div class="grid content-center"><img src="{{ url('') }}/direccionados-white.svg" alt="Congreso Direccionados" height="45" width="89"></div>
                 <ul class="hidden md:flex items-center gap-4 font-climate uppercase text-white tracking-widest text-sm">
                     <li><a id="lvision" href="#vision">Vision</a></li>
                     <li><a id="loradores" href="#oradores">Oradores</a></li>
-                    <li><a id="llugar" href="#lugar"></a>Lugar</li>
+                    <li><a id="llugar" href="#lugar">Lugar</a></li>
                     <li><a id="ltickets" href="#tickets">Tickets</a></li>
                     <li><a id="lfaq" href="#faq">FAQ</a></li>
                     <li id="btn-tienda" class="ml-3 bg-verde px-6 py-4 rounded-full">
@@ -80,7 +76,7 @@
             </div>
             <div class="w-full h-header grid place-items-center content-center gap-4">
                 <span class="uppercase font-cute text-white text-2xl md:text-4xl">Congreso de Jovenes</span>
-                <img class="w-10/12 md:w-1/2" src="{{ url('') }}/logotipo-direccionados.png" alt="Congreso Direccionados">
+                <img class="w-10/12 md:w-1/2" src="{{ url('') }}/logotipo-direccionados.webp" alt="Congreso Direccionados">
                 <span class="uppercase font-cute text-white text-2xl md:text-4xl">18 de Mayo de 2024 - Club Parque Sur</span>
             </div>
             <h1 class="w-full absolute bottom-0 text-center uppercase font-cute text-white text-xl tracking-widest">Congreso de Jovenes Direccionados</h1>
@@ -128,7 +124,7 @@
                 <div class="grid md:flex place-content-center gap-4">
                     <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
                         <div class="flex items-center justify-between mb-4">
-                            <h5 class="text-xl font-bold leading-none text-gray-900">Tickets</h5>
+                            <h3 class="text-xl font-bold leading-none text-gray-900">Tickets</h3>
                             <a href="#" class="text-sm font-medium text-verde hover:underline">
                                 Ir a la tienda
                             </a>
@@ -138,7 +134,7 @@
                                 <li class="py-3 sm:py-4">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/preventa.jpg" alt="Preventa">
+                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/preventa.wepb" alt="Preventa">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
                                             <p class="text-sm font-medium text-gray-900 truncate">
@@ -159,7 +155,7 @@
                                 <li class="py-3 sm:py-4">
                                     <div class="flex items-center ">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/preventa.jpg" alt="Preventa">
+                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/preventa.webp" alt="Preventa">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
                                             <p class="text-sm font-medium text-gray-900 truncate">
@@ -177,7 +173,7 @@
                                 <li class="py-3 sm:py-4">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/general.jpg" alt="General">
+                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/general.webp" alt="General">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
                                             <p class="text-sm font-medium text-gray-900 truncate">
@@ -195,7 +191,7 @@
                                 <li class="py-3 sm:py-4">
                                     <div class="flex items-center ">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/general.jpg" alt="General">
+                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/general.webp" alt="General">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
                                             <p class="text-sm font-medium text-gray-900 truncate">
@@ -216,7 +212,7 @@
                     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                         <div class="px-6">
                             <a href="{{ route('tienda') }}">
-                                <img class="p-8 rounded-t-lg" src="{{ url('') }}/combo.jpg" alt="Remera y Ticket" />
+                                <img class="p-8 rounded-t-lg" src="{{ url('') }}/combo.webp" alt="Remera y Ticket" />
                             </a>
                         </div>
                         <div class="px-5 pb-5">
