@@ -134,7 +134,7 @@
                                 <li class="py-3 sm:py-4">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/preventa.wepb" alt="Preventa">
+                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/preventa.webp" alt="Preventa">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
                                             <p class="text-sm font-medium text-gray-900 truncate">
@@ -217,7 +217,7 @@
                         </div>
                         <div class="px-5 pb-5">
                             <a href="{{ route('tienda') }}">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900">Combo Direccionado (Ticket y Remera)</h5>
+                                <h3 class="text-xl font-semibold tracking-tight text-gray-900">Combo Direccionado (Ticket y Remera)</h3>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">                    
                                 <span class="inline-flex items-center bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
