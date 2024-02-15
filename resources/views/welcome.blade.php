@@ -42,15 +42,15 @@
                 </div>
             </div>
             <ul class="grid items-center font-climate uppercase text-white tracking-widest pt-8">
-                <li class="text-center"><a id="lvision" href="#vision">Vision</a></li>
+                <li class="text-center"><a id="mvision" href="#vision">Vision</a></li>
                 <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
-                <li class="text-center"><a id="loradores" href="#oradores">Oradores</a></li>
+                <li class="text-center"><a id="moradores" href="#oradores">Oradores</a></li>
                 <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
-                <li class="text-center"><a id="llugar" href="#lugar"></a>Lugar</li>
+                <li class="text-center"><a id="mlugar" href="#lugar"></a>Lugar</li>
                 <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
-                <li class="text-center"><a id="ltickets" href="#tickets">Tickets</a></li>
+                <li class="text-center"><a id="mtickets" href="#tickets">Tickets</a></li>
                 <hr class="w-8 h-0.5 mx-auto my-4 bg-gray-200 border-0 rounded">
-                <li class="text-center mb-8"><a id="lfaq" href="#faq">FAQ</a></li>
+                <li class="text-center mb-8"><a id="mfaq" href="#faq">FAQ</a></li>
                 <li class="text-center mt-4">
                     <a class="border px-6 py-4 rounded-full" href="{{ route('tienda') }}">Tienda</a>
                 </li>
