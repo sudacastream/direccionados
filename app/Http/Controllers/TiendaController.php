@@ -23,6 +23,7 @@ class TiendaController extends Controller
             'precioTicket' => DB::table('precios')->where('producto', 'ticket')->value('precio'),
             'precioCombo' => DB::table('precios')->where('producto', 'combo')->value('precio'),
             'tokens' => DB::table('tickets')->where('usuario', '=', $id)->distinct()->pluck('token'),
+            'ticketsVendidos' => DB::table('tickets')->get()->count(),
             'email' => $request->user()['email'],
         ]);
     }

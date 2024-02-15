@@ -128,30 +128,30 @@
                 <div class="grid md:flex place-content-center gap-4">
                     <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
                         <div class="flex items-center justify-between mb-4">
-                            <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Tickets</h5>
+                            <h5 class="text-xl font-bold leading-none text-gray-900">Tickets</h5>
                             <a href="#" class="text-sm font-medium text-verde hover:underline">
                                 Ir a la tienda
                             </a>
                         </div>
                         <div class="flow-root">
-                            <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                            <ul role="list" class="divide-y divide-gray-200">
                                 <li class="py-3 sm:py-4">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
+                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/preventa.jpg" alt="Preventa">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
-                                            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            <p class="text-sm font-medium text-gray-900 truncate">
                                                 Preventa (primer tanda)
                                             </p>
-                                            <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                                            <p class="text-sm text-gray-500 truncate">
+                                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
                                                     <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
                                                     Agotado
                                                 </span>
                                             </p>
                                         </div>
-                                        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                        <div class="inline-flex items-center text-base font-semibold text-gray-900">
                                             $3000
                                         </div>
                                     </div>
@@ -159,17 +159,17 @@
                                 <li class="py-3 sm:py-4">
                                     <div class="flex items-center ">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie image">
+                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/preventa.jpg" alt="Preventa">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
-                                            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            <p class="text-sm font-medium text-gray-900 truncate">
                                                 Preventa (segunda tanda)
                                             </p>
-                                            <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            <p class="text-sm text-gray-500 truncate">
                                                 A partir del 16/2, hasta agotar stock.
                                             </p>
                                         </div>
-                                        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                        <div class="inline-flex items-center text-base font-semibold text-gray-900">
                                             $4500
                                         </div>
                                     </div>
@@ -177,17 +177,17 @@
                                 <li class="py-3 sm:py-4">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-2.jpg" alt="Michael image">
+                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/general.jpg" alt="General">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
-                                            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            <p class="text-sm font-medium text-gray-900 truncate">
                                                 General
                                             </p>
-                                            <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            <p class="text-sm text-gray-500 truncate">
                                                 Hasta el 23/3.
                                             </p>
                                         </div>
-                                        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                        <div class="inline-flex items-center text-base font-semibold text-gray-900">
                                             $6500
                                         </div>
                                     </div>
@@ -195,17 +195,17 @@
                                 <li class="py-3 sm:py-4">
                                     <div class="flex items-center ">
                                         <div class="flex-shrink-0">
-                                            <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-4.jpg" alt="Lana image">
+                                            <img class="w-8 h-8 rounded-full" src="{{ url('') }}/general.jpg" alt="General">
                                         </div>
                                         <div class="flex-1 min-w-0 ms-4">
-                                            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            <p class="text-sm font-medium text-gray-900 truncate">
                                                 General
                                             </p>
-                                            <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            <p class="text-sm text-gray-500 truncate">
                                                 Del 24/3 hasta el 18/5.
                                             </p>
                                         </div>
-                                        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                        <div class="inline-flex items-center text-base font-semibold text-gray-900">
                                             $8000
                                         </div>
                                     </div>
@@ -213,13 +213,15 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="{{ route('tienda') }}">
-                            <img class="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="Remera y Ticket" />
-                        </a>
+                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                        <div class="px-6">
+                            <a href="{{ route('tienda') }}">
+                                <img class="p-8 rounded-t-lg" src="{{ url('') }}/combo.jpg" alt="Remera y Ticket" />
+                            </a>
+                        </div>
                         <div class="px-5 pb-5">
                             <a href="{{ route('tienda') }}">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Combo Direccionado (Ticket y Remera)</h5>
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900">Combo Direccionado (Ticket y Remera)</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">                    
                                 <span class="inline-flex items-center bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
@@ -228,7 +230,7 @@
                                 </span>
                             </div>
                             <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$15000</span>
+                                <span class="text-3xl font-bold text-gray-900">$15000</span>
                                 <a href="{{ route('tienda') }}" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center">Comprar</a>
                             </div>
                         </div>
