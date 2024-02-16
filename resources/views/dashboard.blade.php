@@ -185,9 +185,9 @@
             <span class="absolute top-0 right-0 inline-flex items-center justify-center w-3 h-3 bg-red-500 rounded-full"></span>
         </div>
         <div class="ms-3 text-sm font-normal">
-            <div class="text-sm font-semibold text-gray-900">Tickets de Preventa (primer tanda)</div>
-            <div class="text-sm font-normal">se encuentran agotados</div> 
-            <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-02-10 20:26 GMT-0300')->diffForHumans() }}</span>   
+            <div class="text-sm font-semibold text-gray-900">Tickets de Preventa (2° tanda)</div>
+            <div class="text-sm font-normal">hoy se habilita la compra</div> 
+            <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-02-16 22:00 GMT-0300')->diffForHumans() }}</span>   
         </div>
     </div>
 </div>
