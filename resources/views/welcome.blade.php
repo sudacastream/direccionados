@@ -162,7 +162,7 @@
                                                 Preventa (segunda tanda)
                                             </p>
                                             <p class="text-sm text-gray-500 truncate">
-                                                A partir del 16/2, hasta agotar stock.
+                                                Hasta agotar stock.
                                             </p>
                                         </div>
                                         <div class="inline-flex items-center text-base font-semibold text-gray-900">
@@ -207,6 +207,9 @@
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="flex items-center justify-end md:mt-5">
+                            <a href="{{ route('tienda') }}" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center">Comprar</a>
                         </div>
                     </div>
                     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
