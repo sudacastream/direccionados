@@ -6,7 +6,7 @@
         </h2>
     </x-slot>
     
-    @if($ticketsVendidos <= 40)
+    @if($ticketsVendidos <= 100)
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
           <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">            
@@ -141,7 +141,7 @@
           </div>
           <div class="ms-3 text-sm font-normal">
               <div class="text-sm font-semibold text-gray-900">Tickets de Preventa (2° tanda)</div>
-              <div class="text-sm font-normal">hoy se habilita la compra</div> 
+              <div class="text-sm font-normal">ya se encuentra disponible</div> 
               <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-02-16 22:00 GMT-0300')->diffForHumans() }}</span>   
           </div>
       </div>
