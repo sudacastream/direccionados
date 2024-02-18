@@ -41,7 +41,7 @@
 
                 <div class="p-4">
                     <div class="overflow-hidden">
-                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-5 mb-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-5 mb-5">
                             <div class="h-auto max-w-full bg-slate-50 border border-gray-200 rounded-lg shadow py-3 px-5 self-start">
                                 <span class="text-lg text-gray-900">Tickets Pagos</span>
                                 <div class="flex items-center justify-between">
@@ -57,7 +57,7 @@
                         <!-- Required chart.js -->
                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                         
-                        <div class="ml-0 mt-6 grid grid-cols-2">
+                        <div class="ml-0 mt-6 grid grid-cols-1 md:grid-cols-2">
                             <div>
                                 <div class="px-5 py-3">
                                     Tickets Pagos
