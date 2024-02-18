@@ -6,7 +6,7 @@
         </h2>
     </x-slot>
     
-    @if($ticketsVendidos >= 100)
+    @if($ticketsVendidos <= 1)
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
           <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">            
@@ -28,6 +28,15 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <div class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                  <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                  </svg>
+                  <span class="sr-only">Info</span>
+                  <div>
+                    <span class="font-medium">¡Ups!</span> Se agotaron los tickets de preventa, s&oacute;lo podr&aacute;s comprar combos (remera y ticket). El 2/3 se habilitar&aacute; la venta de entrada general.
+                  </div>
+                </div>
                 <div>
                   <h2 class="my-4 text-lg font-medium text-gray-900 ">Datos de procedencia</h2>
                   <div class="flex flex-wrap px-3">
@@ -93,8 +102,7 @@
                         <div class="w-full px-0 sm:px-1.5 mt-6 sm:mt-0 sm:w-2/12">
                           <label class="block font-medium text-sm text-gray-700" for="funcion">¿Agregar remera?</label>
                           <select name="combo[]" onchange="combo(this.value)" class="border-gray-300 focus:border-indigo-500 rounded-md shadow-sm mt-1 block w-full">
-                            <option value="0">No</option>
-                            <option value="1">Si</option>
+                            <option selected="selected" value="1">Si</option>
                           </select>
                         </div>
                       </div>
@@ -141,15 +149,15 @@
           </div>
           <div class="ms-3 text-sm font-normal">
               <div class="text-sm font-semibold text-gray-900">Tickets de Preventa (2° tanda)</div>
-              <div class="text-sm font-normal">ya se encuentra disponible</div> 
-              <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-02-16 22:00 GMT-0300')->diffForHumans() }}</span>   
+              <div class="text-sm font-normal">se encuentran agotados</div> 
+              <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-02-17 23:30 GMT-0300')->diffForHumans() }}</span>   
           </div>
       </div>
   </div>
 </x-app-layout>
 <script>
-  var cantidadTicket = 1;
-  var cantidadCombo = 0;
+  var cantidadTicket = 0;
+  var cantidadCombo = 1;
   var montoTotal = cantidadTicket * parseInt({{ $precioTicket }}) + cantidadCombo * parseInt({{ $precioCombo }});
   $(document).ready(function(){
     $('#numero-monto').empty().append(montoTotal);
@@ -172,20 +180,22 @@
   }
   function addTicket(valor)
   {
-    cantidadTicket = cantidadTicket + 1;
+    //cantidadTicket = cantidadTicket + 1;
+    cantidadCombo = cantidadCombo + 1;
     montoTotal = cantidadTicket * parseInt({{ $precioTicket }}) + cantidadCombo * parseInt({{ $precioCombo }});
     $('#numero-monto').empty().append(montoTotal);
   }
   function removeTicket(valor)
   {
-    if(valor == 1)
+    cantidadCombo = cantidadCombo - 1;
+    /*if(valor == 1)
     {
       cantidadCombo = cantidadCombo - 1;
     }
     else
     {
       cantidadTicket = cantidadTicket - 1;
-    }
+    }*/
     montoTotal = cantidadTicket * parseInt({{ $precioTicket }}) + cantidadCombo * parseInt({{ $precioCombo }});
     $('#numero-monto').empty().append(montoTotal);
   }

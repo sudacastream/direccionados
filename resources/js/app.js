@@ -48,8 +48,7 @@ $(document).ready(function(){
         <div class="w-full px-0 sm:px-1.5 mt-6 sm:mt-0 sm:w-2/12">
           <label class="block font-medium text-sm text-gray-700" for="funcion">¿Agregar remera?</label>
           <select id="combo`+ i +`" name="combo[]" onchange="combo(this.value,`+ i +`)" class="combo border-gray-300 focus:border-indigo-500 rounded-md shadow-sm mt-1 block w-full">
-            <option value="0">No</option>
-            <option value="1">Si</option>
+            <option selected="selected" value="1">Si</option>
           </select>
         </div>
         <div class="pt-6 pl-3">

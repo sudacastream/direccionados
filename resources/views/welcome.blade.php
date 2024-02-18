@@ -125,7 +125,7 @@
                     <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="text-xl font-bold leading-none text-gray-900">Tickets</h3>
-                            <a href="#" class="text-sm font-medium text-verde hover:underline">
+                            <a href="{{ route('tienda') }}" class="text-sm font-medium text-verde hover:underline">
                                 Ir a la tienda
                             </a>
                         </div>
@@ -147,7 +147,7 @@
                                                 </span>
                                             </p>
                                         </div>
-                                        <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                                        <div class="inline-flex items-center text-base font-semibold text-gray-900 line-through">
                                             $3000
                                         </div>
                                     </div>
@@ -162,10 +162,13 @@
                                                 Preventa (segunda tanda)
                                             </p>
                                             <p class="text-sm text-gray-500 truncate">
-                                                Hasta agotar stock.
+                                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                                    <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
+                                                    Agotado
+                                                </span>
                                             </p>
                                         </div>
-                                        <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                                        <div class="inline-flex items-center text-base font-semibold text-gray-900 line-through">
                                             $4500
                                         </div>
                                     </div>
@@ -180,7 +183,7 @@
                                                 General
                                             </p>
                                             <p class="text-sm text-gray-500 truncate">
-                                                Hasta el 23/3.
+                                                Del 2/3 hasta el 23/3.
                                             </p>
                                         </div>
                                         <div class="inline-flex items-center text-base font-semibold text-gray-900">
@@ -208,8 +211,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="flex items-center justify-end md:mt-5">
-                            <a href="{{ route('tienda') }}" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center">Comprar</a>
+                        <div class="flex items-center justify-end md:mt-5 opacity-50">
+                            <a href="#" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center cursor-not-allowed">Comprar</a>
                         </div>
                     </div>
                     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
