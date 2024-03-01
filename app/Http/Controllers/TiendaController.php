@@ -86,13 +86,29 @@ class TiendaController extends Controller
                 
                 if($combo[$i] == 1)
                 {
-                    $contenido .= '<li>Ticket y Remera: '.$nombres[$i].' '.$apellidos[$i].' ('.$dni[$i].') - <span>$'.$request['precioCombo'].'</span>.</li>';
-                    $montoTotal = $montoTotal + $request['precioCombo'];
+                    if($i == 9)
+                    {    
+                        $contenido .= '<li>Ticket y Remera: '.$nombres[$i].' '.$apellidos[$i].' ('.$dni[$i].') - <span>$'.$request['precioCombo'] - $request['precio'].'</span>.</li>';
+                        $montoTotal = $montoTotal + $request['precioCombo'] - $request['precio'];
+                    }
+                    else
+                    {
+                        $contenido .= '<li>Ticket y Remera: '.$nombres[$i].' '.$apellidos[$i].' ('.$dni[$i].') - <span>$'.$request['precioCombo'].'</span>.</li>';
+                        $montoTotal = $montoTotal + $request['precioCombo'];
+                    }
                 }
                 else
                 {
-                    $contenido .= '<li>Ticket: '.$nombres[$i].' '.$apellidos[$i].' ('.$dni[$i].') - <span>$'.$request['precio'].'</span>.</li>';
-                    $montoTotal = $montoTotal + $request['precio'];
+                    if($i == 9)
+                    {
+                        $contenido .= '<li>Ticket: '.$nombres[$i].' '.$apellidos[$i].' ('.$dni[$i].') - <span>$0</span>.</li>';
+                        $montoTotal = $montoTotal;
+                    }
+                    else
+                    {
+                        $contenido .= '<li>Ticket: '.$nombres[$i].' '.$apellidos[$i].' ('.$dni[$i].') - <span>$'.$request['precio'].'</span>.</li>';
+                        $montoTotal = $montoTotal + $request['precio'];
+                    }
                 }
             }
         }

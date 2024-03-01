@@ -63,7 +63,7 @@ class SendTickets extends Controller
         $tokens = DB::table('tickets')->where('pago','=',true)->distinct()->pluck('token');
 
         $details = '';
-        $tipo = 'preventa';
+        $tipo = 'general';
         $usuario = '';
         foreach($tokens as $token)
         {
@@ -71,14 +71,14 @@ class SendTickets extends Controller
 
             foreach($tickets as $ticket)
             {
-                /*if($ticket->precio > 1500)
+                if($ticket->precio > 4500)
                 {
                     $tipo = 'general';
                 }
                 else
                 {
                     $tipo = 'preventa';
-                }*/
+                }
                 $usuario = $ticket->usuario;
             }
             $d = new DNS2D();
@@ -132,18 +132,18 @@ class SendTickets extends Controller
         if(count($tickets) > 0)
         {
             $details = '';
-            $tipo = 'preventa';
+            $tipo = 'general';
 
             foreach($tickets as $ticket)
             {
-                /*if($ticket->precio > 4500)
+                if($ticket->precio > 4500)
                 {
                     $tipo = 'general';
                 }
                 else
                 {
                     $tipo = 'preventa';
-                }*/
+                }
                 $usuario = $ticket->usuario;
             }
             $details .= 'Presentar en puerta para ingresar';
@@ -197,7 +197,7 @@ class SendTickets extends Controller
 
             Mail::send('emails.correccion-envio-ticket', $data, function($message) use($data, $pdf) {
                 $message->to($data["email"])
-                        ->subject("¡Corrección! Tu pase para el Congreso Direccionados - Token Pass ".$data["token"])
+                        ->subject("Tu pase para el Congreso Direccionados - Token Pass ".$data["token"])
                         ->attachData($pdf->output(), $data["token"].".pdf");
             });
             $mailData = '';
@@ -218,14 +218,14 @@ class SendTickets extends Controller
 
             foreach($tickets as $ticket)
             {
-                /*if($ticket->updated_at > fecha_cierre)
+                if($ticket->precio > 4500)
                 {
                     $tipo = 'general';
                 }
                 else
                 {
                     $tipo = 'preventa';
-                }*/
+                }
                 $usuario = $ticket->usuario;
             }
             $details .= 'Presentar en puerta para ingresar';

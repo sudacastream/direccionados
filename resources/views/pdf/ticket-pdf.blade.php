@@ -16,8 +16,6 @@
     }
     .brand
     {
-        background: url('https://direccionados.ar/bg-ticket.jpg') center center;
-        background-size: 140%;
         border-radius: 0 0 1.65em 1.65em;
         height: 75%;
         margin: 0;
@@ -127,7 +125,7 @@
     }
 </style>
 <body>
-    <div class="brand">
+    <div class="brand" style="background: url('https://direccionados.ar/bg-ticket-{{ $tipo }}.jpg') center center; background-size: 140%;">
         <div class="logotipo">
             <img src="https://direccionados.ar/brand-ticket.png">
         </div>

@@ -179,15 +179,15 @@
     </div>
     <div class="flex items-center">
         <div class="relative inline-block shrink-0">
-            <div class="w-12 h-12 rounded-full bg-verde grid place-content-center">
+            <div class="w-12 h-12 rounded-full bg-naranja grid place-content-center">
                 <img class="w-8 mx-auto" src="https://direccionados.ar/direccionados-white.png" alt="Logo Direccionados">
             </div>
-            <span class="absolute top-0 right-0 inline-flex items-center justify-center w-3 h-3 bg-red-500 rounded-full"></span>
+            <span class="absolute top-0 right-0 inline-flex items-center justify-center w-3 h-3 bg-green-500 rounded-full"></span>
         </div>
         <div class="ms-3 text-sm font-normal">
-            <div class="text-sm font-semibold text-gray-900">Tickets de Preventa (2° tanda)</div>
-            <div class="text-sm font-normal">se encuentran agotados</div> 
-            <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-02-17 23:30 GMT-0300')->diffForHumans() }}</span>   
+            <div class="text-sm font-semibold text-gray-900">Tickets Generales</div>
+            <div class="text-sm font-normal">ya est&aacute;n disponibles</div> 
+            <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-03-01 06:00 GMT-0300')->diffForHumans() }}</span>
         </div>
     </div>
 </div>

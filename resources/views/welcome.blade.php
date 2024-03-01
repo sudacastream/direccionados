@@ -183,7 +183,10 @@
                                                 General
                                             </p>
                                             <p class="text-sm text-gray-500 truncate">
-                                                Del 2/3 hasta el 23/3.
+                                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                                    <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                                    Disponible hasta el 23/3.
+                                                </span>
                                             </p>
                                         </div>
                                         <div class="inline-flex items-center text-base font-semibold text-gray-900">
@@ -211,8 +214,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="flex items-center justify-end md:mt-5 opacity-50">
-                            <a href="#" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center cursor-not-allowed">Comprar</a>
+                        <div class="flex items-center justify-end md:mt-5">
+                            <a href="{{ route('tienda') }}" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center">Comprar</a>
                         </div>
                     </div>
                     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
