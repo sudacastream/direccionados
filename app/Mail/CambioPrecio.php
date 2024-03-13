@@ -31,7 +31,7 @@ class CambioPrecio extends Mailable
      */
     public function build()
     {
-        return $this->subject('Eliminamos tu compra')
+        return $this->subject('Pago pendiente')
                     ->view('emails.cambio-precio');
     }
 

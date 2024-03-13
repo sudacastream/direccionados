@@ -47,11 +47,17 @@
                                         ¡Hola!
                                     </h1>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
-                                        Queremos informarte que eliminamos tu pedido pendiente de pago.</br>
+                                        Te recordamos que ten&eacute;s un ticket pendiente de pago.</br>
                                     </p>
                                 
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; text-align: left;">
-                                        Ten&eacute; en cuenta que no podr&aacute;s acceder al Congreso, pero te esperamos el pr&oacute;ximo a&ntilde;o.
+                                        Ya han pasado m&aacute;s de 7 d&iacute;as desde que realizaste la compra de tu ticket para el congreso, pero no hemos recibido el pago.
+                                    </p>
+                                    <p style="position: relative; font-size: 16px; line-height: 1.5em; text-align: left;">
+                                        Si ya realizaste el pago, tal vez no adjuntaste tu comprobante de transferencia. Por lo cual, te pedimos que puedas hacerlo respondiendo este mensaje.
+                                    </p>
+                                    <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 1em; text-align: left;">
+                                        En el caso de no tener respuesta, procederemos a liberar tu ticket para otra persona.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 1em; text-align: left;">
                                         Si ten&eacute;s alguna inquietud, no dudes en escribirnos.
