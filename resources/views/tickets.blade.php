@@ -149,12 +149,12 @@
               <span class="absolute top-0 right-0 inline-flex items-center justify-center w-3 h-3 bg-green-500 rounded-full"></span>
           </div>
           <div class="ms-3 text-sm font-normal">
-            <div class="text-sm font-semibold text-gray-900">Tickets Generales</div>
-            <div class="text-sm font-normal">ya est&aacute;n disponibles</div> 
-            <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-03-01 06:00 GMT-0300')->diffForHumans() }}</span>
+              <div class="text-sm font-semibold text-gray-900">Semana Santa</div>
+              <div class="text-sm font-normal"><span class="font-bold">Tickets 20% OFF</span> hasta el 2/4.</div> 
+              <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-03-29 00:00 GMT-0300')->diffForHumans() }}</span>
           </div>
       </div>
-  </div>
+    </div>
 </x-app-layout>
 <script>
   var cantidadTicket = 1;

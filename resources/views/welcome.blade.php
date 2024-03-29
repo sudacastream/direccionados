@@ -46,7 +46,15 @@
                 <li class="text-center"><a id="moradores" href="#oradores">Oradores</a></li>
                 <li class="text-center"><a id="mlugar" href="#lugar">Lugar</a></li>
                 <li class="text-center"><a id="mtickets" href="#tickets">Tickets</a></li>
-                <li class="text-center mb-8"><a id="mfaq" href="#faq">FAQ</a></li>
+                <li class="text-center"><a id="mfaq" href="#faq">FAQ</a></li>
+                <li class="text-center mb-6">
+                    <a class="flex items-center place-content-center" href="https://web.facebook.com/media/set/?set=a.760049462831275" target="_blank">
+                        Alojamiento
+                        <svg class="w-6 h-6 ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+                        </svg>
+                    </a>
+                </li>
                 <li class="text-center">
                     <a class="border px-6 py-4 rounded-full" href="{{ route('tienda') }}">Tienda</a>
                 </li>
@@ -62,6 +70,14 @@
                     <li><a id="llugar" href="#lugar">Lugar</a></li>
                     <li><a id="ltickets" href="#tickets">Tickets</a></li>
                     <li><a id="lfaq" href="#faq">FAQ</a></li>
+                    <li>
+                        <a class="flex items-center" href="https://web.facebook.com/media/set/?set=a.760049462831275" target="_blank">
+                            Alojamiento
+                            <svg class="w-6 h-6 ml-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+                            </svg>
+                        </a>
+                    </li>
                     <li id="btn-tienda" class="ml-3 bg-verde px-6 py-4 rounded-full">
                         <a href="{{ route('tienda') }}">Tienda</a>
                     </li>
@@ -86,40 +102,57 @@
                 <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Vision</h2>
                 <p class="mx-auto text-2xl w-full md:w-1/2 px-general text-center">Direccionados es un congreso nacional para j&oacute;venes de visi&oacute;n apost&oacute;lica y prof&eacute;tica que naci&oacute; en el coraz&oacute;n de Dios, para activar j&oacute;venes en sus prop&oacute;sitos y en el camino que Dios traz&oacute; para sus vidas a trav&eacute;s de la Palabra, la comuni&oacute;n con otros j&oacute;venes y el mover de la presencia del Esp&iacute;ritu Santo.</p>
             </section>
-            <section id="oradores" class="px-general bg-gray-50 py-40 grid gap-10 grid-cols-3">
-                <h2 class="animate-pulse mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Oradores</h2>
-                <article class="animate-pulse gap-4">
-                    <svg class="w-1/2 mb-3 text-gray-200 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"/>
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    </svg>
-                    <div class="h-6 bg-gray-300 rounded-full w-2/3 mb-4 mx-auto"></div>
-                    <div class="h-4 bg-gray-200 rounded-full mb-2.5"></div>
-                    <div class="h-4 bg-gray-200 rounded-full mb-2.5"></div>
-                    <div class="h-4 bg-gray-200 rounded-full w-2/3"></div>
+            <section id="oradores" class="px-general bg-gray-50 py-40 grid gap-10 grid-cols-1 md:grid-cols-3">
+                <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest cols-span-1 md:col-span-3">Oradores</h2>
+                <article class="gap-4">
+                    <img class="w-1/2 mb-3 mx-auto" src="{{ url('') }}/carlos-schultz.webp" alt="Ap&oacute;stol Carlos Schultz">
+                    <h3 class="mb-4 mx-auto text-center text-xl font-climate text-verde uppercase"><span class="font-cute text-2xl">Apostol</span><br>Carlos Schultz</h3>
+                    <div class="flex gap-3 place-content-center text-sm text-gray-700"><div class="h-5 w-5 rounded-full"><img class="h-5 w-5 rounded-full" src="{{ url ('') }}/argentina.webp" alt="Rep&uacute;blica Argentina"></div><span>Paran&aacute;, Entre R&iacute;os</span></div>
+                    <p class="my-2.5 px-3 text-sm text-center">Ap&oacute;stol y Pastor principal de la Iglesia Vida y Esperanza, colabora como presidente de la Asociaci&oacute;n de Pastores de Entre R&iacute;os y el Consejo Pastoral de Paran&aacute;.</p>
                 </article>
-                <article class="animate-pulse gap-4">
-                    <svg class="w-1/2 mb-3 text-gray-200 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"/>
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    </svg>
-                    <div class="h-6 bg-gray-300 rounded-full w-2/3 mb-4 mx-auto"></div>
-                    <div class="h-4 bg-gray-200 rounded-full mb-2.5"></div>
-                    <div class="h-4 bg-gray-200 rounded-full mb-2.5"></div>
-                    <div class="h-4 bg-gray-200 rounded-full w-2/3"></div>
+                <article class="gap-4">
+                    <img class="w-1/2 mb-3 mx-auto" src="{{ url('') }}/veronica-lugo.webp" alt="Profeta Ver&oacute;nica Lugo">
+                    <h3 class="mb-4 mx-auto text-center text-xl font-climate text-verde uppercase"><span class="font-cute text-2xl">Profeta</span><br>Ver&oacute;nica Lugo</h3>
+                    <div class="flex gap-3 place-content-center text-sm text-gray-700"><div class="h-5 w-5 rounded-full"><img class="h-5 w-5 rounded-full" src="{{ url ('') }}/argentina.webp" alt="Rep&uacute;blica Argentina"></div><span>San Nicol&aacute;s de los Arroyos, Buenos Aires</span></div>
+                    <p class="my-2.5 px-3 text-sm text-center">Profeta y Maestra de la Palabra; directora y fundadora de la Fundaci&oacute;n Red Beraca (de enseñanza y capacitaci&oacute;n ministerial y apost&oacute;lica).</p>
                 </article>
-                <article class="animate-pulse gap-4">
-                    <svg class="w-1/2 mb-3 text-gray-200 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"/>
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    </svg>
-                    <div class="h-6 bg-gray-300 rounded-full w-2/3 mb-4 mx-auto"></div>
-                    <div class="h-4 bg-gray-200 rounded-full mb-2.5"></div>
-                    <div class="h-4 bg-gray-200 rounded-full mb-2.5"></div>
-                    <div class="h-4 bg-gray-200 rounded-full w-2/3"></div>
+                <article class="gap-4">
+                    <img class="w-1/2 mb-3 mx-auto" src="{{ url('') }}/david-sensini.webp" alt="Pastor David Sensini">
+                    <h3 class="mb-4 mx-auto text-center text-xl font-climate text-verde uppercase"><span class="font-cute text-2xl">Pastor</span><br>David Sensini</h3>
+                    <div class="flex gap-3 place-content-center text-sm text-gray-700"><div class="h-5 w-5 rounded-full"><img class="h-5 w-5 rounded-full" src="{{ url ('') }}/argentina.webp" alt="Rep&uacute;blica Argentina"></div><span>Rosario, Santa Fe</span></div>
+                    <p class="my-2.5 px-3 text-sm text-center">Pastor de la Iglesia Redil de Cristo, lleva adelante el ministerio empresarial y de emprendedores en la Rep&uacute;blica Argentina.</p>
                 </article>
             </section>
-            <section id="tickets" class="px-general bg-white py-40 grid grid-cols-1 gap-y-6">
+            
+            <section id="lugar" class="px-general bg-white py-40 grid grid-cols-1 gap-y-10">
+                <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest cols-span-1 md:col-span-2">Lugar</h2>
+                <div class="grid gap-8 grid-cols-1 md:grid-cols-2 px-8 md:px-0">
+                    <div class="rounded-lg aspect-video" style="background: url({{ url('') }}/estadio-parque-sur.webp) center center; background-size:cover;">
+                        <div class="bg-azul rounded-lg grid place-content-center p-4 aspect-video">
+                            <img class="w-1/3 mx-auto aspect-square rounded-full" src="{{ url('') }}/club-parque-sur.webp" alt="Club Parque Sur">
+                        </div>
+                    </div>
+                    <div class="grid content-center gap-4">
+                        <h3 class="text-verde uppercase text-xl font-climate"><span class="text-2xl font-cute">Estadio Cubierto</span><br>Club Parque Sur</h3>
+                        <p>Conocido como "Gigante del Sur", se encuentra ubicado en la esquina de Cochabamba y Artigas de la Ciudad de Concepci&oacute;n del Uruguay.</p>
+                        <div class="mt-4 flex uppercase">
+                            <a href="https://maps.app.goo.gl/tsgyQGGKjQokVBY58" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex" target="_blank">
+                                Ver en el mapa
+                                <svg class="w-5 h-5 ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+                                </svg>
+                            </a>
+                            <a href="https://web.facebook.com/media/set/?set=a.760049462831275" class="hover:underline text-verde focus:outline-none font-medium rounded-full text-sm ml-5 py-2.5 text-center inline-flex" target="_blank">
+                                Ver alojamiento
+                                <svg class="w-5 h-5 ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="tickets" class="px-general bg-gray-50 py-40 grid grid-cols-1 gap-y-6">
                 <h2 class="mx-auto text-center text-xl md:text-2xl text-verde uppercase font-climate tracking-widest col-span-3">Tickets</h2>
                 <div class="grid md:flex place-content-center gap-4">
                     <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
@@ -183,13 +216,13 @@
                                                 General
                                             </p>
                                             <p class="text-sm text-gray-500 truncate">
-                                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                                                    <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
-                                                    Disponible hasta el 23/3.
+                                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                                    <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
+                                                    Agotado
                                                 </span>
                                             </p>
                                         </div>
-                                        <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                                        <div class="inline-flex items-center text-base font-semibold text-gray-900 line-through">
                                             $6500
                                         </div>
                                     </div>
@@ -204,7 +237,10 @@
                                                 General
                                             </p>
                                             <p class="text-sm text-gray-500 truncate">
-                                                Del 24/3 hasta el 18/5.
+                                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                                    <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                                    Disponible hasta el 5/5.
+                                                </span>
                                             </p>
                                         </div>
                                         <div class="inline-flex items-center text-base font-semibold text-gray-900">
@@ -235,7 +271,7 @@
                                 </span>
                             </div>
                             <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900">$15000</span>
+                                <span class="text-3xl font-bold text-gray-900">$17000</span>
                                 <a href="{{ route('tienda') }}" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center">Comprar</a>
                             </div>
                         </div>
@@ -353,5 +389,29 @@
             <div>&copy;2024 Congreso Direccionados - Todos los derechos reservados.</div>
             <div>Desarrollado por <a class="font-semibold hover:text-verde hover:underline" href="https://instagram.com/sudacastream" target="_blank">Sudaca Stream</a>.</div>
         </footer>
+        <div id="toast-notification" class="w-full fixed z-50 bottom-5 right-5 max-w-xs p-4 text-gray-900 bg-white rounded-lg shadow border" role="alert">
+            <div class="flex items-center mb-3">
+                <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Notificación</span>
+                <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white justify-center items-center flex-shrink-0 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-notification" aria-label="Close">
+                    <span class="sr-only">Cerrar</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex items-center">
+                <div class="relative inline-block shrink-0">
+                    <div class="w-12 h-12 rounded-full bg-naranja grid place-content-center">
+                        <img class="w-8 mx-auto" src="https://direccionados.ar/direccionados-white.png" alt="Logo Direccionados">
+                    </div>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center w-3 h-3 bg-green-500 rounded-full"></span>
+                </div>
+                <div class="ms-3 text-sm font-normal">
+                    <div class="text-sm font-semibold text-gray-900">Semana Santa</div>
+                    <div class="text-sm font-normal"><span class="font-bold">Tickets 20% OFF</span> hasta el 2/4.</div> 
+                    <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-03-29 00:00 GMT-0300')->diffForHumans() }}</span>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

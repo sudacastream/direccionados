@@ -16,6 +16,7 @@ module.exports = {
             colors: {
                 verde : '#1d594f',
                 naranja : '#fc7a00',
+                azul: 'rgba(2,51,154,0.5)',
             },
             boxShadow: {
                 innerxl : 'inset 0 80px 80px 0 rgb(0 0 0 / 0.5);',

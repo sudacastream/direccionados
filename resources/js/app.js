@@ -77,6 +77,14 @@ $(document).ready(function(){
         scrollTop: $("#oradores").offset().top
     }, 200);
     });
+    $('#llugar, #mlugar').on('click', (e) => {
+      e.preventDefault();
+      $('#menu').removeClass('active');
+      $('#backdrop').removeClass('fixed').addClass('hidden').removeClass('active');
+      $('html, body').animate({
+        scrollTop: $("#lugar").offset().top
+    }, 200);
+    });
     $('#ltickets, #mtickets').on('click', (e) => {
       e.preventDefault();
       $('#menu').removeClass('active');
