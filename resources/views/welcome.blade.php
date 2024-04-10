@@ -401,8 +401,8 @@
             </div>
             <div class="flex items-center">
                 <div class="relative inline-block shrink-0">
-                    <div class="w-12 h-12 rounded-full bg-green-500 grid place-content-center">
-                        <img class="w-8 mx-auto" src="https://direccionados.ar/direccionados-white.png" alt="Logo Direccionados">
+                    <div class="w-12 h-12 rounded-full bg-red-900 grid place-content-center">
+                        <span class="text-white font-bold">3x2</span>
                     </div>
                     <span class="absolute top-0 right-0 inline-flex items-center justify-center text-right translate-x-2 w-5 h-5 bg-greens-500 rounded-full">
                         <svg class="w-5 h-5 text-orange-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -411,9 +411,9 @@
                     </span>
                 </div>
                 <div class="ms-3 text-sm font-normal">
-                    <div class="text-sm font-semibold text-gray-900">Descuento a grupos</div>
-                    <div class="text-sm font-normal">Compra 10 tickets y llevate 1 gratis.</div> 
-                    <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-04-05 00:00 GMT-0300')->diffForHumans() }}</span>
+                    <div class="text-sm font-semibold text-gray-900">¡3x2 en tickets!</div>
+                    <div class="text-sm font-normal">Compra 3 tickets y paga 2.</div> 
+                    <span class="text-xs font-medium text-verde">{{ \Carbon\Carbon::parse('2024-04-10 00:00 GMT-0300')->diffForHumans() }}</span>
                 </div>
             </div>
         </div>

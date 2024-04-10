@@ -18,7 +18,9 @@ $(document).ready(function(){
     var i=1;
     $('#add-ticket').on('click', function(){
         i++;
-        $('#ticket-names').append(`<div id="row`+ i +`" class="ticket flex flex-wrap p-3 border-t border-1 border-gray-200">
+        if(cantidadTicket + cantidadCombo <= 2)
+        {
+          $('#ticket-names').append(`<div id="row`+ i +`" class="ticket flex flex-wrap p-3 border-t border-1 border-gray-200">
         <div class="w-full pr-0 sm:pr-1.5 sm:w-2/12">
           <div>
             <label class="block font-medium text-sm text-gray-700" for="nombres">Nombres</label>
@@ -59,7 +61,8 @@ $(document).ready(function(){
         </div>
       </div>
 `);
-      addTicket($('#combo'+ i).val());
+addTicket($('#combo'+ i).val());
+        }
     });
     $('#lvision, #mvision').on('click', (e) => {
       e.preventDefault();

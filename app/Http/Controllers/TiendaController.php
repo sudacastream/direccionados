@@ -86,7 +86,7 @@ class TiendaController extends Controller
                 
                 if($combo[$i] == 1)
                 {
-                    if($i == 9)
+                    if($i == 2)
                     {    
                         $contenido .= '<li>Ticket y Remera: '.$nombres[$i].' '.$apellidos[$i].' ('.$dni[$i].') - <span>$'.$request['precioCombo'] - $request['precio'].'</span>.</li>';
                         $montoTotal = $montoTotal + $request['precioCombo'] - $request['precio'];
@@ -99,7 +99,7 @@ class TiendaController extends Controller
                 }
                 else
                 {
-                    if($i == 9)
+                    if($i == 2)
                     {
                         $contenido .= '<li>Ticket: '.$nombres[$i].' '.$apellidos[$i].' ('.$dni[$i].') - <span>$0</span>.</li>';
                         $montoTotal = $montoTotal;
