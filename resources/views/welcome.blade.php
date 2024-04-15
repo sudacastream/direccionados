@@ -428,7 +428,7 @@
                     <div class="text-sm font-semibold text-gray-900">¡3X2 en tickets</div>
                     <div class="text-sm font-normal">Compr&aacute; 3 tickets y pag&aacute; 2.</div> 
                     <span class="text-xs font-medium text-verde">
-                        {{ \Carbon\Carbon::parse('2024-04-15 09:00 GMT-0300')->diffForHumans() }}
+                        {{ \Carbon\Carbon::parse('2024-04-15 00:00 GMT-0300')->diffForHumans() }}
                     </span>
                 </div>
             </div>
