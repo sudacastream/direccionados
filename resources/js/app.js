@@ -17,6 +17,8 @@ $(document).ready(function(){
   stickyMenu();
     var i=1;
     $('#add-ticket').on('click', function(){
+      if(i<=2)
+      {      
         i++;
           $('#ticket-names').append(`<div id="row`+ i +`" class="ticket flex flex-wrap p-3 border-t border-1 border-gray-200">
         <div class="w-full pr-0 sm:pr-1.5 sm:w-2/12">
@@ -60,6 +62,7 @@ $(document).ready(function(){
       </div>
 `);
 addTicket($('#combo'+ i).val());
+    }
     });
     $('#lvision, #mvision').on('click', (e) => {
       e.preventDefault();

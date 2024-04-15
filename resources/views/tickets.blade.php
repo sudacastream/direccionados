@@ -34,9 +34,7 @@
                   </svg>
                   <span class="sr-only">Info</span>
                   <div>
-                    <span class="font-medium">¡Aprovecha! </span>
-                    Cada 10 (diez) tickets ten&eacute;s 1 (uno) sin cargo.
-                    <!--<span class="font-medium">¡Aprovech&aacute;!</span> 3X2 en tickets por 24 horas (hasta dentro de {{ \Carbon\Carbon::parse('2024-04-11 00:00 GMT-0300')->diffForHumans(null, true) }}).-->
+                    <span class="font-medium">¡Aprovech&aacute;!</span> 3X2 en tickets por 24 horas (hasta dentro de {{ \Carbon\Carbon::parse('2024-04-16 00:00 GMT-0300')->diffForHumans(null, true) }}).
                   </div>
                 </div>
                 <div>
@@ -160,7 +158,7 @@
   function addTicket(valor)
   {
     cantidadTicket = cantidadTicket + 1;
-    if(cantidadTicket >= 10)
+    if(cantidadTicket >= 3)
     {
       montoTotal = cantidadTicket * parseInt({{ $precioTicket }}) + cantidadCombo * parseInt({{ $precioCombo }});
       montoTotal = montoTotal - parseInt({{ $precioTicket }});
@@ -181,7 +179,7 @@
     {
       cantidadTicket = cantidadTicket - 1;
     }
-    if(cantidadTicket >= 10)
+    if(cantidadTicket >= 3)
     {
       montoTotal = cantidadTicket * parseInt({{ $precioTicket }}) + cantidadCombo * parseInt({{ $precioCombo }});
       montoTotal = montoTotal - parseInt({{ $precioTicket }});
