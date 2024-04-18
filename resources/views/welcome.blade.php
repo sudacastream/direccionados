@@ -415,7 +415,7 @@
                     </span>
                 </div>
                 <div class="ms-3 text-sm font-normal">
-                    <!--<div class="text-sm font-semibold text-gray-900">¡Faltan {{ \Carbon\Carbon::parse('2024-05-18 09:00 GMT-0300')->diffInDays() }} d&iacute;as!</div>
+                    <div class="text-sm font-semibold text-gray-900">¡Faltan {{ \Carbon\Carbon::parse('2024-05-18 09:00 GMT-0300')->diffInDays() }} d&iacute;as!</div>
                     <div class="text-sm font-normal">No te olvides de sacar tu ticket.</div> 
                     <span class="text-xs font-medium text-verde">
                         <a href="{{ route('tienda') }}">
@@ -424,11 +424,6 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                             </svg>                              
                         </a>
-                    </span>-->
-                    <div class="text-sm font-semibold text-gray-900">¡3X2 en tickets</div>
-                    <div class="text-sm font-normal">Compr&aacute; 3 tickets y pag&aacute; 2.</div> 
-                    <span class="text-xs font-medium text-verde">
-                        {{ \Carbon\Carbon::parse('2024-04-15 00:00 GMT-0300')->diffForHumans() }}
                     </span>
                 </div>
             </div>
