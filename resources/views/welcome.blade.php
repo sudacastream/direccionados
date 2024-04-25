@@ -402,8 +402,8 @@
             <div class="flex items-center">
                 <div class="relative inline-block shrink-0">
                     <div class="w-12 h-12 rounded-full bg-verde grid place-content-center">
-                        <span class="text-white text-lg font-bold">3X2</span>
-                        <!--<img src="{{ url('') }}/direccionados-white.svg" alt="Congreso Direccionados" height="32" width="32">-->
+                        <!--<span class="text-white text-lg font-bold">3X2</span>-->
+                        <img src="{{ url('') }}/direccionados-white.svg" alt="Congreso Direccionados" height="32" width="32">
                     </div>
                     <span class="absolute top-0 right-0 inline-flex items-center justify-center text-right translate-x-2 w-5 h-5 bg-greens-500 rounded-full">
                         <svg class="w-6 h-6 text-naranja" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
