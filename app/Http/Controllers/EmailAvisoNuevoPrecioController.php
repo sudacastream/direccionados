@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AvisoDeEliminacion;
 use App\Mail\CambioPrecio;
+use Hamcrest\Type\IsInteger;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Ramsey\Uuid\Type\Integer;
 
 class EmailAvisoNuevoPrecioController extends Controller
 {
@@ -20,12 +23,29 @@ class EmailAvisoNuevoPrecioController extends Controller
     }
     public function send(Request $request)
     {
-        $listadoMorosos = DB::table('tickets')->where('pago','=',false)->distinct()->pluck('usuario');
+        $moroso = DB::table('tickets')->where('token','=',$request->tokenPass)->distinct()->pluck('usuario');
+        $usuario = DB::table('users')->where('id','=',$moroso[0])->get();
+        $email = $usuario[0]->email;
+        Mail::to($email)->send(new CambioPrecio());
+        return to_route('advice')->with('status', 'Aviso enviado a '.$email.'.');
+    }
+    public function destroy(Request $request)
+    {
+        $moroso = DB::table('tickets')->where('token','=',$request->tokenPass)->distinct()->pluck('usuario');
+        $usuario = DB::table('users')->where('id','=',$moroso[0])->get();
+        $email = $usuario[0]->email;
 
-        foreach($listadoMorosos as $moroso)
+        $eliminados = DB::table('tickets')->where('token','=',$request->tokenPass)->get();
+
+        $contenido = '<ul>';
+        foreach($eliminados as $eliminado)
         {
-            $usuario = DB::table('users')->where('id','=',$moroso)->get();
-            Mail::to($usuario[0]->email)->send(new CambioPrecio());
+            $contenido .= '<li>Ticket: '.$eliminado->nombres.' '.$eliminado->apellidos.' ('.$eliminado->dni.').</li>';
         }
+        $contenido .= '</ul>';
+        
+        DB::table('tickets')->where('token','=',$request->tokenPass)->delete();
+        Mail::to($email)->send(new AvisoDeEliminacion($contenido));
+        return to_route('advice')->with('status', 'Los tickets con el Token Pass '.$request->tokenPass.' han sido eliminados.');
     }
 }

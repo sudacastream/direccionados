@@ -71,6 +71,7 @@ Route::get('/admin/list/pastors', [AdminController::class, 'pastors'])->middlewa
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/advice', [EmailAvisoNuevoPrecioController::class, 'index'])->name('advice');
     Route::post('/admin/advice', [EmailAvisoNuevoPrecioController::class, 'send'])->name('advice.send');
+    Route::delete('/admin/advice', [EmailAvisoNuevoPrecioController::class, 'destroy'])->name('advice.destroy');
 });
 
 Route::middleware(['auth'])->group(function () {

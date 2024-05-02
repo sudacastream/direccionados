@@ -1,10 +1,13 @@
-@section('title', 'Enviar Aviso de cambio de precio - Congreso Direccionados')
+@section('title', 'Tickets adeudados - Congreso Direccionados')
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Enviar aviso de cambio de precio') }}
+            {{ __('Tickets adeudados') }}
         </h2>
     </x-slot>
+    <div class="box-border max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <x-auth-session-status class="bg-green-200 text-green-600 mt-6 px-4 py-3 rounded" :status="session('status')" />
+    </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
@@ -15,15 +18,6 @@
                             <a class="cursor-pointer text-blue-600 border-b-2 border-blue-600 inline-flex p-4 rounded-t-lg group">
                                 <i class="fa-solid fa-list-check pt-1 mr-3"></i>Listado
                             </a>
-                        </li>
-                        <li class="mr-2 mt-2 float-right">
-                            <form action="{{ route('advice.send') }}" method="POST">
-                                @csrf
-                                <a class="inline-flex cursor-pointer items-center px-4 py-2.5 text-yellow-600 bg-yellow-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-yellow-200 focus:bg-yellow-200 active:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
-                                    <i class="fa-solid fa-paper-plane sm:mr-2"></i>
-                                    <span class="hidden sm:inline-block">Enviar aviso</span>
-                                </a>
-                            </form>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +39,10 @@
                                         Precio
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        Pago
+                                        Fecha de aviso
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Acciones
                                     </th>
                                 </tr>
                             </thead>
@@ -75,15 +72,23 @@
                                             ${{ $pago->precio }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            @if($pago->pago)
-                                            <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium p-2.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-                                            </span>
-                                            @else                    
-                                            <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium p-2.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                                            </span>
-                                            @endif
+                                            {{ \Carbon\Carbon::parse($pago->updated_at)->diffForHumans() }}
+                                        </td>
+                                        <td class="px-6 py-4 flex gap-3">
+                                            <form action="{{ route('advice.send') }}" method="POST">
+                                                @csrf
+                                                <a title="Dar aviso" class="inline-flex cursor-pointer items-center px-4 py-2.5 text-blue-600 bg-blue-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-blue-200 focus:bg-blue-200 active:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
+                                                    <i class="fa-solid fa-paper-plane"></i>
+                                                </a>
+                                            </form>
+                                            <form action="{{ route('advice.destroy') }}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <input type="hidden" name="tokenPass" value="{{ $pago->token }}">
+                                                <a title="Eliminar" class="inline-flex cursor-pointer items-center px-4 py-2.5 text-red-600 bg-red-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-red-200 focus:bg-red-200 active:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
+                                                    <i class="fa-solid fa-trash-can"></i>
+                                                </a>
+                                            </form>
                                         </td>
                                     </tr>
                                     @else
@@ -110,15 +115,24 @@
                                             ${{ $pago->precio }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            @if($pago->pago)
-                                            <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium p-2.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-                                            </span>
-                                            @else                    
-                                            <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium p-2.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                                <span class="w-2 h-2 bg-red-500 rounded-full"></span>
-                                            </span>
-                                            @endif
+                                            {{ \Carbon\Carbon::parse($pago->created_at)->diffForHumans() }}
+                                        </td>
+                                        <td class="px-6 py-4 flex gap-3">
+                                            <form action="{{ route('advice.send') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="tokenPass" value="{{ $pago->token }}">
+                                                <a title="Dar aviso" class="inline-flex cursor-pointer items-center px-4 py-2.5 text-blue-600 bg-blue-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-blue-200 focus:bg-blue-200 active:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
+                                                    <i class="fa-solid fa-paper-plane"></i>
+                                                </a>
+                                            </form>
+                                            <form action="{{ route('advice.destroy') }}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <input type="hidden" name="tokenPass" value="{{ $pago->token }}">
+                                                <a title="Eliminar" class="inline-flex cursor-pointer items-center px-4 py-2.5 text-red-600 bg-red-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-red-200 focus:bg-red-200 active:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
+                                                    <i class="fa-solid fa-trash-can"></i>
+                                                </a>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endif
