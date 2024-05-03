@@ -31,9 +31,6 @@
                         <x-nav-link :href="route('inlet')" :active="request()->routeIs('inlet')">
                             {{ __('Admisión') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('buffet')" :active="request()->routeIs('buffet')">
-                            {{ __('Buffet') }}
-                        </x-nav-link>
                     @endif
                 </div>
             </div>
@@ -116,9 +113,6 @@
             @else
                 <x-responsive-nav-link :href="route('inlet')">
                     {{ __('Admisión') }}
-                </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('buffet')">
-                    {{ __('Buffet') }}
                 </x-responsive-nav-link>
             @endif
         </div>
