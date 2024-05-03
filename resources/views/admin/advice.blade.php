@@ -115,7 +115,7 @@
                                             ${{ $pago->precio }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ \Carbon\Carbon::parse($pago->created_at)->diffForHumans() }}
+                                            {{ \Carbon\Carbon::parse($pago->updated)->diffForHumans() }}
                                         </td>
                                         <td class="px-6 py-4 flex gap-3">
                                             <form action="{{ route('advice.send') }}" method="POST">
