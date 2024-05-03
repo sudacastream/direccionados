@@ -77,6 +77,7 @@
                                         <td class="px-6 py-4 flex gap-3">
                                             <form action="{{ route('advice.send') }}" method="POST">
                                                 @csrf
+                                                <input type="hidden" name="tokenPass" value="{{ $pago->token }}">
                                                 <a title="Dar aviso" class="inline-flex cursor-pointer items-center px-4 py-2.5 text-blue-600 bg-blue-300 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-blue-200 focus:bg-blue-200 active:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150" onclick="event.preventDefault();this.closest('form').submit();">
                                                     <i class="fa-solid fa-paper-plane"></i>
                                                 </a>
