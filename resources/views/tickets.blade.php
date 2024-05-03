@@ -34,7 +34,7 @@
                   </svg>
                   <span class="sr-only">Info</span>
                   <div>
-                    <span class="font-medium">¡Aprovech&aacute;!</span> Cada 10 (diez) tickets, ten&eacute;s 1 (uno) sin cargo.
+                    <span class="font-medium">¡Aprovech&aacute;!</span> Compr&aacute;a tres (3) tickets y pag&aacute; dos (2).
                   </div>
                 </div>
                 <div>
@@ -158,7 +158,7 @@
   function addTicket(valor)
   {
     cantidadTicket = cantidadTicket + 1;
-    if(cantidadTicket >= 10)
+    if(cantidadTicket >= 3)
     {
       montoTotal = cantidadTicket * parseInt({{ $precioTicket }}) + cantidadCombo * parseInt({{ $precioCombo }});
       montoTotal = montoTotal - parseInt({{ $precioTicket }});
@@ -179,7 +179,7 @@
     {
       cantidadTicket = cantidadTicket - 1;
     }
-    if(cantidadTicket >= 10)
+    if(cantidadTicket >= 3)
     {
       montoTotal = cantidadTicket * parseInt({{ $precioTicket }}) + cantidadCombo * parseInt({{ $precioCombo }});
       montoTotal = montoTotal - parseInt({{ $precioTicket }});
