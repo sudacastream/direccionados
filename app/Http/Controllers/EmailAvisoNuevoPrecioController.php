@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\AvisoDeEliminacion;
 use App\Mail\CambioPrecio;
+use Carbon\Carbon;
 use Hamcrest\Type\IsInteger;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,6 +28,7 @@ class EmailAvisoNuevoPrecioController extends Controller
         $usuario = DB::table('users')->where('id','=',$moroso[0])->get();
         $email = $usuario[0]->email;
         Mail::to($email)->send(new CambioPrecio());
+        DB::table('tickets')->where('token','=',$request->tokenPass)->update(['updated_at'=>Carbon::now()]);
         return to_route('advice')->with('status', 'Aviso enviado a '.$email.'.');
     }
     public function destroy(Request $request)
