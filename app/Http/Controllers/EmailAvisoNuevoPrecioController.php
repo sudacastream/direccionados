@@ -24,11 +24,11 @@ class EmailAvisoNuevoPrecioController extends Controller
     }
     public function send(Request $request)
     {
+        DB::table('tickets')->where('token','=',$request->tokenPass)->update(['updated_at'=>Carbon::now()]);
         $moroso = DB::table('tickets')->where('token','=',$request->tokenPass)->distinct()->pluck('usuario');
         $usuario = DB::table('users')->where('id','=',$moroso[0])->get();
         $email = $usuario[0]->email;
         Mail::to($email)->send(new CambioPrecio());
-        DB::table('tickets')->where('token','=',$request->tokenPass)->update(['updated_at'=>Carbon::now()]);
         return to_route('advice')->with('status', 'Aviso enviado a '.$email.'.');
     }
     public function destroy(Request $request)
