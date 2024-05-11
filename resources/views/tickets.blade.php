@@ -158,7 +158,7 @@
   function addTicket(valor)
   {
     cantidadTicket = cantidadTicket + 1;
-    if(cantidadTicket >= 3)
+    if(cantidadTicket >= 10)
     {
       montoTotal = cantidadTicket * parseInt({{ $precioTicket }}) + cantidadCombo * parseInt({{ $precioCombo }});
       montoTotal = montoTotal - parseInt({{ $precioTicket }});
@@ -179,7 +179,7 @@
     {
       cantidadTicket = cantidadTicket - 1;
     }
-    if(cantidadTicket >= 3)
+    if(cantidadTicket >= 10)
     {
       montoTotal = cantidadTicket * parseInt({{ $precioTicket }}) + cantidadCombo * parseInt({{ $precioCombo }});
       montoTotal = montoTotal - parseInt({{ $precioTicket }});

@@ -402,21 +402,27 @@
             <div class="flex items-center">
                 <div class="relative inline-block shrink-0">
                     <div class="w-12 h-12 rounded-full bg-verde grid place-content-center">
-                        <span class="text-white text-lg font-bold">3X2</span>
-                        <!--<img src="{{ url('') }}/direccionados-white.svg" alt="Congreso Direccionados" height="32" width="32">-->
+                        <!--<span class="text-white text-lg font-bold">3X2</span>-->
+                        <img src="{{ url('') }}/direccionados-white.svg" alt="Congreso Direccionados" height="32" width="32">
                     </div>
                     <span class="absolute top-0 right-0 inline-flex items-center justify-center text-right translate-x-2 w-5 h-5 bg-greens-500 rounded-full">
-                        <svg class="w-6 h-6 text-naranja" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <!--<svg class="w-6 h-6 text-naranja" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M8.597 3.2A1 1 0 0 0 7.04 4.289a3.49 3.49 0 0 1 .057 1.795 3.448 3.448 0 0 1-.84 1.575.999.999 0 0 0-.077.094c-.596.817-3.96 5.6-.941 10.762l.03.049a7.73 7.73 0 0 0 2.917 2.602 7.617 7.617 0 0 0 3.772.829 8.06 8.06 0 0 0 3.986-.975 8.185 8.185 0 0 0 3.04-2.864c1.301-2.2 1.184-4.556.588-6.441-.583-1.848-1.68-3.414-2.607-4.102a1 1 0 0 0-1.594.757c-.067 1.431-.363 2.551-.794 3.431-.222-2.407-1.127-4.196-2.224-5.524-1.147-1.39-2.564-2.3-3.323-2.788a8.487 8.487 0 0 1-.432-.287Z"/>
-                        </svg>
-                        <!--<svg class="w-5 h-5 text-naranja" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
                         </svg>-->
+                        <svg class="w-5 h-5 text-naranja" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
                     </span>
                 </div>
-                <!--<div class="ms-3 text-sm font-normal">
-                    <div class="text-sm font-semibold text-gray-900">¡Faltan {{ \Carbon\Carbon::parse('2024-05-18 09:00 GMT-0300')->diffInDays() }} d&iacute;as!</div>
-                    <div class="text-sm font-normal">No te olvides de sacar tu ticket.</div> 
+                <div class="ms-3 text-sm font-normal">
+                    <div class="text-sm font-semibold text-gray-900">
+                        ¡Se acaban los tickets!
+                        <!--¡Faltan {{ \Carbon\Carbon::parse('2024-05-18 09:00 GMT-0300')->diffInDays() }} d&iacute;as!-->
+                    </div>
+                    <div class="text-sm font-normal">
+                        Quedan {{ \Carbon\Carbon::parse('2024-05-13 00:00 GMT-0300')->diffForHumans(null, true, true, 2) }} para sacar el tuyo.
+                        <!--No te olvides de sacar tu ticket.-->
+                    </div> 
                     <span class="text-xs font-medium text-verde">
                         <a href="{{ route('tienda') }}">
                             Ir a la tienda
@@ -425,20 +431,20 @@
                             </svg>                              
                         </a>
                     </span>
-                </div>-->
-                <div class="ms-3 text-sm font-normal">
+                </div>
+                <!--<div class="ms-3 text-sm font-normal">
                     <div class="text-sm font-semibold text-gray-900">¡3x2 en Tickets!</div>
                     <div class="text-sm font-normal">Compr&aacute; tres tickets y pag&aacute; dos.</div> 
                     <span class="text-xs font-medium text-verde">
                         {{ \Carbon\Carbon::parse('2024-05-03 00:00 GMT-0300')->diffForHumans() }}
-                        <!--<a href="{{ route('tienda') }}">
+                        <a href="{{ route('tienda') }}">
                             Ir a la tienda
                             <svg class="w-4 h-4 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                             </svg>                              
-                        </a>-->
+                        </a>
                     </span>
-                </div>
+                </div>-->
             </div>
         </div>
     </body>

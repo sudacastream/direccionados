@@ -16,8 +16,10 @@ $(document).ready(function(){
   document.documentElement.setAttribute('data-theme', 'dark');
   stickyMenu();
     var i=1;
-    $('#add-ticket').on('click', function(){      
+    $('#add-ticket').on('click', function(){
         i++;
+        if(cantidadTicket + cantidadCombo <= 2)
+        {
           $('#ticket-names').append(`<div id="row`+ i +`" class="ticket flex flex-wrap p-3 border-t border-1 border-gray-200">
         <div class="w-full pr-0 sm:pr-1.5 sm:w-2/12">
           <div>
@@ -60,6 +62,7 @@ $(document).ready(function(){
       </div>
 `);
 addTicket($('#combo'+ i).val());
+        }
     });
     $('#lvision, #mvision').on('click', (e) => {
       e.preventDefault();
