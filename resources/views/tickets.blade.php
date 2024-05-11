@@ -34,7 +34,7 @@
                   </svg>
                   <span class="sr-only">Info</span>
                   <div>
-                    <span class="font-medium">¡Aprovech&aacute;!</span> Compr&aacute;a tres (3) tickets y pag&aacute; dos (2).
+                    <span class="font-medium">¡Aprovech&aacute;!</span> Comprando diez (10) tickets, ten&eacute;s uno (1) sin cargo.
                   </div>
                 </div>
                 <div>
