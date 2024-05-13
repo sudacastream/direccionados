@@ -237,9 +237,9 @@
                                                 General
                                             </p>
                                             <p class="text-sm text-gray-500 truncate">
-                                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                                                    <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
-                                                    Disponible hasta el 5/5.
+                                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                                    <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
+                                                    No disponible.
                                                 </span>
                                             </p>
                                         </div>
@@ -251,7 +251,7 @@
                             </ul>
                         </div>
                         <div class="flex items-center justify-end md:mt-5">
-                            <a href="{{ route('tienda') }}" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center">Comprar</a>
+                            <span class="text-white bg-green-500 hover:bg-green-400 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center cursor-no-drop">Comprar</span>
                         </div>
                     </div>
                     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
@@ -265,14 +265,14 @@
                                 <h3 class="text-xl font-semibold tracking-tight text-gray-900">Combo Direccionado (Ticket y Remera)</h3>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">                    
-                                <span class="inline-flex items-center bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                                    <span class="w-2 h-2 me-1 bg-yellow-500 rounded-full"></span>
-                                    Hasta agotar stock
+                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                    <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
+                                    Agotado
                                 </span>
                             </div>
                             <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900">$17000</span>
-                                <a href="{{ route('tienda') }}" class="text-white bg-verde hover:bg-verde-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center">Comprar</a>
+                                <span class="text-3xl font-bold text-gray-900 line-through">$17000</span>
+                                <span class="text-white bg-green-500 hover:bg-green-400 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center cursor-no-drop">Comprar</span>
                             </div>
                         </div>
                     </div>
@@ -416,21 +416,24 @@
                 </div>
                 <div class="ms-3 text-sm font-normal">
                     <div class="text-sm font-semibold text-gray-900">
-                        ¡Se acaban los tickets!
+                        ¡Cerramos la venta online!
                         <!--¡Faltan {{ \Carbon\Carbon::parse('2024-05-18 09:00 GMT-0300')->diffInDays() }} d&iacute;as!-->
                     </div>
                     <div class="text-sm font-normal">
-                        Quedan {{ \Carbon\Carbon::parse('2024-05-13 00:00 GMT-0300')->diffForHumans(null, true, true, 2) }} para sacar el tuyo.
+                        Obten&eacute; tu ticket el d&iacute;a del congreso.
                         <!--No te olvides de sacar tu ticket.-->
                     </div> 
                     <span class="text-xs font-medium text-verde">
+                        {{ \Carbon\Carbon::parse('2024-05-13 00:00 GMT-0300')->diffForHumans() }}
+                    </span>
+                    <!--<span class="text-xs font-medium text-verde">
                         <a href="{{ route('tienda') }}">
                             Ir a la tienda
                             <svg class="w-4 h-4 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                             </svg>                              
                         </a>
-                    </span>
+                    </span>-->
                 </div>
                 <!--<div class="ms-3 text-sm font-normal">
                     <div class="text-sm font-semibold text-gray-900">¡3x2 en Tickets!</div>

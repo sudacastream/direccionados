@@ -6,17 +6,17 @@
         </h2>
     </x-slot>
     
-    @if($ticketsVendidos <= 1)
+    @if(Auth::user()->email!='ceo@sudacastream.com')
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
           <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">            
-            <div class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+            <div class="flex items-center p-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
               <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
               </svg>
               <span class="sr-only">Info</span>
               <div>
-                <span class="font-medium">¡Pesta&ntilde;aste!</span> Se agotaron los tickets de la primera tanda de preventa. El 16/2 se habilitar&aacute; la segunda tanda de preventa, no te duermas.
+                <span class="font-medium">¡Llegaste tarde!</span> Cerr&oacute; la venta online de tickets para el Congreso Direccionados. El d&iacute;a del congreso, podr&aacute;s obtener tu ticket en el ingreso y abonarlo <span class="underline">s&oacute;lo con transferencia bancaria</span>.
               </div>
             </div>
           </div>
