@@ -101,6 +101,30 @@ addTicket($('#combo'+ i).val());
         scrollTop: $("#faq").offset().top
     }, 200);
     });
+    $('#lcronograma, #mcronograma').on('click', (e) => {
+      e.preventDefault();
+      $('#menu').removeClass('active');
+      $('#backdrop').removeClass('fixed').addClass('hidden').removeClass('active');
+      $('html, body').animate({
+        scrollTop: $("#cronograma").offset().top
+    }, 200);
+    });
+    $('#lbosquejos, #mbosquejos').on('click', (e) => {
+      e.preventDefault();
+      $('#menu').removeClass('active');
+      $('#backdrop').removeClass('fixed').addClass('hidden').removeClass('active');
+      $('html, body').animate({
+        scrollTop: $("#bosquejos").offset().top
+    }, 200);
+    });
+    $('#lofrendas, #mofrendas').on('click', (e) => {
+      e.preventDefault();
+      $('#menu').removeClass('active');
+      $('#backdrop').removeClass('fixed').addClass('hidden').removeClass('active');
+      $('html, body').animate({
+        scrollTop: $("#ofrendas").offset().top
+    }, 200);
+    });
 });
 $('#menu-btn, #close-menu-btn, #backdrop').on('click',()=>{
   $('#menu').toggleClass('active');
