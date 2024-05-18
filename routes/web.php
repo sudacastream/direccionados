@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailAvisoNuevoPrecioController;
 use App\Http\Controllers\InletController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RecursosController;
 use App\Http\Controllers\SendTickets;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\StatsController;
@@ -28,6 +29,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/recursos', [RecursosController::class, 'index'])->name('recursos');
+Route::post('/recursos', [RecursosController::class, 'verified'])->name('recursos.verified');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 

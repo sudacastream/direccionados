@@ -12,8 +12,8 @@ class StatsController extends Controller
         if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
         {
             $totales = DB::table('tickets')->get();
-            $pagos = DB::table('tickets')->where('pago','=',true)->get();
-            $ingresantes = DB::table('tickets')->where('pago','=',false)->orderByDesc('updated_at')->get();
+            $pagos = DB::table('tickets')->where('asistencia','=',true)->get();
+            $ingresantes = DB::table('tickets')->where('asistencia','=',false)->orderByDesc('updated_at')->get();
 
             return view('admin.stats', [
                 'user' => $request->user(),
