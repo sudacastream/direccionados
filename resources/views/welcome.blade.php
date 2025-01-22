@@ -32,7 +32,6 @@
         }
     </style>
     <body class="antialiased">
-        QUE ONDA
         <nav class="w-80 h-screen bg-verde z-50 fixed px-general" id="menu">
             <div class="w-full h-24 flex justify-between">
                 <div class="grid content-center"><img src="{{ url('') }}/direccionados-white.svg" alt="Congreso Direccionados" height="30" width="59"></div>
