@@ -93,7 +93,7 @@
             <div class="w-full h-header grid place-items-center content-center gap-4">
                 <span class="uppercase font-cute text-white text-2xl md:text-4xl">Congreso de Jovenes</span>
                 <img class="w-10/12 md:w-1/2" src="{{ url('') }}/logotipo-direccionados.webp" alt="Congreso Direccionados">
-                <span class="uppercase font-cute text-white text-2xl md:text-4xl">18 de Mayo de 2024 - Club Parque Sur</span>
+                <span class="uppercase font-cute text-white text-2xl md:text-4xl">18 de Mayo de 2025 - Club Parque Sur</span>
             </div>
             <h1 class="w-full absolute bottom-0 text-center uppercase font-cute text-white text-xl tracking-widest">Congreso de Jovenes Direccionados</h1>
         </header>
