@@ -10,12 +10,12 @@
         <meta property="og:url" content="https://direccionados.ar/" />
         <meta property="og:title" content="Congreso Direccionados 2025" />
         <meta property="og:description" content="Congreso de Jóvenes Direccionados: 17 de mayo de 2025 en el Club Parque Sur de Concepci&oacute;n del Uruguay." />
-        <meta property="og:image" content="https://direccionados.ar/congreso-direccionados.jpg" />
+        <meta property="og:image" content="https://direccionados.ar/congreso-direccionados.jpg?v=2" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://direccionados.ar/" />
         <meta property="twitter:title" content="Congreso Direccionados 2025" />
         <meta property="twitter:description" content="Congreso de Jóvenes Direccionados: 17 de mayo de 2025 en el Club Parque Sur de Concepci&oacute;n del Uruguay." />
-        <meta property="twitter:image" content="https://direccionados.ar/congreso-direccionados.jpg" />
+        <meta property="twitter:image" content="https://direccionados.ar/congreso-direccionados.jpg?v=2" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
