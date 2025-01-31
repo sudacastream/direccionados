@@ -82,7 +82,7 @@
         position: absolute;
         top: 4%;
         right: 10%;
-        width: 7%;
+        width: 9%;
     }
     .brand .logotipo img
     {
@@ -94,7 +94,7 @@
         left: 50%;
         top: 4%;
         transform: translateX(-50%);
-        width: 10%;
+        width: 15%;
     }
     .brand .tipo img
     {
@@ -117,7 +117,7 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 70%;
+        width: 60%;
     }
     .brand .sitio img
     {
@@ -125,18 +125,18 @@
     }
 </style>
 <body>
-    <div class="brand" style="background: url('https://direccionados.ar/bg-ticket-{{ $tipo }}.jpg') center center; background-size: 140%;">
+    <div class="brand" style="background: url('http://direccionados.ar/bg-ticket-{{ $tipo }}.jpg?v=2') center center; background-size: cover;">
         <div class="logotipo">
-            <img src="https://direccionados.ar/brand-ticket.png">
+            <img src="http://direccionados.ar/brand-ticket.png?v=2">
         </div>
         <div class="tipo">
-            <img src="https://direccionados.ar/{{ $tipo }}.png">
+            <img src="http://direccionados.ar/{{ $tipo }}.png?v=2">
         </div>
         <div class="lugar">
-            <img src="https://direccionados.ar/lugar.png">
+            <img src="http://direccionados.ar/lugar.png?v=2">
         </div>
         <div class="sitio">
-            <img src="https://direccionados.ar/sitio.png">
+            <img src="http://direccionados.ar/sitio.png?v=2">
         </div>
     </div>
     <div class="info">
@@ -145,7 +145,7 @@
         <div class="barcode"><img src="data:image/png;base64,{{ $code }}" alt="barcode"   /><span>{{ $token }}</span></div>
     </div>
     <div class="logo">
-        <img src="https://direccionados.ar/logo-ticket.png" alt="">
+        <img src="http://direccionados.ar/logo-ticket.png?v=2" alt="">
     </div>
     <div class="pinb"></div>
 </body>

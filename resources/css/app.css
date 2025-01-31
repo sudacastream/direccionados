@@ -32,6 +32,58 @@ html
     }
 }
 
+
+/* */
+#menu-1, #menu-2, #b-tienda
+{
+    transition: all ease .2s;
+}
+#navi
+{
+    transition: top linear 1s;
+}
+#menu-content
+{
+    transition: all linear 3s;
+}
+#menu-icon:hover #menu-1
+{
+    transform: translateX(-3px) translateY(-0.125rem);
+}
+#menu-icon:hover #menu-2
+{
+    transform: translateX(3px) translateY(0.125rem);
+}
+#menu-icon.active #menu-1
+{
+    transform: translateX(0) translateY(1.5px) rotate(45deg);
+}
+#menu-icon.active #menu-2
+{
+    transform: translateX(0) translateY(-1.5px) rotate(-45deg);
+}
+#menu-icon.active:hover #menu-1
+{
+    transform: translateX(0) translateY(1.5px) rotate(45deg);
+}
+#menu-icon.active:hover #menu-2
+{
+    transform: translateX(0) translateY(-1.5px) rotate(-45deg);
+}
+#menu-icon span::after
+{
+    content:"Menú";
+}
+#menu-icon.active span::after
+{
+    content:"Cerrar";
+}
+#menu-icon:hover span
+{
+    color: #f2f2f2;
+}
+
+
 #menu
 {
     right: -150vw;

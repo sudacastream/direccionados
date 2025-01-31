@@ -74,19 +74,19 @@
                   <h2 class="my-4 text-lg font-medium text-gray-900 ">Datos individuales</h2>
                     <div id="ticket-names">
                       <div id="row0" class="ticket flex flex-wrap p-3">
-                        <div class="w-full pr-0 sm:pr-1.5 sm:w-2/12">
+                        <div class="w-full pr-0 sm:pr-1.5 sm:w-3/12">
                           <div>
                             <label class="block font-medium text-sm text-gray-700 " for="nombres">Nombres</label>
                             <input required class="border-gray-300 focus:border-indigo-500 rounded-md shadow-sm mt-1 block w-full" name="nombres[]" type="text" autocomplete="nombres" value="">
                           </div>
                         </div>
-                        <div class="w-full px:0 sm:px-1.5 mt-6 sm:mt-0 sm:w-2/12">
+                        <div class="w-full px:0 sm:px-1.5 mt-6 sm:mt-0 sm:w-3/12">
                           <div>
                             <label class="block font-medium text-sm text-gray-700 " for="apellidos">Apellidos</label>
                             <input required class="border-gray-300 focus:border-indigo-500 rounded-md shadow-sm mt-1 block w-full" name="apellidos[]" type="text" autocomplete="apellidos" value="">
                           </div>
                         </div>
-                        <div class="w-full px:0 sm:px-1.5 mt-6 sm:mt-0 sm:w-2/12">
+                        <div class="w-full px:0 sm:px-1.5 mt-6 sm:mt-0 sm:w-3/12">
                           <div>
                             <label class="block font-medium text-sm text-gray-700 " for="dni">DNI -sin puntos-</label>
                             <input required class="border-gray-300 focus:border-indigo-500 rounded-md shadow-sm mt-1 block w-full" name="dni[]" type="text" autocomplete="dni" value="">
@@ -99,13 +99,13 @@
                             <option value="pastor">Si</option>
                           </select>
                         </div>              
-                        <div class="w-full px-0 sm:px-1.5 mt-6 sm:mt-0 sm:w-2/12">
+                        <!--<div class="w-full px-0 sm:px-1.5 mt-6 sm:mt-0 sm:w-2/12">
                           <label class="block font-medium text-sm text-gray-700" for="funcion">¿Agregar remera?</label>
                           <select name="combo[]" onchange="combo(this.value)" class="border-gray-300 focus:border-indigo-500 rounded-md shadow-sm mt-1 block w-full">
                             <option value="0">No</option>
                             <option value="1">Si</option>
                           </select>
-                        </div>
+                        </div>-->
                       </div>
                     </div>
                     

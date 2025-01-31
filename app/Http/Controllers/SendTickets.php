@@ -71,7 +71,7 @@ class SendTickets extends Controller
 
             foreach($tickets as $ticket)
             {
-                if($ticket->precio > 4500)
+                if($ticket->precio > 9000)
                 {
                     $tipo = 'general';
                 }
@@ -136,7 +136,7 @@ class SendTickets extends Controller
 
             foreach($tickets as $ticket)
             {
-                if($ticket->precio > 4500)
+                if($ticket->precio > 9000)
                 {
                     $tipo = 'general';
                 }
@@ -210,7 +210,7 @@ class SendTickets extends Controller
     }
     public function getTicket($token)
     {
-        $tickets = DB::table('tickets')->where('token','=',$token)->get();
+        $tickets = DB::table('tickets')->where('token','=',$token)->where('pago','=',true)->get();
         if(count($tickets) > 0)
         {
             $details = '';
@@ -218,7 +218,7 @@ class SendTickets extends Controller
 
             foreach($tickets as $ticket)
             {
-                if($ticket->precio > 4500)
+                if($ticket->precio > 9000)
                 {
                     $tipo = 'general';
                 }
@@ -248,7 +248,7 @@ class SendTickets extends Controller
         }
         else
         {
-            return 'El token '.$token.' no existe.';
+            return view('welcome-nueva');
         }
     }
 }
