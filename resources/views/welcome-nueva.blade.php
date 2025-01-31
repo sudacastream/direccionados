@@ -91,7 +91,7 @@
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                             </svg>
                         </div>
-                        <div class="w-2/3 grid">
+                        <div class="w-full grid">
                             <div class="bg-gray-100 h-6 w-48 rounded-full"></div>
                             <div class="bg-gray-100 h-4 w-24 rounded-full mb-4"></div>
                             <div class="bg-gray-100 h-3 w-48 rounded-full mb-4"></div>
@@ -107,7 +107,7 @@
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                             </svg>
                         </div>
-                        <div class="w-2/3 grid">
+                        <div class="w-full grid">
                             <div class="bg-gray-100 h-6 w-48 rounded-full"></div>
                             <div class="bg-gray-100 h-4 w-24 rounded-full mb-4"></div>
                             <div class="bg-gray-100 h-3 w-48 rounded-full mb-4"></div>
@@ -123,7 +123,7 @@
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                             </svg>
                         </div>
-                        <div class="w-2/3 grid">
+                        <div class="w-full grid">
                             <div class="bg-gray-100 h-6 w-48 rounded-full"></div>
                             <div class="bg-gray-100 h-4 w-24 rounded-full mb-4"></div>
                             <div class="bg-gray-100 h-3 w-48 rounded-full mb-4"></div>
@@ -139,7 +139,7 @@
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                             </svg>
                         </div>
-                        <div class="w-2/3 grid">
+                        <div class="w-full grid">
                             <div class="bg-gray-100 h-6 w-48 rounded-full"></div>
                             <div class="bg-gray-100 h-4 w-24 rounded-full mb-4"></div>
                             <div class="bg-gray-100 h-3 w-48 rounded-full mb-4"></div>
@@ -194,8 +194,8 @@
             <div class="w-full py-24">
                 <h3 class="mx-auto text-center text-xl text-naranja uppercase font-press tracking-widest mb-6">Tickets</h3>
                 <div class="w-full mb-6">
-                    <div class="w-full md:w-2/3 flex mx-auto animate-pulse gap-6 mb-6">
-                        <div class="w-1/4 bg-slate-50 rounded shadow-sm p-4">
+                    <div class="w-full md:w-2/3 grid grid-cols-2 lg:grid-cols-4 mx-auto animate-pulse gap-6 mb-6">
+                        <div class="bg-slate-50 rounded shadow-sm p-4">
                             <div class="w-full rounded flex items-center justify-center">
                                 <svg class="w-32 h-32 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M16 18H8l2.5-6 2 4 1.5-2 2 4Zm-1-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
@@ -209,7 +209,7 @@
                                 <div class="bg-gray-100 w-full h-6 rounded-full mt-2"></div>
                             </div>
                         </div>
-                        <div class="w-1/4 bg-slate-50 rounded shadow-sm p-4">
+                        <div class="bg-slate-50 rounded shadow-sm p-4">
                             <div class="w-full rounded flex items-center justify-center">
                                 <svg class="w-32 h-32 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M16 18H8l2.5-6 2 4 1.5-2 2 4Zm-1-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
@@ -223,7 +223,7 @@
                                 <div class="bg-gray-100 w-full h-6 rounded-full mt-2"></div>
                             </div>
                         </div>
-                        <div class="w-1/4 bg-slate-50 rounded shadow-sm p-4">
+                        <div class="bg-slate-50 rounded shadow-sm p-4">
                             <div class="w-full rounded flex items-center justify-center">
                                 <svg class="w-32 h-32 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M16 18H8l2.5-6 2 4 1.5-2 2 4Zm-1-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
@@ -237,7 +237,7 @@
                                 <div class="bg-gray-100 w-full h-6 rounded-full mt-2"></div>
                             </div>
                         </div>
-                        <div class="w-1/4 bg-slate-50 rounded shadow-sm p-4">
+                        <div class="bg-slate-50 rounded shadow-sm p-4">
                             <div class="w-full rounded flex items-center justify-center">
                                 <svg class="w-32 h-32 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M16 18H8l2.5-6 2 4 1.5-2 2 4Zm-1-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
