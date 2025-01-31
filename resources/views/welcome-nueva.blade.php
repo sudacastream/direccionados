@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Congreso Direccionados 2024</title>
+        <title>Congreso Direccionados 2025</title>
         <meta name="title" content="Congreso Direccionados 2025" />
         <meta name="description" content="Congreso de Jóvenes Direccionados: 17 de mayo de 2025 en el Club Parque Sur de Concepci&oacute;n del Uruguay." />
         <meta property="og:type" content="website" />
