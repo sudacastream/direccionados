@@ -57,7 +57,7 @@ class TiendaController extends Controller
                 $apellidos = $request['apellidos'];
                 $dni = $request['dni'];
                 $funcion = $request['funcion'];
-                $combo = $request['combo'];
+                $combo = 0;//$request['combo'];
 
                 $ticket = new Ticket();
                 $ticket->usuario = $request['usuario'];
@@ -72,19 +72,20 @@ class TiendaController extends Controller
                 $ticket->congregacion = $request['congregacion'];
                 $ticket->pastor = $request['pastor'];
                 $ticket->asistencia = $request['asistencia'];
-                $ticket->combo = $combo[$i];
-                if($combo[$i] == 1)
+                $ticket->combo = $combo;//$combo[$i];
+                /*if($combo[$i] == 1)
                 {
                     $ticket->precio = $request['precioCombo'];
                 }
                 else
                 {
                     $ticket->precio = $request['precio'];
-                }
+                }*/
+                $ticket->precio = $request['precio'];//
                 $ticket->pago = $request['pago'];
                 $ticket->save();
                 
-                if($combo[$i] == 1)
+                if(1==200)//$combo[$i] == 1)
                 {
                     if($i == 9)
                     {    
