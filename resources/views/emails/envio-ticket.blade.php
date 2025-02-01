@@ -44,7 +44,7 @@
                             <tr>
                                 <td class="content-cell" style="max-width: 100vw;padding: 32px;">
                                     <h1 style="position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">
-                                        ¡Bienvenido al Congreso Direccionados 2024!
+                                        ¡Bienvenido al Congreso Direccionados 2025!
                                     </h1>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
                                         Hemos registrado tu pago en los productos con el Token Pass <span style="font-weight:600;">{{ $token }}</span>.
