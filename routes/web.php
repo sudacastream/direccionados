@@ -29,9 +29,12 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome-nueva');
 });
+Route::get('/vieja', function () {
+    return view('welcome');
+});
 
 /*Route::get('/recursos', [RecursosController::class, 'index'])->name('recursos');
-Route::post('/recursos', [RecursosController::class, 'verified'])->name('recursos.verified');
+Route::post('/recursos', [RecursosController::class, 'verified'])->name('recursos.verified');*/
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -96,7 +99,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/buffet', [BuffetController::class, 'search'])->name('buffet.search');
     Route::post('/buffet/usuario', [BuffetController::class, 'searchUsuario'])->name('buffet.search.usuario');
     Route::patch('/buffet', [BuffetController::class, 'entrega'])->name('buffet.entrega');
-});*/
+});
 
 
 require __DIR__.'/auth.php';

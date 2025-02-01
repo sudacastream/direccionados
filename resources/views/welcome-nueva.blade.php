@@ -194,72 +194,87 @@
             <div class="w-full py-24">
                 <h3 class="mx-auto text-center text-xl text-naranja uppercase font-press tracking-widest mb-6">Tickets</h3>
                 <div class="w-full mb-6">
-                    <div class="w-full md:w-2/3 grid grid-cols-2 lg:grid-cols-4 mx-auto animate-pulse gap-6 mb-6">
-                        <div class="bg-slate-50 rounded shadow-sm p-4">
-                            <div class="w-full rounded flex items-center justify-center">
-                                <svg class="w-32 h-32 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M16 18H8l2.5-6 2 4 1.5-2 2 4Zm-1-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 3v4a1 1 0 0 1-1 1H5m14-4v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1ZM8 18h8l-2-4-1.5 2-2-4L8 18Zm7-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                                </svg>                                  
-                            </div>
+                    <div class="w-full md:w-2/3 grid grid-cols-2 lg:grid-cols-4 mx-auto gap-6 mb-6">
+                        <article class="bg-slate-50 rounded shadow-sm p-4">
+                            <div class="w-full aspect-square rounded flex items-center justify-center" style="background:url(/preventa.webp) no-repeat center center;background-size:cover;"></div>
                             <div class="w-full grid gap-2 justify-center">
-                                <div class="bg-gray-100 w-32 h-4 rounded-full"></div>
-                                <div class="bg-gray-100 w-24 h-4 rounded-full"></div>
-                                <div class="bg-gray-100 w-28 h-3 rounded-full mt-2"></div>
-                                <div class="bg-gray-100 w-full h-6 rounded-full mt-2"></div>
+                                <h1 class="text-center text-sm"><span class="font-bold text-lg">Preventa</span><br>(primera tanda)</h1>
+                                <p class="text-sm text-gray-500 truncate text-center">
+                                    <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                        Disponible
+                                    </span>
+                                </p>
+                                <span class="text-center text-2xl font-bold my-3">$6000</span>
+                                <a href="/tienda" class="text-white uppercase tracking-widest font-bold text-xs px-5 py-2 md:text-sm rounded border-2 border-morado bg-morado hover:border-transparente hover:text-gray-50">Comprar</a>
                             </div>
-                        </div>
-                        <div class="bg-slate-50 rounded shadow-sm p-4">
-                            <div class="w-full rounded flex items-center justify-center">
-                                <svg class="w-32 h-32 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M16 18H8l2.5-6 2 4 1.5-2 2 4Zm-1-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 3v4a1 1 0 0 1-1 1H5m14-4v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1ZM8 18h8l-2-4-1.5 2-2-4L8 18Zm7-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                                </svg>                                  
-                            </div>
+                        </article>
+                        <article class="bg-slate-50 rounded shadow-sm p-4">
+                            <div class="w-full aspect-square rounded flex items-center justify-center" style="background:url(/preventa.webp) no-repeat center center;background-size:cover;"></div>
                             <div class="w-full grid gap-2 justify-center">
-                                <div class="bg-gray-100 w-32 h-4 rounded-full"></div>
-                                <div class="bg-gray-100 w-24 h-4 rounded-full"></div>
-                                <div class="bg-gray-100 w-28 h-3 rounded-full mt-2"></div>
-                                <div class="bg-gray-100 w-full h-6 rounded-full mt-2"></div>
+                                <h1 class="text-center text-sm"><span class="font-bold text-lg">Preventa</span><br>(segunda tanda)</h1>
+                                <p class="text-sm text-gray-500 truncate text-center">
+                                    <span class="inline-flex items-center bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-yellow-500 rounded-full"></span>
+                                        Proximamente
+                                    </span>
+                                </p>
+                                <span class="text-center text-2xl font-bold my-3 line-through">$9000</span>
+                                <a href="#" class="opacity-25 cursor-not-allowed text-white uppercase tracking-widest font-bold text-xs px-5 py-2 md:text-sm rounded border-2 border-morado bg-morado hover:border-transparente hover:text-gray-50">Comprar</a>
                             </div>
-                        </div>
-                        <div class="bg-slate-50 rounded shadow-sm p-4">
-                            <div class="w-full rounded flex items-center justify-center">
-                                <svg class="w-32 h-32 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M16 18H8l2.5-6 2 4 1.5-2 2 4Zm-1-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 3v4a1 1 0 0 1-1 1H5m14-4v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1ZM8 18h8l-2-4-1.5 2-2-4L8 18Zm7-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                                </svg>                                  
-                            </div>
+                        </article>
+                        <article class="bg-slate-50 rounded shadow-sm p-4">
+                            <div class="w-full aspect-square rounded flex items-center justify-center" style="background:url(/general.webp) no-repeat center center;background-size:cover;"></div>
                             <div class="w-full grid gap-2 justify-center">
-                                <div class="bg-gray-100 w-32 h-4 rounded-full"></div>
-                                <div class="bg-gray-100 w-24 h-4 rounded-full"></div>
-                                <div class="bg-gray-100 w-28 h-3 rounded-full mt-2"></div>
-                                <div class="bg-gray-100 w-full h-6 rounded-full mt-2"></div>
+                                <h1 class="text-center text-sm"><span class="font-bold text-lg">General</span><br>&nbsp;</h1>
+                                <p class="text-sm text-gray-500 truncate text-center">
+                                    <span class="inline-flex items-center bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-yellow-500 rounded-full"></span>
+                                        Proximamente
+                                    </span>
+                                </p>
+                                <span class="text-center text-2xl font-bold my-3 line-through">$13000</span>
+                                <a href="#" class="opacity-25 cursor-not-allowed text-white uppercase tracking-widest font-bold text-xs px-5 py-2 md:text-sm rounded border-2 border-morado bg-morado hover:border-transparente hover:text-gray-50">Comprar</a>
                             </div>
-                        </div>
-                        <div class="bg-slate-50 rounded shadow-sm p-4">
-                            <div class="w-full rounded flex items-center justify-center">
-                                <svg class="w-32 h-32 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M16 18H8l2.5-6 2 4 1.5-2 2 4Zm-1-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 3v4a1 1 0 0 1-1 1H5m14-4v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1ZM8 18h8l-2-4-1.5 2-2-4L8 18Zm7-8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                                </svg>                                  
-                            </div>
+                        </article>
+                        <article class="bg-slate-50 rounded shadow-sm p-4">
+                            <div class="w-full aspect-square rounded flex items-center justify-center" style="background:url(/general.webp) no-repeat center center;background-size:cover;"></div>
                             <div class="w-full grid gap-2 justify-center">
-                                <div class="bg-gray-100 w-32 h-4 rounded-full"></div>
-                                <div class="bg-gray-100 w-24 h-4 rounded-full"></div>
-                                <div class="bg-gray-100 w-28 h-3 rounded-full mt-2"></div>
-                                <div class="bg-gray-100 w-full h-6 rounded-full mt-2"></div>
+                                <h1 class="text-center text-sm"><span class="font-bold text-lg">General</span><br>&nbsp;</h1>
+                                <p class="text-sm text-gray-500 truncate text-center">
+                                    <span class="inline-flex items-center bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-yellow-500 rounded-full"></span>
+                                        Proximamente
+                                    </span>
+                                </p>
+                                <span class="text-center text-2xl font-bold my-3 line-through">$16000</span>
+                                <a href="#" class="opacity-25 cursor-not-allowed text-white uppercase tracking-widest font-bold text-xs px-5 py-2 md:text-sm rounded border-2 border-morado bg-morado hover:border-transparente hover:text-gray-50">Comprar</a>
                             </div>
-                        </div>
+                        </article>
+                    </div>
+                    <div class="w-full md:w-2/3 flex justify-center mx-auto mb-6">
+                        <article class="w-full bg-slate-50 rounded shadow-sm p-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="w-full aspect-square rounded items-center justify-center col-span-1" style="background:url(/combo.webp) no-repeat center center;background-size:contain;"></div>
+                            <div class="w-full grid gap-2 col-span-2">
+                                <h1 class="text-sm"><span class="font-bold text-lg">Combo Direccionado</span><br>(ticket y remera)</h1>
+                                <p>
+                                    Tenemos para ofrecer los talles L, XL, 2XL y talle especial; en color blanco con diseño exclusivo de D25.
+                                    Ten&eacute; en cuenta que el stock disponible es limitado.
+                                </p>
+                                <p class="text-sm text-gray-500 truncate">
+                                    <span class="inline-flex items-center bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-yellow-500 rounded-full"></span>
+                                        Proximamente
+                                    </span>
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-2xl font-bold my-3 line-through">$00000</span>
+                                    <div><a href="#" class="opacity-25 cursor-not-allowed text-white uppercase tracking-widest font-bold text-xs px-5 py-2 md:text-sm rounded border-2 border-morado bg-morado hover:border-transparente hover:text-gray-50">Comprar</a></div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
-                <button type="button" class="mx-auto flex items-center px-4 py-2 font-semibold leading-6 text-sm text-gray-400 transition ease-in-out duration-150 cursor-not-allowed" disabled="">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Cargando informaci&oacute;n...
-                </button>
             </div>
             <div class="w-full border-b"></div>
         </section>
@@ -344,8 +359,8 @@
                         </h2>
                         <div id="remeras-body-3" class="hidden" aria-labelledby="remeras-heading-3">
                             <div class="py-5 border-b px-4">
-                                Tenemos para ofrecer los talles L, XL, 2XL y talle especial; en colores negro (con inscripciones en blanco) y blanco (con inscripciones en negro).
-                                Ten&eacute; en cuenta que el stock disponible es de 50 unidades.
+                                Tenemos para ofrecer los talles L, XL, 2XL y talle especial; en color blanco con diseño exclusivo de D25.
+                                Ten&eacute; en cuenta que el stock disponible es limitado.
                             </div>
                         </div>
                     </div>
