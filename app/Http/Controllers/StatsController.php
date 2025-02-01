@@ -13,7 +13,7 @@ class StatsController extends Controller
         {
             $totales = DB::table('tickets')->get();
             $pagos = DB::table('tickets')->where('pago','=',true)->get();
-            $ingresantes = DB::table('tickets')->where('asistencia','=',false)->orderByDesc('updated_at')->get();
+            $ingresantes = DB::table('tickets')->where('pago','=',false)->orderByDesc('updated_at')->get();
 
             return view('admin.stats', [
                 'user' => $request->user(),
