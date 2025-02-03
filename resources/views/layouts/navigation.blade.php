@@ -59,16 +59,27 @@
                         <x-dropdown-link :href="route('admin.tokens')">
                             {{ __('Administración') }}
                         </x-dropdown-link>
+                        <x-dropdown-link :href="route('listado')">
+                            {{ __('Listado') }}
+                        </x-dropdown-link>
                         @endif
                         @if(Auth::user()->email=='ceo@sudacastream.com')
                         <x-dropdown-link :href="route('admin.tokens')">
                             {{ __('Administración') }}
                         </x-dropdown-link>
+                        <x-dropdown-link :href="route('listado')">
+                            {{ __('Listado') }}
+                        </x-dropdown-link>
                         <x-dropdown-link :href="route('inlet')">
                             {{ __('Admisión') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('buffet')">
-                            {{ __('Buffet') }}
+                        @endif
+                        @if(Auth::user()->email=='coquidamer@hotmail.com')
+                        <x-dropdown-link :href="route('admin.tokens')">
+                            {{ __('Administración') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('listado')">
+                            {{ __('Listado') }}
                         </x-dropdown-link>
                         @endif
                         @endif

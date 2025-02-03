@@ -9,7 +9,7 @@ class StatsController extends Controller
 {
     public function index(Request $request)
     {
-        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com' || $request->user()['email'] == 'coquidamer@hotmail.com')
         {
             $totales = DB::table('tickets')->get();
             $pagos = DB::table('tickets')->where('pago','=',true)->get();
