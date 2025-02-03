@@ -140,17 +140,17 @@
                     <x-responsive-nav-link :href="route('profile.edit')">
                         {{ __('Perfil') }}
                     </x-responsive-nav-link>
-                    @if(Auth::user()->email=='ceo@sudacastream.com' || Auth::user()->email=='nahufidelibus@gmail.com')
+                    @if(Auth::user()->email=='ceo@sudacastream.com' || Auth::user()->email=='nahufidelibus@gmail.com' || Auth::user()->email=='coquidamer@hotmail.com')
                     <x-responsive-nav-link :href="route('admin.tokens')">
                         {{ __('Administración') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('listado')">
+                        {{ __('Listado') }}
                     </x-responsive-nav-link>
                     @endif                    
                     @if(Auth::user()->email=='ceo@sudacastream.com')
                     <x-responsive-nav-link :href="route('inlet')">
                         {{ __('Admisión') }}
-                    </x-responsive-nav-link>
-                    <x-responsive-nav-link :href="route('buffet')">
-                        {{ __('Buffet') }}
                     </x-responsive-nav-link>
                     @endif
                 @endif
