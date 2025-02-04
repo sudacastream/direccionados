@@ -16,7 +16,7 @@ class AdminController extends Controller
 {
     public function edit(Request $request): View
     {
-        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com' || $request->user()['email'] == 'coquidamer@hotmail.com')
         {
             $tokens = DB::table('tickets')->distinct()->pluck('token');
             $tokensTicket = DB::table('tickets')->distinct()->pluck('token');
@@ -193,7 +193,7 @@ class AdminController extends Controller
     }
     public function redirect(Request $request)
     {
-        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com' || $request->user()['email'] == 'coquidamer@hotmail.com')
         {
         return to_route('admin.tokens');
         }
@@ -204,7 +204,7 @@ class AdminController extends Controller
     }
     public function list(Request $request)
     {
-        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com' || $request->user()['email'] == 'coquidamer@hotmail.com')
         {
             $ticketsPagos = DB::table('tickets')->orderBy('apellidos')->orderBy('pago')->get();
             return view('admin.list',[
@@ -219,7 +219,7 @@ class AdminController extends Controller
     }
     public function pastors(Request $request)
     {
-        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com')
+        if($request->user()['email'] == 'ceo@sudacastream.com' || $request->user()['email'] == 'nahufidelibus@gmail.com' || $request->user()['email'] == 'coquidamer@hotmail.com')
         {
             $pastores = DB::table('tickets')->where('funcion','=','pastor')->orderBy('apellidos')->get();
             return view('admin.pastores',[
