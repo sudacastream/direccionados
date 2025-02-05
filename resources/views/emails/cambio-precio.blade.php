@@ -51,7 +51,7 @@
                                     </p>
                                 
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; text-align: left;">
-                                        Ya han pasado m&aacute;s de 7 d&iacute;as desde que realizaste la compra de tu ticket para el congreso, pero no hemos recibido el pago.
+                                        Ya han pasado m&aacute;s de 3 d&iacute;as desde que realizaste la compra de tu ticket para el congreso, pero no hemos recibido el pago.
                                     </p>
                                     <p style="position: relative; font-size: 16px; line-height: 1.5em; text-align: left;">
                                         Si ya realizaste el pago, tal vez no adjuntaste tu comprobante de transferencia. Por lo cual, te pedimos que puedas hacerlo respondiendo este mensaje.
