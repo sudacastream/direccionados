@@ -6,7 +6,7 @@
         </h2>
     </x-slot>
     
-    @if(Auth::user()->email=='aassceo@sudacastream.com')
+    @if(Auth::user()->email!='ceo@sudacastream.com')
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
           <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">            
@@ -16,7 +16,7 @@
               </svg>
               <span class="sr-only">Info</span>
               <div>
-                <span class="font-medium">¡Llegaste tarde!</span> Cerr&oacute; la venta online de tickets para el Congreso Direccionados. El d&iacute;a del congreso, podr&aacute;s obtener tu ticket en el ingreso y abonarlo <span class="underline">s&oacute;lo con transferencia bancaria</span>.
+                <span class="font-semibold">¡Pes-ta-&ntilde;as-te!</span> Se acabaron los tickets de la primera tanda de preventa. <span class="font-bold">¡Estate atento! Pronto abriremos la sengunda tanda.</span>
               </div>
             </div>
           </div>

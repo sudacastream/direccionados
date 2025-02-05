@@ -200,13 +200,16 @@
                             <div class="w-full grid gap-2 justify-center">
                                 <h1 class="text-center text-sm"><span class="font-bold text-lg">Preventa</span><br>(primera tanda)</h1>
                                 <p class="text-sm text-gray-500 truncate text-center">
-                                    <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                                        <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
-                                        Disponible
+                                    <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
+                                        Agotado
                                     </span>
                                 </p>
-                                <span class="text-center text-2xl font-bold my-3">$6000</span>
-                                <a href="/tienda" class="text-white uppercase tracking-widest font-bold text-xs px-5 py-2 md:text-sm rounded border-2 border-morado bg-morado hover:border-transparente hover:text-gray-50">Comprar</a>
+                                <span class="text-center text-2xl font-bold my-3 line-through">$6000</span>
+                                @if(1==2)
+                                <a href="#" class="text-white uppercase tracking-widest font-bold text-xs px-5 py-2 md:text-sm rounded border-2 border-morado bg-morado hover:border-transparente hover:text-gray-50">Comprar</a>-->
+                                @endif
+                                <a href="#" class="opacity-25 cursor-not-allowed text-white uppercase tracking-widest font-bold text-xs px-5 py-2 md:text-sm rounded border-2 border-morado bg-morado hover:border-transparente hover:text-gray-50">Comprar</a>
                             </div>
                         </article>
                         <article class="bg-slate-50 rounded shadow-sm p-4">
