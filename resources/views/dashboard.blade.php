@@ -26,7 +26,7 @@
         <div class="ticket-listado">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
-                    <div class="bg-blue-200 flex items-center justify-between py-3 px-6 mb-6 rounded">
+                    <div class="bg-blue-200 flex items-center justify-center py-3 px-6 mb-6 rounded">
                         <h3 class="text-blue-600 text-center text-xl">Token Pass: <span class="font-semibold">{{ $tokens[$t] }}</span></h3>
                     </div>
                     @for($b=0;$b < count($tokensTicket);$b++)
