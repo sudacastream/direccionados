@@ -251,4 +251,47 @@ class SendTickets extends Controller
             return view('welcome-nueva');
         }
     }
+    public function downloadTicket($token)
+    {
+        $tickets = DB::table('tickets')->where('token','=',$token)->where('pago','=',true)->get();
+        if(count($tickets) > 0)
+        {
+            $details = '';
+            $tipo = 'preventa';
+
+            foreach($tickets as $ticket)
+            {
+                if($ticket->precio > 9000)
+                {
+                    $tipo = 'general';
+                }
+                else
+                {
+                    $tipo = 'preventa';
+                }
+                $usuario = $ticket->usuario;
+            }
+            $details .= 'Presentar en puerta para ingresar';
+            
+            $d = new DNS2D();
+            $d->setStorPath(__DIR__.'/cache/');
+            $code = $d->getBarcodePNG($token,'PDF417',2,0.5);
+    
+            $data = [
+                'code' => $code,
+                'token' => $token,
+                'details' => $details,
+                'tipo' => $tipo,
+                'url' => env('APP_URL'),
+            ];
+            $customPaper = array(0,0,396.85,198.425);
+            $pdf = Pdf::loadView('pdf.ticket-pdf', $data)->setPaper($customPaper, 'landscape');
+            $details = '';
+            return $pdf->download($token.'.pdf');
+        }
+        else
+        {
+            return view('welcome-nueva');
+        }
+    }
 }
