@@ -116,7 +116,7 @@ class TiendaController extends Controller
 
         $contenido .= '</ul><span style="font-weight:600;">Monto total: $'.$montoTotal.'</span><ul></ul>';
         $contenido .= '<span style="font-weight:600;">Cuenta a transferir:</span><ul style="margin-top:5px;list-style:none;">';
-        $contenido .= '<li>Titular: Gastón Eugenio Fidelibus</li><li>CVU: 0000003100021237935253</li><li>Alias: direccionados24</li><li>CUIT/CUIL: 20214537460</li><li>Mercado Pago</li></ul>';
+        $contenido .= '<li>Titular: Nahuel Santiago Fidelibus</li><li>CVU: 0170212740000034715039</li><li>Alias: direccionados25</li><li>CUIT/CUIL: 20403950468</li><li>BBVA</li></ul>';
 
         if($montoTotal > 0)
         {
