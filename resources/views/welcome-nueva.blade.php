@@ -370,6 +370,7 @@
                         <div id="tickets-body-4" class="hidden" aria-labelledby="tickets-heading-4">
                             <div class="py-5 border-b px-4">
                                 Si. Se podr&aacute;n transferir los tickets hasta el d&iacute;a previo al congreso. Para ello, deber&aacute;s enviar un correo electr&oacute;nico a <a class="text-naranja underline" href="mailto:registro@direccionados.ar" target="_blank">registro@direccionados.ar</a> para que un asesor te contacte y efect&uacute;e el traspaso.
+                                <br><span class="font-semibold">Ten&eacute; en cuenta que esto se podr&aacute; realizar s&oacute;lo una vez por ticket.</span>
                             </div>
                         </div>
                         <h2 id="remeras-heading-4">
