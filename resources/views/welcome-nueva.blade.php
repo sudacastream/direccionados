@@ -35,8 +35,8 @@
     </style>
     <body class="antialiased" style="background:url(/bg.webp) center center no-repeat;background-size:cover;background-attachment: fixed;">
         
-        <div id="marketing-banner" tabindex="-1" class="fixed z-40 flex flex-col md:flex-row justify-between w-[calc(100%-2rem)] px-4 py-3 -translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow lg:max-w-7xl left-1/2 bottom-6">
-            <div class="flex flex-col items-start mb-3 me-4 md:items-center md:flex-row md:mb-0">
+        <div id="marketing-banner" tabindex="-1" class="fixed z-40 flex justify-between w-[calc(100%-2rem)] px-4 py-3 -translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow lg:max-w-7xl left-1/2 bottom-6">
+            <div class="flex items-center me-4">
                 <div class="relative inline-block shrink-0 me-4 pe-4 border-e">
                     <div class="w-12 h-12 rounded-full bg-naranja grid place-content-center">
                         <!--<span class="text-white text-lg font-bold">3X2</span>-->
@@ -51,7 +51,7 @@
                         </svg>
                     </span>
                 </div>
-                <p class="flex items-center text-sm font-normal text-gray-700">¡Wooow! Se agotaron los tickets de la primera tanda de la preventa.&nbsp;<span class="font-semibold">Segunda tanda disponible {{ \Carbon\Carbon::parse('2025-02-20 00:00 GMT-0300')->diffForHumans() }}.</span></p>
+                <p class="inline text-xs md:text-sm font-normal text-gray-700">¡Wooow! Se agotaron los tickets de la primera tanda de la preventa.&nbsp;<span class="font-semibold">Segunda tanda disponible {{ \Carbon\Carbon::parse('2025-02-20 00:00 GMT-0300')->diffForHumans() }}.</span></p>
             </div>
             <div class="flex items-center shrink-0">
                 <button data-dismiss-target="#marketing-banner" type="button" class="shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white">
