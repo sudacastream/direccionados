@@ -51,7 +51,7 @@
                         </svg>
                     </span>
                 </div>
-                <p class="inline text-xs md:text-sm font-normal text-gray-700">¡Wooow! Se agotaron los tickets de la primera tanda de la preventa.&nbsp;<span class="font-semibold">Segunda tanda disponible {{ \Carbon\Carbon::parse('2025-02-20 00:00 GMT-0300')->diffForHumans() }}.</span></p>
+                <p class="inline text-xs md:text-sm font-normal text-gray-700">¡Wooow! Se agotaron los tickets de la primera tanda de la preventa. &nbsp;<span class="font-semibold">Segunda tanda disponible {{ \Carbon\Carbon::parse('2025-02-20 00:00 GMT-0300')->diffForHumans() }}.</span></p>
             </div>
             <div class="flex items-center shrink-0">
                 <button data-dismiss-target="#marketing-banner" type="button" class="shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white">
