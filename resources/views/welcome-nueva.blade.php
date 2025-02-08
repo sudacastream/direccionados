@@ -304,7 +304,7 @@
                                     </span>
                                 </p>
                                 <div class="flex justify-between items-center">
-                                    <span class="text-2xl font-bold my-3 line-through">$00000</span>
+                                    <span class="text-2xl font-bold my-3 line-through">$35000</span>
                                     <div><a href="#" class="opacity-25 cursor-not-allowed text-white uppercase tracking-widest font-bold text-xs px-5 py-2 md:text-sm rounded border-2 border-morado bg-morado hover:border-transparente hover:text-gray-50">Comprar</a></div>
                                 </div>
                             </div>
